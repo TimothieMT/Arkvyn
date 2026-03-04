@@ -1,73 +1,132 @@
-# React + TypeScript + Vite
+# Arkvyn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Persönliche Website von Arkvyn – gebaut mit **React + TypeScript + Vite** (Frontend) und **Node.js + Express** (Backend/Mail-Service).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech-Stack
 
-## React Compiler
+| Bereich | Technologie |
+|---|---|
+| Frontend | React 19, TypeScript, Vite, React Router |
+| Backend | Node.js, Express, Nodemailer |
+| Prozess-Manager | PM2 |
+| Webserver | Nginx (Reverse Proxy) |
+| Hosting | Hetzner VPS (178.104.24.155) |
+| Domain | arkvyn.de |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Projektstruktur
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+/
+├── src/                  # React-Frontend
+│   └── components/       # Einzelne Seiten (Home, UeberMich, Preise, …)
+├── backend/
+│   └── MailService.js    # Express-API für das Kontaktformular
+├── public/               # Statische Assets
+├── dist/                 # Build-Output (wird von Nginx ausgeliefert)
+├── ecosystem.config.cjs  # PM2-Konfiguration
+├── nginx.conf            # Nginx-Konfiguration (Referenz)
+├── deploy.sh             # Deployment-Skript
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Wie die Seite funktioniert
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Frontend
+- Single-Page-Application (SPA) mit React Router.
+- Vite baut die App in den Ordner `dist/`.
+- Nginx liefert den `dist/`-Ordner statisch aus. Alle unbekannten Routen werden auf `index.html` weitergeleitet (SPA-Routing).
+
+### Backend (Mail-Service)
+- Ein schlanker Express-Server läuft auf Port **3001**.
+- Nginx leitet alle Anfragen unter `/api/` per Reverse Proxy an den Express-Server weiter.
+- Das Kontaktformular (`/api/contact`) sendet E-Mails über Gmail SMTP (Nodemailer).
+- Der Health-Check-Endpunkt `/api/health` gibt `{ ok: true }` zurück.
+- Der Prozess wird von **PM2** als `arkvyn-backend` überwacht und automatisch neugestartet.
+
+### Umgebungsvariablen (Backend)
+Die Datei `backend/.env` muss auf dem Server manuell angelegt werden und **darf nicht ins Repository**:
+
+```
+GMAIL_USER=deine@gmail.com
+GMAIL_APP_PASSWORD=dein-app-passwort
+```
+
+---
+
+## Lokale Entwicklung
+
+```bash
+# 1. Abhängigkeiten installieren
+npm install
+cd backend && npm install && cd ..
+
+# 2. Backend starten (Port 3001)
+cd backend && node MailService.js
+
+# 3. Frontend-Dev-Server starten (Port 5173)
+npm run dev
+```
+
+Der Frontend-Dev-Server erwartet das Backend unter `http://localhost:5173` – CORS ist dafür bereits konfiguriert.
+
+---
+
+## Deployment auf dem Server
+
+### Voraussetzungen (einmalig)
+Auf dem Hetzner-VPS müssen folgende Dinge vorhanden sein:
+- Node.js & npm
+- PM2 (`npm install -g pm2`)
+- Nginx
+- Git & SSH-Schlüssel für den GitHub-Zugriff
+- `backend/.env` mit den Gmail-Credentials
+
+### Änderungen deployen
+
+**1. Änderungen lokal committen und pushen:**
+
+```bash
+git add .
+git commit -m "Beschreibung der Änderung"
+git push origin main
+```
+
+**2. Auf dem Server deployen:**
+
+Per SSH auf den Server verbinden und das Deploy-Skript ausführen:
+
+```bash
+ssh root@178.104.24.155
+cd /var/www/arkvyn
+bash deploy.sh
+```
+
+Das Skript führt automatisch folgende Schritte aus:
+1. `git pull` – aktuellen Code vom Repository holen
+2. `npm ci` – Frontend-Abhängigkeiten installieren
+3. `npm run build` – TypeScript kompilieren & Vite-Build erstellen
+4. `npm ci --omit=dev` – Backend-Abhängigkeiten installieren
+5. PM2 Backend neustarten (`pm2 startOrRestart`)
+6. `sudo systemctl reload nginx` – Nginx neu laden
+
+### Nützliche Server-Befehle
+
+```bash
+# PM2 Status & Logs
+pm2 list
+pm2 logs arkvyn-backend
+pm2 restart arkvyn-backend
+
+# Nginx Status
+sudo systemctl status nginx
+sudo nginx -t          # Konfiguration testen
+
+# Backend Health-Check
+curl http://127.0.0.1:3001/api/health
 ```
