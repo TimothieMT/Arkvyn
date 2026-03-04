@@ -41,6 +41,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  margin-top: 150px;
 }
 
 .navbar__links button {
@@ -53,11 +54,53 @@
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: color 0.2s, background 0.2s;
+  color: #0f1f0f;
+  background: #5CB85C;
+  opacity: 0.8;
 }
 
 .navbar__links button:hover {
   color: var(--green-light);
   background: rgba(92, 184, 92, 0.08);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  z-index: 1100;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.navbar__hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ════════════════════════════════════════
@@ -222,7 +265,6 @@
   line-height: 1.1;
   color: var(--white);
   margin-bottom: 1.5rem;
-  white-space: nowrap;
 }
 
 .home__sub {
@@ -743,9 +785,37 @@
 }
 
 @media (max-width: 768px) {
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__links {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 999;
+  }
+
+  .navbar__links.open {
+    display: flex;
+  }
+
   .navbar__links button {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.7rem;
+    font-size: 1.2rem;
+    padding: 0.85rem 2rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    border-radius: 8px;
   }
 
   .grid--3 {
@@ -783,10 +853,6 @@
 @media (max-width: 480px) {
   .navbar__inner {
     padding: 0 1rem;
-  }
-
-  .navbar__links {
-    gap: 0;
   }
 
   .grid,
