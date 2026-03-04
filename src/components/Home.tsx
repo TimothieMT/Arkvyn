@@ -9,7 +9,7 @@ export default function Home({ scrollTo }: HomeProps) {
     scrollTo(id)
   }
   return (
-    <section id="home" className="section section--home">
+    <section id="home" className="section section--home" aria-label="Startseite – Arkvyn Softwareentwicklung">
       <div className="grid grid--12">
         <div className="home__content">
           <button className="footer__logo" onClick={() => handleNav('home')}>

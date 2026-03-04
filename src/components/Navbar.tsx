@@ -27,7 +27,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
         <button className="navbar__logo" onClick={() => handleNav('home')}>
           <img src={logo} alt="Arkvyn Logo" />
         </button>
-        <nav className={`navbar__links${menuOpen ? ' open' : ''}`}>
+        <nav className={`navbar__links${menuOpen ? ' open' : ''}`} aria-label="Hauptnavigation">
           <button onClick={() => handleNav('home')}>Startseite</button>
           <button onClick={() => handleNav('angebot')}>Leistungen</button>
           <button onClick={() => handleNav('preise')}>Preise</button>

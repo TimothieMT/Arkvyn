@@ -1,6 +1,6 @@
 export default function Preise() {
   return (
-    <section id="preise" className="section section--preise">
+    <section id="preise" className="section section--preise" aria-label="Preise & Pakete">
       <div className="section__header">
         <h2>Webseiten zum <span className="accent">Festpreis</span></h2>
         <p>

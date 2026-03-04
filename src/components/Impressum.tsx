@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 export default function Impressum() {
   useEffect(() => {
@@ -6,6 +7,13 @@ export default function Impressum() {
   }, [])
 
   return (
+    <>
+    <Helmet>
+      <title>Impressum – Arkvyn | Tim Tolk, Lübeck</title>
+      <meta name="description" content="Impressum von Arkvyn – Angaben gemäß § 5 TMG. Inhaber: Tim Tolk, Softwareentwickler aus Lübeck." />
+      <meta name="robots" content="noindex, follow" />
+      <link rel="canonical" href="https://arkvyn.de/impressum" />
+    </Helmet>
     <div className="legal-page">
       <div className="legal-page__inner">
         <h1>Impressum</h1>
@@ -106,5 +114,6 @@ export default function Impressum() {
         </section>
       </div>
     </div>
+    </>
   )
 }

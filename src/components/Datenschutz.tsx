@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 export default function Datenschutz() {
   useEffect(() => {
@@ -6,6 +7,13 @@ export default function Datenschutz() {
   }, [])
 
   return (
+    <>
+    <Helmet>
+      <title>Datenschutzerklärung – Arkvyn | Tim Tolk</title>
+      <meta name="description" content="Datenschutzerklärung von Arkvyn – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
+      <meta name="robots" content="noindex, follow" />
+      <link rel="canonical" href="https://arkvyn.de/datenschutz" />
+    </Helmet>
     <div className="legal-page">
       <div className="legal-page__inner">
         <h1>Datenschutzerklärung</h1>
@@ -192,5 +200,6 @@ export default function Datenschutz() {
         </section>
       </div>
     </div>
+    </>
   )
 }

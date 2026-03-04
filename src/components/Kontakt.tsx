@@ -41,7 +41,7 @@ export default function Kontakt() {
   };
 
   return (
-    <section id="kontakt" className="section section--kontakt">
+    <section id="kontakt" className="section section--kontakt" aria-label="Kontakt aufnehmen">
       <div className="grid grid--2">
         <div className="kontakt__info">
           <h2>Kontakt <span className="accent">aufnehmen</span></h2>

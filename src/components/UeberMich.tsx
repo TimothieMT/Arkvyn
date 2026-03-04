@@ -1,6 +1,6 @@
 export default function UeberMich() {
   return (
-    <section id="ueber-mich" className="section section--ueber-mich">
+    <section id="ueber-mich" className="section section--ueber-mich" aria-label="Über Tim Tolk – Arkvyn">
       <div className="grid grid--12">
         <div className="about__inner">
           <div className="about__text">

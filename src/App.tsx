@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Angebot from './components/Angebot'
@@ -12,13 +13,20 @@ import Datenschutz from './components/Datenschutz'
 
 function MainPage({ scrollTo }: { scrollTo: (id: string) => void }) {
   return (
-    <main className="main-content">
-      <Home scrollTo={scrollTo} />
-      <Angebot />
-      <Preise />
-      <UeberMich />
-      <Kontakt />
-    </main>
+    <>
+      <Helmet>
+        <title>Arkvyn – Full-Stack Softwareentwicklung aus Lübeck | Tim Tolk</title>
+        <meta name="description" content="Arkvyn – Maßgeschneiderte Softwarelösungen von Tim Tolk, Full-Stack Entwickler aus Lübeck. React, TypeScript, Node.js, AI-Integration, DevOps & IT-Beratung. Jetzt Erstgespräch vereinbaren." />
+        <link rel="canonical" href="https://arkvyn.de/" />
+      </Helmet>
+      <main className="main-content">
+        <Home scrollTo={scrollTo} />
+        <Angebot />
+        <Preise />
+        <UeberMich />
+        <Kontakt />
+      </main>
+    </>
   )
 }
 

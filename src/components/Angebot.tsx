@@ -1,6 +1,6 @@
 export default function Angebot() {
   return (
-    <section id="angebot" className="section section--angebot">
+    <section id="angebot" className="section section--angebot" aria-label="Leistungen">
       <div className="section__header">
         <h2>Meine <span className="accent">Leistungen</span></h2>
         <p>Individuelle Lösungen für Ihre digitalen Herausforderungen – von der Idee bis zur Umsetzung.</p>
