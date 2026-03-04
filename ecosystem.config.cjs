@@ -11,6 +11,8 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 3001,
+        // GMAIL_USER und GMAIL_APP_PASSWORD werden aus backend/.env geladen
+        // Falls env_file nicht greift: Werte hier eintragen (nur auf dem Server!)
       },
     },
   ],
