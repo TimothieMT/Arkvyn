@@ -1,0 +1,149 @@
+/* ── Montserrat Local Fonts ── */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ── Arkvyn Design System ── */
+:root {
+  /* Farben aus dem Logo */
+  --green-dark:   #2d6a2d;
+  --green-mid:    #3a7a3a;
+  --green-light:  #5cb85c;
+  --green-bright: #7dc87d;
+  --black:        #111111;
+  --dark:         #1a1a1a;
+  --dark-2:       #222222;
+  --dark-3:       #2a2a2a;
+  --border:       #333333;
+  --text:         #e8e8e8;
+  --text-muted:   #999999;
+  --white:        #ffffff;
+
+  font-family: 'Montserrat', system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--dark);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: var(--text);
+}
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+a {
+  color: var(--green-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--green-bright);
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: var(--white);
+}
+
+p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+button:focus-visible {
+  outline: 2px solid var(--green-light);
+  outline-offset: 2px;
+}
