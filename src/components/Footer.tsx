@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import logo from '../assets/logo.svg'
+import logo from '../assets/Logo.png'
 
 interface FooterProps {
   scrollTo: (id: string) => void

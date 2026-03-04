@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom'
-import logo from '../assets/logo.svg'
+import logo from '../assets/Logo.png'
 
 interface NavbarProps {
   scrollTo: (id: string) => void
