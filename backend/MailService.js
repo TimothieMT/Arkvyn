@@ -31,10 +31,12 @@ const transporter = nodemailer.createTransport({
   logger: DEBUG_EMAIL,
 });
 
-transporter
-  .verify()
-  .then(() => console.log('[startup] SMTP Verbindung erfolgreich verifiziert'))
-  .catch((err) => console.error('[startup] SMTP Verify fehlgeschlagen:', err?.message || err));
+if (!missing.length) {
+  transporter
+    .verify()
+    .then(() => console.log('[startup] SMTP Verbindung erfolgreich verifiziert'))
+    .catch((err) => console.error('[startup] SMTP Verify fehlgeschlagen:', err?.message || err));
+}
 
 app.get('/api/health', (req, res) => {
   res.json({ ok: true, service: 'mail', time: new Date().toISOString() });
