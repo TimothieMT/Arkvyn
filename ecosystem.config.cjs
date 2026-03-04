@@ -7,6 +7,7 @@ module.exports = {
       autorestart: true,
       watch: false,
       max_memory_restart: '200M',
+      env_file: './backend/.env',
       env: {
         NODE_ENV: 'production',
         PORT: 3001,

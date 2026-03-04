@@ -26,10 +26,23 @@ npm ci --omit=dev
 echo "==> Frontend-Build nach /var/www/arkvyn/dist bereitstellen..."
 # Nginx zeigt auf /var/www/arkvyn/dist (oder passe den Nginx-Root an)
 
+echo "==> .env Datei prüfen..."
+if [ ! -f "$APP_DIR/backend/.env" ]; then
+  echo "⚠️  WARNUNG: $APP_DIR/backend/.env fehlt! GMAIL_USER und GMAIL_APP_PASSWORD müssen gesetzt sein."
+  echo "   Erstelle die Datei manuell: nano $APP_DIR/backend/.env"
+fi
+
 echo "==> PM2 Backend starten / neustarten..."
 cd "$APP_DIR"
 pm2 startOrRestart ecosystem.config.cjs --env production
 pm2 save
+
+echo "==> PM2 Status:"
+pm2 list
+
+echo "==> Backend Health-Check..."
+sleep 2
+curl -sf http://127.0.0.1:3001/api/health && echo " ✅ Backend erreichbar" || echo " ❌ Backend NICHT erreichbar – prüfe: pm2 logs arkvyn-backend"
 
 echo "==> Nginx neu laden..."
 sudo systemctl reload nginx
