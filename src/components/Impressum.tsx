@@ -36,23 +36,7 @@ export default function Impressum() {
         </section>
 
         <section className="legal-section">
-          <h2>Umsatzsteuer-ID</h2>
-          <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
-            <br />
-            DE [Ihre USt-IdNr.]
-          </p>
-        </section>
-
-        <section className="legal-section">
-          <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
-          <p>Berufsbezeichnung: Softwareentwickler / IT-Dienstleister</p>
-          <p>Zuständige Kammer: Handelskammer Hamburg (sofern zutreffend)</p>
-          <p>Verliehen in: Deutschland</p>
-        </section>
-
-        <section className="legal-section">
-          <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <address>
             <p>Tim Tolk</p>
             <p>Krummer Weg 30</p>

@@ -80,17 +80,23 @@ export default function Datenschutz() {
         <section className="legal-section">
           <h2>2. Hosting</h2>
           <p>
-            Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die
-            personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern
-            des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen,
-            Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und
-            sonstige Daten, die über eine Website generiert werden, handeln.
+            Diese Website wird auf Servern der Hetzner Online GmbH, Industriestr. 25, 91710
+            Gunzenhausen, Deutschland gehostet. Die personenbezogenen Daten, die auf dieser Website
+            erfasst werden, werden auf den Servern von Hetzner gespeichert. Hierbei kann es sich
+            v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten,
+            Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website
+            generiert werden, handeln.
           </p>
           <p>
-            Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren
+            Der Einsatz von Hetzner erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren
             potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer
             sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen
-            professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+            professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Mit Hetzner wurde ein
+            Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO geschlossen. Die
+            Datenschutzerklärung von Hetzner finden Sie unter:{' '}
+            <a href="https://www.hetzner.com/de/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+              https://www.hetzner.com/de/legal/privacy-policy
+            </a>
           </p>
         </section>
 
@@ -157,6 +163,20 @@ export default function Datenschutz() {
             Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die
             Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende
             gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+          </p>
+
+          <h3>E-Mail-Versand über Google (Gmail)</h3>
+          <p>
+            Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail-Adresse, Betreff
+            und Nachricht) über den SMTP-Dienst von Google Ireland Limited, Gordon House, Barrow
+            Street, Dublin 4, Irland übermittelt und an uns weitergeleitet. Google verarbeitet diese
+            Daten dabei als Auftragsverarbeiter. Die Nutzung erfolgt auf Grundlage unseres
+            berechtigten Interesses an einer zuverlässigen E-Mail-Zustellung (Art. 6 Abs. 1 lit. f
+            DSGVO). Ihre Daten werden nicht für Werbezwecke durch Google genutzt. Weitere
+            Informationen finden Sie in der Datenschutzerklärung von Google:{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              https://policies.google.com/privacy
+            </a>
           </p>
 
           <h3>Server-Log-Dateien</h3>
