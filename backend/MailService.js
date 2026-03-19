@@ -69,7 +69,7 @@ app.post('/api/contact', async (req, res) => {
   const mailOptions = {
     from: `Arkvyn Kontakt <${process.env.GMAIL_USER}>`,
     replyTo: cEmail,
-    to: process.env.GMAIL_USER,
+    to: 'arkvyn.solutions@proton.me',
     subject: `[Arkvyn] ${cBetreff} – von ${cName}`,
     text: `Name: ${cName}\nEmail: ${cEmail}\nBetreff: ${cBetreff}\n\nNachricht:\n${cMessage}`,
     html: `
