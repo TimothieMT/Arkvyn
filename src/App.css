@@ -1169,6 +1169,7 @@
   min-height: calc(100vh - 64px);
   background: var(--bg);
   padding: 4rem 0 6rem;
+  margin-top: 40px;
 }
 
 .legal-page__inner {
