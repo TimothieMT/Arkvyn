@@ -1,6 +1,9 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import theme from './theme'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Angebot from './components/Angebot'
@@ -34,24 +37,24 @@ function App() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id)
     if (el) {
-      const navHeight = 64
-      const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+      const top = el.getBoundingClientRect().top + window.scrollY - 72
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
 
   return (
-    <BrowserRouter>
-      <Navbar scrollTo={scrollTo} />
-
-      <Routes>
-        <Route path="/" element={<MainPage scrollTo={scrollTo} />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/datenschutz" element={<Datenschutz />} />
-      </Routes>
-
-      <Footer scrollTo={scrollTo} />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Navbar scrollTo={scrollTo} />
+        <Routes>
+          <Route path="/" element={<MainPage scrollTo={scrollTo} />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+        </Routes>
+        <Footer scrollTo={scrollTo} />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
