@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import logo from '../assets/Logo.png'
+import logo from '../assets/noBgColor.svg'
 
 interface NavbarProps {
   scrollTo: (id: string) => void
@@ -28,11 +28,10 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           <img src={logo} alt="Arkvyn Logo" />
         </button>
         <nav className={`navbar__links${menuOpen ? ' open' : ''}`} aria-label="Hauptnavigation">
-          <button onClick={() => handleNav('home')}>Startseite</button>
           <button onClick={() => handleNav('angebot')}>Leistungen</button>
           <button onClick={() => handleNav('preise')}>Preise</button>
           <button onClick={() => handleNav('ueber-mich')}>Über mich</button>
-          <button onClick={() => handleNav('kontakt')}>Kontakt</button>
+          <button className="nav--cta" onClick={() => handleNav('kontakt')}>Kontakt</button>
         </nav>
         <button
           className={`navbar__hamburger${menuOpen ? ' open' : ''}`}

@@ -4,7 +4,8 @@ export default function UeberMich() {
       <div className="grid grid--12">
         <div className="about__inner">
           <div className="about__text">
-            <h2>Über <span className="accent">mich</span></h2>
+            <span className="section__label">Über mich</span>
+            <h2>Wer steckt hinter <span className="accent">Arkvyn</span></h2>
             <p>
               Ich bin Tim Tolk, Full-Stack Softwareentwickler aus Lübeck mit Erfahrung
               in der Entwicklung datengetriebener Web- und Plattformapplikationen.
@@ -20,10 +21,10 @@ export default function UeberMich() {
               Cloud-Infrastruktur mit Docker & Hetzner.
             </p>
             <ul className="about__highlights">
-              <li>✓ Full-Stack & Backend Entwicklung</li>
-              <li>✓ AI/LLM-Integration & Datenarchitektur</li>
-              <li>✓ REST-APIs, Microservices & DevOps</li>
-              <li>✓ Agile Arbeitsweise mit Kanban & GitLab</li>
+              <li>Full-Stack & Backend Entwicklung</li>
+              <li>AI/LLM-Integration</li>
+              <li>REST-APIs & Microservices</li>
+              <li>DevOps & Infrastruktur</li>
             </ul>
           </div>
           <div className="about__visual">
@@ -36,6 +37,8 @@ export default function UeberMich() {
               <div className="terminal__body">
                 <p><span className="t-green">$</span> whoami</p>
                 <p className="t-white">Tim Tolk – Software Developer</p>
+                <p><span className="t-green">$</span> location</p>
+                <p className="t-white">Lübeck, Germany</p>
                 <p><span className="t-green">$</span> skills</p>
                 <p className="t-white">React · TypeScript · Node.js</p>
                 <p className="t-white">Go · Java · Python · Docker</p>

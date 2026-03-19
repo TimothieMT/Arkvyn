@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import logo from '../assets/Logo.png'
+import logo from '../assets/noBgColor.svg'
 
 interface FooterProps {
   scrollTo: (id: string) => void
@@ -41,7 +41,7 @@ export default function Footer({ scrollTo }: FooterProps) {
         <div className="footer__contact">
           <h4>Kontakt</h4>
           <address>
-            <p>📞 +49 (0) 123 456 789</p>
+            <p>📞 +49 (0) 176 46143387</p>
             <p>✉️ info@arkvyn.de</p>
           </address>
         </div>
