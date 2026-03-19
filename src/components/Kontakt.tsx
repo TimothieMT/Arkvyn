@@ -62,7 +62,7 @@ export default function Kontakt() {
               <span className="kontakt__icon">✉️</span>
               <div>
                 <strong>E-Mail</strong>
-                <p>info@arkvyn.de</p>
+                <p>arkvyn.solutions@proton.me</p>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function Kontakt() {
                 <input
                   type="email"
                   id="email"
-                  placeholder="max@beispiel.de"
+                  placeholder="arkvyn.solutions@proton.me"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

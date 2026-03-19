@@ -7,7 +7,7 @@ export default function Home({ scrollTo }: HomeProps) {
     <section id="home" className="section section--home" aria-label="Startseite – Arkvyn Softwareentwicklung">
       <div className="grid grid--12">
         <div className="home__content">
-          <span className="home__tag">Full-Stack Software Development · Lübeck</span>
+          <span className="home__tag">Full-Stack Softwareentwicklung · Lübeck</span>
           <h1 className="home__headline">
             Think. Build.<br />
             <span className="accent">Deliver.</span>

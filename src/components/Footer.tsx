@@ -42,7 +42,7 @@ export default function Footer({ scrollTo }: FooterProps) {
           <h4>Kontakt</h4>
           <address>
             <p>📞 +49 (0) 176 46143387</p>
-            <p>✉️ info@arkvyn.de</p>
+            <p>✉️ arkvyn.solutions@proton.me</p>
           </address>
         </div>
       </div>

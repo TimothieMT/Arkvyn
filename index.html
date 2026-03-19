@@ -8,10 +8,16 @@
     <!-- Primary SEO -->
     <title>Arkvyn – Full-Stack Softwareentwicklung aus Lübeck | Tim Tolk</title>
     <meta name="description" content="Arkvyn – Maßgeschneiderte Softwarelösungen von Tim Tolk, Full-Stack Entwickler aus Lübeck. React, TypeScript, Node.js, AI-Integration, DevOps & IT-Beratung. Jetzt Erstgespräch vereinbaren." />
-    <meta name="keywords" content="Softwareentwicklung Lübeck, Full-Stack Entwickler, React Entwickler, TypeScript, Node.js, AI Integration, Web-Entwicklung, IT-Beratung, Freelancer Entwickler" />
+    <meta name="keywords" content="Softwareentwicklung Lübeck, Webentwickler Lübeck, Full-Stack Entwickler Lübeck, Freelancer Softwareentwicklung Schleswig-Holstein, React Entwickler, TypeScript, Node.js, KI-Integration, Webseite erstellen lassen Lübeck, IT-Beratung Lübeck, App entwickeln lassen, Tim Tolk, Arkvyn" />
     <meta name="author" content="Tim Tolk – Arkvyn" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://arkvyn.de/" />
+
+    <!-- Local SEO -->
+    <meta name="geo.region" content="DE-SH" />
+    <meta name="geo.placename" content="Lübeck" />
+    <meta name="geo.position" content="53.8655;10.6866" />
+    <meta name="ICBM" content="53.8655, 10.6866" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -29,33 +35,65 @@
     <meta name="twitter:description" content="Maßgeschneiderte Softwarelösungen von Tim Tolk – React, TypeScript, Node.js, AI-Integration & DevOps." />
     <meta name="twitter:image" content="https://arkvyn.de/og-image.png" />
 
-    <!-- Structured Data: Person / LocalBusiness -->
+    <!-- Structured Data: ProfessionalService / LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "LocalBusiness"],
       "name": "Arkvyn",
-      "description": "Maßgeschneiderte Softwarelösungen – Full-Stack Entwicklung, AI-Integration, DevOps und IT-Beratung.",
+      "description": "Maßgeschneiderte Softwarelösungen – Full-Stack Entwicklung, AI-Integration, DevOps und IT-Beratung aus Lübeck.",
       "url": "https://arkvyn.de",
-      "logo": "https://arkvyn.de/src/assets/Logo.png",
+      "logo": "https://arkvyn.de/logo.png",
       "founder": {
         "@type": "Person",
         "name": "Tim Tolk",
         "jobTitle": "Full-Stack Softwareentwickler",
+        "url": "https://arkvyn.de",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Lübeck",
+          "addressRegion": "Schleswig-Holstein",
           "addressCountry": "DE"
         }
       },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lübeck",
+        "addressRegion": "Schleswig-Holstein",
         "addressCountry": "DE"
       },
-      "areaServed": "DE",
-      "serviceType": ["Full-Stack Entwicklung", "Web-Entwicklung", "AI-Integration", "IT-Beratung", "DevOps"],
-      "priceRange": "ab 800 €"
+      "areaServed": ["Lübeck", "Schleswig-Holstein", "Hamburg", "Deutschland"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Softwareentwicklung & IT-Dienstleistungen",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Page Erstellung", "description": "Professionelle einseitige Webpräsenz für Selbstständige und Startups." }, "priceSpecification": { "@type": "PriceSpecification", "price": "1200", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Website Entwicklung", "description": "Vollwertige Unternehmenswebsite mit CMS-Anbindung und SEO." }, "priceSpecification": { "@type": "PriceSpecification", "price": "2800", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full-Stack Entwicklung" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & LLM-Integration" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DevOps & Infrastruktur" } }
+        ]
+      },
+      "priceRange": "ab 1.200 €"
+    }
+    </script>
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tim Tolk",
+      "jobTitle": "Full-Stack Softwareentwickler",
+      "worksFor": { "@type": "Organization", "name": "Arkvyn", "url": "https://arkvyn.de" },
+      "url": "https://arkvyn.de",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lübeck",
+        "addressRegion": "Schleswig-Holstein",
+        "addressCountry": "DE"
+      },
+      "knowsAbout": ["React", "TypeScript", "Node.js", "Full-Stack Entwicklung", "AI-Integration", "DevOps", "Docker", "PostgreSQL"]
     }
     </script>
   </head>

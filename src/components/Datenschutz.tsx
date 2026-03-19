@@ -111,8 +111,8 @@ export default function Datenschutz() {
             <p>Arkvyn – Softwareentwicklung</p>
             <p>Krummer Weg 30</p>
             <p>23569 Lübeck</p>
-            <p>Telefon: +49 (0) 123 456 789</p>
-            <p>E-Mail: <a href="mailto:info@arkvyn.de">info@arkvyn.de</a></p>
+            <p>Telefon: +49 (0) 176 46143387</p>
+            <p>E-Mail: <a href="mailto:arkvyn.solutions@proton.me">arkvyn.solutions@proton.me</a></p>
           </address>
 
           <h3>Speicherdauer</h3>
