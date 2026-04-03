@@ -57,6 +57,10 @@ export default function Footer({ scrollTo }: FooterProps) {
             >
               Think / Build / Deliver
             </Typography>
+            <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', mt: 1 }}>
+              Webentwickler &amp; IT Freelancer aus Lübeck –<br />
+              tätig in Lübeck, Hamburg &amp; Schleswig-Holstein
+            </Typography>
           </Box>
 
           {/* Navigation */}

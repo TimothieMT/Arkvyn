@@ -7,31 +7,36 @@ import CardContent from '@mui/material/CardContent'
 const services = [
   {
     num: '01',
+    title: 'Webdesign & Webentwicklung',
+    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in Lübeck und Schleswig-Holstein – von der modernen Landing Page bis zur komplexen Webanwendung.',
+  },
+  {
+    num: '02',
     title: 'Full-Stack Entwicklung',
     desc: 'Moderne Webanwendungen mit React, TypeScript und Node.js, von responsiven Frontends bis zu skalierbaren REST-APIs und Backend-Services.',
   },
   {
-    num: '02',
+    num: '03',
     title: 'Backend & Datenarchitektur',
     desc: 'Robuste Backend-Systeme mit Java, Go, Python oder Node.js, inklusive Datenbankdesign (PostgreSQL, MongoDB) und ETL-Pipelines.',
   },
   {
-    num: '03',
+    num: '04',
     title: 'AI & Automatisierung',
     desc: 'Integration von LLMs in Backend und Frontend, automatisierte Workflows, Datenextraktion und intelligente Matching-Systeme.',
   },
   {
-    num: '04',
+    num: '05',
     title: 'API-Integration',
     desc: 'Anbindung komplexer Drittanbieter-Systeme wie Shopify, Weclapp, Billbee, Keycloak, Mailjet, Google und mehr.',
   },
   {
-    num: '05',
+    num: '06',
     title: 'DevOps & Infrastruktur',
     desc: 'Deployment und Hosting mit Docker, Kubernetes und Hetzner, CI/CD mit GitLab, TeamCity und Bitbucket.',
   },
   {
-    num: '06',
+    num: '07',
     title: 'IT-Beratung',
     desc: 'Strategische Beratung für Digitalisierungsprojekte von der Konzeption bis zur erfolgreichen Umsetzung.',
   },
@@ -66,7 +71,10 @@ export default function Angebot() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 6px 20px rgba(0,0,0,0.07)',
           }}
         >
-          {services.map(service => (
+          {services.map((service, index) => {
+            const isLast = index === services.length - 1
+            const remainder = services.length % 3
+            return (
             <Card
               key={service.num}
               sx={{
@@ -74,6 +82,12 @@ export default function Angebot() {
                 bgcolor: 'background.paper',
                 transition: 'background-color 0.18s',
                 '&:hover': { bgcolor: '#f5f5f7' },
+                ...(isLast && remainder !== 0 && {
+                  gridColumn: {
+                    sm: remainder === 1 ? '1 / -1' : 'auto',
+                    md: remainder === 1 ? '1 / -1' : 'auto',
+                  },
+                }),
               }}
             >
               <CardContent sx={{ p: '2rem 2.25rem !important' }}>
@@ -102,7 +116,8 @@ export default function Angebot() {
                 </Typography>
               </CardContent>
             </Card>
-          ))}
+            )
+          })}
         </Box>
       </Container>
     </Box>

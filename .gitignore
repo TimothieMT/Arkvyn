@@ -77,6 +77,8 @@ tsconfig.tsbuildinfo
 .claude/
 .agents/
 skills-lock.json
+CLAUDE.md
+memory/
 
 # ════════════════════════════════
 # Testing

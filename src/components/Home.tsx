@@ -31,7 +31,7 @@ export default function Home({ scrollTo }: HomeProps) {
             variant="overline"
             sx={{ color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
           >
-            Full-Stack Softwareentwicklung · Lübeck
+            Webentwickler & Webdesign · Lübeck · Schleswig-Holstein
           </Typography>
 
           <Typography

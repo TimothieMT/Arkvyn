@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 
 const highlights = [
+  'Webentwicklung & Webdesign',
   'Full-Stack & Backend Entwicklung',
   'AI/LLM-Integration',
   'REST-APIs & Microservices',
@@ -11,7 +12,7 @@ const highlights = [
 ]
 
 const credentials = [
-  { label: 'Standort', value: 'Lübeck, Deutschland' },
+  { label: 'Standort', value: 'Lübeck · tätig in Hamburg & SH' },
   { label: 'Erfahrung', value: '5+ Jahre' },
   { label: 'Frontend', value: 'React · TypeScript' },
   { label: 'Backend', value: 'Node.js · Go · Java · Python' },
@@ -42,7 +43,7 @@ export default function UeberMich() {
               <Box component="span" sx={{ color: 'primary.main' }}>Arkvyn</Box>
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
-              Ich bin Tim Tolk, Full-Stack Softwareentwickler aus Lübeck mit Erfahrung
+              Ich bin Tim Tolk, Webentwickler und Softwareentwickler aus Lübeck (Schleswig-Holstein) mit Erfahrung
               in der Entwicklung datengetriebener Web- und Plattformapplikationen.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
@@ -50,10 +51,17 @@ export default function UeberMich() {
               komplexe technische Herausforderungen in einfache, elegante Lösungen
               zu verwandeln von der Architektur über APIs bis zur UI.
             </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 4 }}>
+            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
               Mein Stack reicht von React & TypeScript im Frontend über Node.js,
               Java, Go und Python im Backend bis zu PostgreSQL, MongoDB und
-              Cloud-Infrastruktur mit Docker & Hetzner.
+              Cloud-Infrastruktur mit Docker & Hetzner. Als IT Freelancer aus Lübeck
+              arbeite ich für Kunden in Lübeck, Hamburg und ganz Schleswig-Holstein.
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 4 }}>
+              Als freiberuflicher Programmierer und Webdesigner aus Lübeck unterstütze
+              ich Startups und Unternehmen bei der App-Entwicklung, Digitalisierung und
+              IT-Beratung – lokal in Lübeck, Kiel & Hamburg sowie remote in ganz
+              Norddeutschland.
             </Typography>
 
             {/* Highlights list — elevated */}
