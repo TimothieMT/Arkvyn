@@ -31,7 +31,7 @@ export default function Home({ scrollTo }: HomeProps) {
             variant="overline"
             sx={{ color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
           >
-            Webentwickler & Webdesign · Lübeck · Schleswig-Holstein
+            Webentwickler & Webdesign
           </Typography>
 
           <Typography

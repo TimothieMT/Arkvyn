@@ -62,8 +62,7 @@ export default function Preise() {
           <Box component="span" sx={{ color: 'primary.main' }}>Festpreis</Box>
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>
-          Homepage erstellen lassen in Lübeck, Hamburg und Schleswig-Holstein –
-          professionell, responsive, transparent kalkuliert, ohne versteckte Kosten.
+          Homepage erstellen lassen, professionell, responsive, transparent kalkuliert, ohne versteckte Kosten.
         </Typography>
       </Container>
 
