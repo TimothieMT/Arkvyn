@@ -12,8 +12,8 @@ const highlights = [
 ]
 
 const credentials = [
-  { label: 'Standort', value: 'Lübeck · tätig in Hamburg & SH' },
-  { label: 'Erfahrung', value: '5+ Jahre' },
+  { label: 'Standort', value: 'Lübeck · remote deutschlandweit' },
+  { label: 'Erfahrung', value: '6+ Jahre' },
   { label: 'Frontend', value: 'React · TypeScript' },
   { label: 'Backend', value: 'Node.js · Go · Java · Python' },
   { label: 'Datenbanken', value: 'PostgreSQL · MongoDB' },
@@ -39,7 +39,7 @@ export default function UeberMich() {
               Über mich
             </Typography>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 3 }}>
-              Wer steckt hinter{' '}
+              Softwareentwickler aus Lübeck – wer steckt hinter{' '}
               <Box component="span" sx={{ color: 'primary.main' }}>Arkvyn</Box>
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
@@ -55,13 +55,13 @@ export default function UeberMich() {
               Mein Stack reicht von React & TypeScript im Frontend über Node.js,
               Java, Go und Python im Backend bis zu PostgreSQL, MongoDB und
               Cloud-Infrastruktur mit Docker & Hetzner. Als IT Freelancer aus Lübeck
-              arbeite ich für Kunden in Lübeck, Hamburg und ganz Schleswig-Holstein.
+              arbeite ich remote für Kunden in ganz Deutschland.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 4 }}>
               Als freiberuflicher Programmierer und Webdesigner aus Lübeck unterstütze
               ich Startups und Unternehmen bei der App-Entwicklung, Digitalisierung und
-              IT-Beratung – lokal in Lübeck, Kiel & Hamburg sowie remote in ganz
-              Norddeutschland.
+              IT-Beratung – vor Ort in Lübeck, Kiel & Hamburg sowie remote in ganz
+              Deutschland.
             </Typography>
 
             {/* Highlights list — elevated */}

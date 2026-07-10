@@ -14,7 +14,7 @@ export default function Impressum() {
       <meta name="robots" content="noindex, follow" />
       <link rel="canonical" href="https://arkvyn.de/impressum" />
     </Helmet>
-    <div className="legal-page">
+    <main id="main" className="legal-page">
       <div className="legal-page__inner">
         <h1>Impressum</h1>
 
@@ -30,7 +30,7 @@ export default function Impressum() {
 
         <section className="legal-section">
           <h2>Kontakt</h2>
-          <p>Telefon: +49 (0) 176 46143387</p>
+          <p>Telefon: <a href="tel:+4917646143387">+49 (0) 176 46143387</a></p>
           <p>E-Mail: <a href="mailto:arkvyn.solutions@proton.me">arkvyn.solutions@proton.me</a></p>
           <p>Website: <a href="https://arkvyn.de">arkvyn.de</a></p>
         </section>
@@ -97,7 +97,7 @@ export default function Impressum() {
           </p>
         </section>
       </div>
-    </div>
+    </main>
     </>
   )
 }

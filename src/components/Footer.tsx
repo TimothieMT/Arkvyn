@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import logo from '../assets/noBgColor.svg'
 
 interface FooterProps {
@@ -14,15 +15,23 @@ interface FooterProps {
 const navItems = [
   { id: 'home', label: 'Startseite' },
   { id: 'angebot', label: 'Leistungen' },
+  { id: 'referenzen', label: 'Referenzen' },
   { id: 'ueber-mich', label: 'Über mich' },
   { id: 'kontakt', label: 'Kontakt' },
+]
+
+const serviceLinks = [
+  { to: '/webdesign', label: 'Webdesign & Webentwicklung' },
+  { to: '/homepage-erstellen-lassen', label: 'Homepage erstellen lassen' },
+  { to: '/ki-integration', label: 'KI-Integration & LLM' },
 ]
 
 export default function Footer({ scrollTo }: FooterProps) {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const handleNav = (id: string) => {
+  const handleNav = (e: React.MouseEvent, id: string) => {
+    e.preventDefault()
     if (location.pathname !== '/') {
       navigate('/')
       setTimeout(() => scrollTo(id), 100)
@@ -37,7 +46,7 @@ export default function Footer({ scrollTo }: FooterProps) {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '2fr 1fr 1fr' },
+            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr' },
             gap: { xs: 4, md: 5 },
             pt: { xs: 6, md: 8 },
             pb: { xs: 5, md: 6 },
@@ -45,13 +54,14 @@ export default function Footer({ scrollTo }: FooterProps) {
         >
           {/* Brand */}
           <Box sx={{ gridColumn: { sm: '1 / -1', md: '1' } }}>
-            <button
-              onClick={() => handleNav('home')}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'inline-flex', padding: 0, marginBottom: 16 }}
+            <a
+              href="/#home"
+              onClick={e => handleNav(e, 'home')}
+              style={{ display: 'inline-flex', marginBottom: 16 }}
               aria-label="Arkvyn – Startseite"
             >
-              <img src={logo} alt="Arkvyn Logo" style={{ height: 36, width: 'auto', opacity: 0.6 }} />
-            </button>
+              <img src={logo} alt="Arkvyn Logo" width={135} height={36} style={{ height: 36, width: 'auto', opacity: 0.6 }} />
+            </a>
             <Typography
               sx={{ fontSize: '0.8rem', color: 'text.disabled', letterSpacing: '0.1em', textTransform: 'uppercase' }}
             >
@@ -59,7 +69,7 @@ export default function Footer({ scrollTo }: FooterProps) {
             </Typography>
             <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', mt: 1 }}>
               Webentwickler &amp; IT Freelancer aus Lübeck –<br />
-              tätig in Lübeck, Hamburg &amp; Schleswig-Holstein
+              remote in ganz Deutschland tätig
             </Typography>
           </Box>
 
@@ -75,11 +85,34 @@ export default function Footer({ scrollTo }: FooterProps) {
                 <Box component="li" key={item.id}>
                   <Button
                     variant="text"
-                    onClick={() => handleNav(item.id)}
+                    component="a"
+                    href={`/#${item.id}`}
+                    onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
                     sx={{ fontSize: '0.875rem', p: 0, minWidth: 0, height: 'auto', '&:hover': { background: 'none', color: 'text.primary' } }}
                   >
                     {item.label}
                   </Button>
+                </Box>
+              ))}
+            </Stack>
+          </Box>
+
+          {/* Services */}
+          <Box>
+            <Typography
+              sx={{ fontSize: '0.6875rem', fontWeight: 600, color: 'text.disabled', letterSpacing: '0.12em', textTransform: 'uppercase', mb: 2.5 }}
+            >
+              Leistungen
+            </Typography>
+            <Stack spacing={1} component="ul" sx={{ p: 0 }}>
+              {serviceLinks.map(link => (
+                <Box component="li" key={link.to}>
+                  <Link
+                    to={link.to}
+                    style={{ fontSize: '0.875rem', color: '#6e6e73' }}
+                  >
+                    {link.label}
+                  </Link>
                 </Box>
               ))}
             </Stack>
@@ -93,11 +126,27 @@ export default function Footer({ scrollTo }: FooterProps) {
               Kontakt
             </Typography>
             <Box component="address">
-              <Typography sx={{ fontSize: '0.875rem', color: 'text.secondary', mb: 0.75, overflowWrap: 'break-word' }}>
-                +49 (0) 176 46143387
+              <Typography sx={{ fontSize: '0.875rem', mb: 0.75, overflowWrap: 'break-word' }}>
+                <Box component="a" href="tel:+4917646143387" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  +49 (0) 176 46143387
+                </Box>
               </Typography>
-              <Typography sx={{ fontSize: '0.875rem', color: 'text.secondary', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                arkvyn.solutions@proton.me
+              <Typography sx={{ fontSize: '0.875rem', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+                <Box component="a" href="mailto:arkvyn.solutions@proton.me" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  arkvyn.solutions@proton.me
+                </Box>
+              </Typography>
+              <Typography sx={{ fontSize: '0.875rem', mt: 0.75 }}>
+                <Box
+                  component="a"
+                  href="https://www.linkedin.com/in/tim-tolk-2091a7258"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+                >
+                  <LinkedInIcon sx={{ fontSize: 18 }} aria-hidden="true" />
+                  LinkedIn-Profil
+                </Box>
               </Typography>
             </Box>
           </Box>

@@ -5,17 +5,13 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
 
-interface HomeProps {
-  scrollTo: (id: string) => void
-}
-
 const stats = [
-  { num: '5+', label: 'Jahre Erfahrung' },
-  { num: '17+', label: 'Projekte' },
+  { num: '6+', label: 'Jahre Erfahrung' },
+  { num: '20+', label: 'Projekte' },
   { num: '12+', label: 'Technologien' },
 ]
 
-export default function Home({ scrollTo }: HomeProps) {
+export default function Home() {
   return (
     <Box
       component="section"
@@ -27,15 +23,18 @@ export default function Home({ scrollTo }: HomeProps) {
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: { xs: 6, md: 10 } }}>
 
+          {/* H1 trägt die Keywords; der Slogan bleibt visuell unverändert als Display-Text */}
           <Typography
             variant="overline"
+            component="h1"
             sx={{ color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
           >
-            Webentwickler & Webdesign
+            Webentwickler & Webdesign – deutschlandweit
           </Typography>
 
           <Typography
             variant="h1"
+            component="p"
             sx={{ fontSize: { xs: '3rem', sm: '4.5rem', md: '6.5rem' }, textAlign: 'center', color: 'text.primary', mb: 3 }}
           >
             Think. Build.
@@ -47,15 +46,16 @@ export default function Home({ scrollTo }: HomeProps) {
             variant="body1"
             sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 520, mb: 5, fontSize: '1.125rem' }}
           >
-            Maßgeschneiderte Softwarelösungen für Ihr Unternehmen
+            Maßgeschneiderte Softwarelösungen für Unternehmen in ganz
+            Deutschland – remote oder vor Ort in Lübeck &amp; Hamburg,
             von der Idee bis zur fertigen Anwendung.
           </Typography>
 
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} mb={8} sx={{ width: { xs: '100%', sm: 'auto' } }}>
-            <Button variant="contained" onClick={() => scrollTo('angebot')} sx={{ width: { xs: '100%', sm: 'auto' } }}>
+            <Button variant="contained" component="a" href="#angebot" sx={{ width: { xs: '100%', sm: 'auto' } }}>
               Meine Leistungen
             </Button>
-            <Button variant="outlined" onClick={() => scrollTo('kontakt')} sx={{ width: { xs: '100%', sm: 'auto' } }}>
+            <Button variant="outlined" component="a" href="#kontakt" sx={{ width: { xs: '100%', sm: 'auto' } }}>
               Kontakt aufnehmen
             </Button>
           </Stack>

@@ -1,14 +1,16 @@
+import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 
-const services = [
+const services: { num: string; title: string; desc: string; to?: string }[] = [
   {
     num: '01',
     title: 'Webdesign & Webentwicklung',
-    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in Lübeck und Schleswig-Holstein – von der modernen Landing Page bis zur komplexen Webanwendung.',
+    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in ganz Deutschland – von der modernen Landing Page bis zur komplexen Webanwendung.',
+    to: '/webdesign',
   },
   {
     num: '02',
@@ -24,6 +26,7 @@ const services = [
     num: '04',
     title: 'AI & Automatisierung',
     desc: 'Integration von LLMs in Backend und Frontend, automatisierte Workflows, Datenextraktion und intelligente Matching-Systeme.',
+    to: '/ki-integration',
   },
   {
     num: '05',
@@ -50,7 +53,7 @@ export default function Angebot() {
           Leistungen
         </Typography>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 1.5 }}>
-          Was ich für Sie{' '}
+          Webentwicklung, Apps & KI – was ich für Sie{' '}
           <Box component="span" sx={{ color: 'primary.main' }}>entwickle</Box>
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>
@@ -114,6 +117,11 @@ export default function Angebot() {
                 <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem', lineHeight: 1.8 }}>
                   {service.desc}
                 </Typography>
+                {service.to ? (
+                  <Typography sx={{ mt: 1.5, fontSize: '0.875rem', fontWeight: 600 }}>
+                    <Link to={service.to}>Mehr erfahren →</Link>
+                  </Typography>
+                ) : null}
               </CardContent>
             </Card>
             )

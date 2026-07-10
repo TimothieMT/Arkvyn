@@ -15,6 +15,7 @@ interface NavbarProps {
 const navItems = [
   { id: 'angebot', label: 'Leistungen' },
   { id: 'preise', label: 'Preise' },
+  { id: 'referenzen', label: 'Referenzen' },
   { id: 'ueber-mich', label: 'Über mich' },
 ]
 
@@ -23,7 +24,10 @@ export default function Navbar({ scrollTo }: NavbarProps) {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleNav = (id: string) => {
+  // Auf der Startseite sanft scrollen (SPA), von anderen Routen zuerst zurück navigieren.
+  // Als echte <a href="/#…">-Links bleiben die Sektionen crawlbar und per Middle-Click öffenbar.
+  const handleNav = (e: React.MouseEvent, id: string) => {
+    e.preventDefault()
     setMenuOpen(false)
     if (location.pathname !== '/') {
       navigate('/')
@@ -38,13 +42,14 @@ export default function Navbar({ scrollTo }: NavbarProps) {
       <AppBar position="fixed" component="header">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           {/* Logo */}
-          <button
-            onClick={() => handleNav('home')}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
+          <a
+            href="/#home"
+            onClick={e => handleNav(e, 'home')}
+            style={{ display: 'flex', alignItems: 'center' }}
             aria-label="Arkvyn – Startseite"
           >
-            <img src={logo} alt="Arkvyn Logo" style={{ height: 52, width: 'auto' }} />
-          </button>
+            <img src={logo} alt="Arkvyn Logo" width={195} height={52} style={{ height: 52, width: 'auto' }} />
+          </a>
 
           {/* Desktop navigation */}
           <Box
@@ -53,14 +58,22 @@ export default function Navbar({ scrollTo }: NavbarProps) {
             sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.25 }}
           >
             {navItems.map(item => (
-              <Button key={item.id} variant="text" onClick={() => handleNav(item.id)}>
+              <Button
+                key={item.id}
+                variant="text"
+                component="a"
+                href={`/#${item.id}`}
+                onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
+              >
                 {item.label}
               </Button>
             ))}
             <Button
               variant="contained"
               size="small"
-              onClick={() => handleNav('kontakt')}
+              component="a"
+              href="/#kontakt"
+              onClick={(e: React.MouseEvent) => handleNav(e, 'kontakt')}
               sx={{ ml: 1.5 }}
             >
               Kontakt
@@ -71,7 +84,9 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           <button
             className={`navbar__hamburger${menuOpen ? ' open' : ''}`}
             onClick={() => setMenuOpen(prev => !prev)}
-            aria-label="Menü öffnen"
+            aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <span />
             <span />
@@ -87,6 +102,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
         onClose={() => setMenuOpen(false)}
         sx={{ display: { md: 'none' } }}
         PaperProps={{
+          id: 'mobile-menu',
           sx: {
             height: '100vh',
             display: 'flex',
@@ -102,7 +118,9 @@ export default function Navbar({ scrollTo }: NavbarProps) {
             <Button
               key={item.id}
               variant="text"
-              onClick={() => handleNav(item.id)}
+              component="a"
+              href={`/#${item.id}`}
+              onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
               sx={{ fontSize: '1.25rem', width: 280, color: 'text.secondary', '&:hover': { color: 'text.primary' } }}
             >
               {item.label}
@@ -110,7 +128,9 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           ))}
           <Button
             variant="contained"
-            onClick={() => handleNav('kontakt')}
+            component="a"
+            href="/#kontakt"
+            onClick={(e: React.MouseEvent) => handleNav(e, 'kontakt')}
             sx={{ mt: 1.5, width: 280 }}
           >
             Kontakt aufnehmen
