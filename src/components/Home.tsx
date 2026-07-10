@@ -47,8 +47,8 @@ export default function Home({ scrollTo }: HomeProps) {
             variant="body1"
             sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 520, mb: 5, fontSize: '1.125rem' }}
           >
-            Maßgeschneiderte Softwarelösungen für Ihr Unternehmen
-            von der Idee bis zur fertigen Anwendung.
+            Maßgeschneiderte Softwarelösungen für Unternehmen in Lübeck,
+            Hamburg &amp; Schleswig-Holstein – von der Idee bis zur fertigen Anwendung.
           </Typography>
 
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} mb={8} sx={{ width: { xs: '100%', sm: 'auto' } }}>

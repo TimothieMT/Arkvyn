@@ -9,10 +9,12 @@ import Home from './components/Home'
 import Angebot from './components/Angebot'
 import Preise from './components/Preise'
 import UeberMich from './components/UeberMich'
+import Faq from './components/Faq'
 import Kontakt from './components/Kontakt'
 import Footer from './components/Footer'
 import Impressum from './components/Impressum'
 import Datenschutz from './components/Datenschutz'
+import NotFound from './components/NotFound'
 
 function MainPage({ scrollTo }: { scrollTo: (id: string) => void }) {
   return (
@@ -27,6 +29,7 @@ function MainPage({ scrollTo }: { scrollTo: (id: string) => void }) {
         <Angebot />
         <Preise />
         <UeberMich />
+        <Faq />
         <Kontakt />
       </main>
     </>
@@ -51,6 +54,7 @@ function App() {
           <Route path="/" element={<MainPage scrollTo={scrollTo} />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer scrollTo={scrollTo} />
       </BrowserRouter>
