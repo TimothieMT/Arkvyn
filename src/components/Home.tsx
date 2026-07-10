@@ -6,8 +6,8 @@ import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
 
 const stats = [
-  { num: '5+', label: 'Jahre Erfahrung' },
-  { num: '17+', label: 'Projekte' },
+  { num: '6+', label: 'Jahre Erfahrung' },
+  { num: '20+', label: 'Projekte' },
   { num: '12+', label: 'Technologien' },
 ]
 

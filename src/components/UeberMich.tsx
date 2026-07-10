@@ -13,7 +13,7 @@ const highlights = [
 
 const credentials = [
   { label: 'Standort', value: 'Lübeck · remote deutschlandweit' },
-  { label: 'Erfahrung', value: '5+ Jahre' },
+  { label: 'Erfahrung', value: '6+ Jahre' },
   { label: 'Frontend', value: 'React · TypeScript' },
   { label: 'Backend', value: 'Node.js · Go · Java · Python' },
   { label: 'Datenbanken', value: 'PostgreSQL · MongoDB' },

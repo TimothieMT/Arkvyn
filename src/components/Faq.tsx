@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Wie finde ich einen guten Softwareentwickler in Lübeck?',
-    a: 'Arkvyn bietet maßgeschneiderte Softwareentwicklung aus Lübeck an. Mit über 5 Jahren Erfahrung als Full-Stack Entwickler und Webdesigner unterstützt Tim Tolk Unternehmen deutschlandweit bei Webprojekten, Digitalisierung und App-Entwicklung.',
+    a: 'Arkvyn bietet maßgeschneiderte Softwareentwicklung aus Lübeck an. Mit über 6 Jahren Erfahrung als Full-Stack Entwickler und Webdesigner unterstützt Tim Tolk Unternehmen deutschlandweit bei Webprojekten, Digitalisierung und App-Entwicklung.',
   },
 ]
 
