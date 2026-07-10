@@ -12,7 +12,14 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const routes = ['/', '/impressum', '/datenschutz']
+const routes = [
+  '/',
+  '/webdesign',
+  '/homepage-erstellen-lassen',
+  '/ki-integration',
+  '/impressum',
+  '/datenschutz',
+]
 
 async function main() {
   console.log('\n🔍 Prerendering routes...')

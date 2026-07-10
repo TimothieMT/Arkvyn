@@ -10,14 +10,18 @@ import Home from './components/Home'
 import Angebot from './components/Angebot'
 import Preise from './components/Preise'
 import UeberMich from './components/UeberMich'
+import Referenzen from './components/Referenzen'
 import Faq from './components/Faq'
 import Kontakt from './components/Kontakt'
 import Footer from './components/Footer'
 
-// Selten besuchte Routen aus dem Haupt-Bundle heraushalten
+// Unterseiten aus dem Haupt-Bundle heraushalten
 const Impressum = lazy(() => import('./components/Impressum'))
 const Datenschutz = lazy(() => import('./components/Datenschutz'))
 const NotFound = lazy(() => import('./components/NotFound'))
+const Webdesign = lazy(() => import('./components/services/Webdesign'))
+const HomepageErstellen = lazy(() => import('./components/services/HomepageErstellen'))
+const KiIntegration = lazy(() => import('./components/services/KiIntegration'))
 
 function MainPage() {
   return (
@@ -32,6 +36,7 @@ function MainPage() {
         <Angebot />
         <Preise />
         <UeberMich />
+        <Referenzen />
         <Faq />
         <Kontakt />
       </main>
@@ -65,6 +70,9 @@ function App() {
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/webdesign" element={<Webdesign />} />
+            <Route path="/homepage-erstellen-lassen" element={<HomepageErstellen />} />
+            <Route path="/ki-integration" element={<KiIntegration />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="*" element={<NotFound />} />

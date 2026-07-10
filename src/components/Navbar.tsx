@@ -15,6 +15,7 @@ interface NavbarProps {
 const navItems = [
   { id: 'angebot', label: 'Leistungen' },
   { id: 'preise', label: 'Preise' },
+  { id: 'referenzen', label: 'Referenzen' },
   { id: 'ueber-mich', label: 'Über mich' },
 ]
 

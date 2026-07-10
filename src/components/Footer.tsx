@@ -15,8 +15,15 @@ interface FooterProps {
 const navItems = [
   { id: 'home', label: 'Startseite' },
   { id: 'angebot', label: 'Leistungen' },
+  { id: 'referenzen', label: 'Referenzen' },
   { id: 'ueber-mich', label: 'Über mich' },
   { id: 'kontakt', label: 'Kontakt' },
+]
+
+const serviceLinks = [
+  { to: '/webdesign', label: 'Webdesign & Webentwicklung' },
+  { to: '/homepage-erstellen-lassen', label: 'Homepage erstellen lassen' },
+  { to: '/ki-integration', label: 'KI-Integration & LLM' },
 ]
 
 export default function Footer({ scrollTo }: FooterProps) {
@@ -39,7 +46,7 @@ export default function Footer({ scrollTo }: FooterProps) {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '2fr 1fr 1fr' },
+            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr' },
             gap: { xs: 4, md: 5 },
             pt: { xs: 6, md: 8 },
             pb: { xs: 5, md: 6 },
@@ -85,6 +92,27 @@ export default function Footer({ scrollTo }: FooterProps) {
                   >
                     {item.label}
                   </Button>
+                </Box>
+              ))}
+            </Stack>
+          </Box>
+
+          {/* Services */}
+          <Box>
+            <Typography
+              sx={{ fontSize: '0.6875rem', fontWeight: 600, color: 'text.disabled', letterSpacing: '0.12em', textTransform: 'uppercase', mb: 2.5 }}
+            >
+              Leistungen
+            </Typography>
+            <Stack spacing={1} component="ul" sx={{ p: 0 }}>
+              {serviceLinks.map(link => (
+                <Box component="li" key={link.to}>
+                  <Link
+                    to={link.to}
+                    style={{ fontSize: '0.875rem', color: '#6e6e73' }}
+                  >
+                    {link.label}
+                  </Link>
                 </Box>
               ))}
             </Stack>

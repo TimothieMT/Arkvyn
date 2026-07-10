@@ -23,15 +23,18 @@ export default function Home() {
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: { xs: 6, md: 10 } }}>
 
+          {/* H1 trägt die Keywords; der Slogan bleibt visuell unverändert als Display-Text */}
           <Typography
             variant="overline"
+            component="h1"
             sx={{ color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
           >
-            Webentwickler & Webdesign
+            Webentwickler & Webdesign – deutschlandweit
           </Typography>
 
           <Typography
             variant="h1"
+            component="p"
             sx={{ fontSize: { xs: '3rem', sm: '4.5rem', md: '6.5rem' }, textAlign: 'center', color: 'text.primary', mb: 3 }}
           >
             Think. Build.

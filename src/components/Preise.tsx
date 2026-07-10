@@ -49,7 +49,7 @@ export default function Preise() {
           Preise & Pakete
         </Typography>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 1.5 }}>
-          Website zum{' '}
+          Website erstellen lassen zum{' '}
           <Box component="span" sx={{ color: 'primary.main' }}>Festpreis</Box>
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>

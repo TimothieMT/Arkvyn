@@ -39,7 +39,7 @@ export default function UeberMich() {
               Über mich
             </Typography>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 3 }}>
-              Wer steckt hinter{' '}
+              Softwareentwickler aus Lübeck – wer steckt hinter{' '}
               <Box component="span" sx={{ color: 'primary.main' }}>Arkvyn</Box>
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
