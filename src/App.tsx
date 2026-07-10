@@ -23,8 +23,8 @@ function MainPage() {
   return (
     <>
       <Helmet>
-        <title>Arkvyn – Full-Stack Softwareentwicklung aus Lübeck | Tim Tolk</title>
-        <meta name="description" content="Arkvyn – Maßgeschneiderte Softwarelösungen von Tim Tolk, Full-Stack Entwickler aus Lübeck. React, TypeScript, Node.js, AI-Integration, DevOps & IT-Beratung. Jetzt Erstgespräch vereinbaren." />
+        <title>Arkvyn – Webentwicklung &amp; Webdesign deutschlandweit | Tim Tolk, Lübeck</title>
+        <meta name="description" content="Arkvyn – Maßgeschneiderte Softwarelösungen von Tim Tolk, Full-Stack Entwickler aus Lübeck. Deutschlandweit remote: React, TypeScript, Node.js, AI-Integration, DevOps & IT-Beratung. Jetzt Erstgespräch vereinbaren." />
         <link rel="canonical" href="https://arkvyn.de/" />
       </Helmet>
       <main id="main" className="main-content">

@@ -8,7 +8,7 @@ const services = [
   {
     num: '01',
     title: 'Webdesign & Webentwicklung',
-    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in Lübeck und Schleswig-Holstein – von der modernen Landing Page bis zur komplexen Webanwendung.',
+    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in ganz Deutschland – von der modernen Landing Page bis zur komplexen Webanwendung.',
   },
   {
     num: '02',
