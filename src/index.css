@@ -1,56 +1,56 @@
 /* ── Montserrat Local Fonts ── */
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-Italic.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-MediumItalic.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-MediumItalic.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-SemiBoldItalic.woff2') format('woff2');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;

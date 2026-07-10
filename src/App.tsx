@@ -1,4 +1,5 @@
 import './App.css'
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ThemeProvider } from '@mui/material/styles'
@@ -12,9 +13,11 @@ import UeberMich from './components/UeberMich'
 import Faq from './components/Faq'
 import Kontakt from './components/Kontakt'
 import Footer from './components/Footer'
-import Impressum from './components/Impressum'
-import Datenschutz from './components/Datenschutz'
-import NotFound from './components/NotFound'
+
+// Selten besuchte Routen aus dem Haupt-Bundle heraushalten
+const Impressum = lazy(() => import('./components/Impressum'))
+const Datenschutz = lazy(() => import('./components/Datenschutz'))
+const NotFound = lazy(() => import('./components/NotFound'))
 
 function MainPage({ scrollTo }: { scrollTo: (id: string) => void }) {
   return (
@@ -50,12 +53,14 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Navbar scrollTo={scrollTo} />
-        <Routes>
-          <Route path="/" element={<MainPage scrollTo={scrollTo} />} />
-          <Route path="/impressum" element={<Impressum />} />
-          <Route path="/datenschutz" element={<Datenschutz />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<MainPage scrollTo={scrollTo} />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
         <Footer scrollTo={scrollTo} />
       </BrowserRouter>
     </ThemeProvider>
