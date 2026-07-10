@@ -7,15 +7,6 @@ import Chip from '@mui/material/Chip'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 
-const scrollToKontakt = (e: React.MouseEvent) => {
-  e.preventDefault()
-  const el = document.getElementById('kontakt')
-  if (el) {
-    const top = el.getBoundingClientRect().top + window.scrollY - 72
-    window.scrollTo({ top, behavior: 'smooth' })
-  }
-}
-
 const landingFeatures = [
   'Eine responsive Seite',
   'Kontaktformular',
@@ -97,7 +88,7 @@ export default function Preise() {
                 Startups und Produktlaunches.
               </Typography>
               <FeatureList items={landingFeatures} />
-              <Button variant="outlined" fullWidth onClick={scrollToKontakt} sx={{ mt: 'auto' }}>
+              <Button variant="outlined" fullWidth component="a" href="#kontakt" sx={{ mt: 'auto' }}>
                 Angebot anfragen
               </Button>
             </CardContent>
@@ -129,7 +120,7 @@ export default function Preise() {
                 Content-Management für Ihre langfristige Online-Präsenz.
               </Typography>
               <FeatureList items={businessFeatures} />
-              <Button variant="contained" fullWidth onClick={scrollToKontakt} sx={{ mt: 'auto' }}>
+              <Button variant="contained" fullWidth component="a" href="#kontakt" sx={{ mt: 'auto' }}>
                 Angebot anfragen
               </Button>
             </CardContent>
@@ -174,7 +165,7 @@ export default function Preise() {
               <Box component="strong" sx={{ color: 'primary.main', fontWeight: 600 }}>kostenlosen Erstgespräch</Box>.
             </Typography>
           </Box>
-          <Button variant="contained" onClick={scrollToKontakt} sx={{ flexShrink: 0, whiteSpace: 'nowrap' }}>
+          <Button variant="contained" component="a" href="#kontakt" sx={{ flexShrink: 0, whiteSpace: 'nowrap' }}>
             Kostenloses Erstgespräch →
           </Button>
         </Box>

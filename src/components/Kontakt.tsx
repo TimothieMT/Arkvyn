@@ -11,8 +11,8 @@ import CircularProgress from '@mui/material/CircularProgress'
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
 const contactDetails = [
-  { label: 'Telefon', value: '0176 46143387', icon: '📞' },
-  { label: 'E-Mail', value: 'arkvyn.solutions@proton.me', icon: '✉' },
+  { label: 'Telefon', value: '0176 46143387', href: 'tel:+4917646143387', icon: '📞' },
+  { label: 'E-Mail', value: 'arkvyn.solutions@proton.me', href: 'mailto:arkvyn.solutions@proton.me', icon: '✉' },
 ]
 
 export default function Kontakt() {
@@ -99,14 +99,18 @@ export default function Kontakt() {
                     '&:hover': { bgcolor: '#f0f4ff' },
                   }}
                 >
-                  <Typography sx={{ opacity: 0.5, mt: 0.25, flexShrink: 0 }}>{detail.icon}</Typography>
+                  <Typography aria-hidden="true" sx={{ opacity: 0.5, mt: 0.25, flexShrink: 0 }}>{detail.icon}</Typography>
                   <Box>
                     <Typography
                       sx={{ fontSize: '0.7rem', fontWeight: 600, color: 'text.disabled', letterSpacing: '0.1em', textTransform: 'uppercase', mb: 0.25 }}
                     >
                       {detail.label}
                     </Typography>
-                    <Typography sx={{ fontSize: '0.9375rem', color: 'text.primary' }}>
+                    <Typography
+                      component="a"
+                      href={detail.href}
+                      sx={{ fontSize: '0.9375rem', color: 'text.primary', display: 'inline-block', '&:hover': { color: 'primary.main' } }}
+                    >
                       {detail.value}
                     </Typography>
                   </Box>
@@ -131,17 +135,21 @@ export default function Kontakt() {
                 <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
                   <TextField
                     label="Name"
+                    name="name"
+                    autoComplete="name"
                     placeholder="Max Mustermann"
                     value={name}
                     onChange={e => setName(e.target.value)}
                     required
                     disabled={isLoading}
                     fullWidth
-                    hiddenLabel={false}
                   />
                   <TextField
                     label="E-Mail"
                     type="email"
+                    name="email"
+                    autoComplete="email"
+                    spellCheck={false}
                     placeholder="mail@beispiel.de"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
@@ -153,6 +161,8 @@ export default function Kontakt() {
 
                 <TextField
                   label="Betreff"
+                  name="subject"
+                  autoComplete="off"
                   placeholder="Ihr Anliegen"
                   value={betreff}
                   onChange={e => setBetreff(e.target.value)}
@@ -163,6 +173,8 @@ export default function Kontakt() {
 
                 <TextField
                   label="Nachricht"
+                  name="message"
+                  autoComplete="off"
                   placeholder="Beschreiben Sie Ihr Projekt…"
                   value={nachricht}
                   onChange={e => setNachricht(e.target.value)}
@@ -173,14 +185,14 @@ export default function Kontakt() {
                   fullWidth
                 />
 
-                {feedback && (
+                {feedback ? (
                   <Alert
                     severity={status === 'success' ? 'success' : 'error'}
                     icon={false}
                   >
                     {feedback}
                   </Alert>
-                )}
+                ) : null}
 
                 <Button
                   type="submit"

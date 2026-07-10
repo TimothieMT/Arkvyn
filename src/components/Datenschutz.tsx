@@ -14,7 +14,7 @@ export default function Datenschutz() {
       <meta name="robots" content="noindex, follow" />
       <link rel="canonical" href="https://arkvyn.de/datenschutz" />
     </Helmet>
-    <div className="legal-page">
+    <main id="main" className="legal-page">
       <div className="legal-page__inner">
         <h1>Datenschutzerklärung</h1>
 
@@ -219,7 +219,7 @@ export default function Datenschutz() {
           </p>
         </section>
       </div>
-    </div>
+    </main>
     </>
   )
 }

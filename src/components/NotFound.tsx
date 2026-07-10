@@ -14,6 +14,7 @@ export default function NotFound() {
       </Helmet>
       <Box
         component="main"
+        id="main"
         sx={{ minHeight: 'calc(100vh - 72px)', display: 'flex', alignItems: 'center', pt: '72px' }}
       >
         <Container maxWidth="md" sx={{ textAlign: 'center', py: 10 }}>

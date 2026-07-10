@@ -22,7 +22,8 @@ export default function Footer({ scrollTo }: FooterProps) {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const handleNav = (id: string) => {
+  const handleNav = (e: React.MouseEvent, id: string) => {
+    e.preventDefault()
     if (location.pathname !== '/') {
       navigate('/')
       setTimeout(() => scrollTo(id), 100)
@@ -45,13 +46,14 @@ export default function Footer({ scrollTo }: FooterProps) {
         >
           {/* Brand */}
           <Box sx={{ gridColumn: { sm: '1 / -1', md: '1' } }}>
-            <button
-              onClick={() => handleNav('home')}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'inline-flex', padding: 0, marginBottom: 16 }}
+            <a
+              href="/#home"
+              onClick={e => handleNav(e, 'home')}
+              style={{ display: 'inline-flex', marginBottom: 16 }}
               aria-label="Arkvyn – Startseite"
             >
-              <img src={logo} alt="Arkvyn Logo" style={{ height: 36, width: 'auto', opacity: 0.6 }} />
-            </button>
+              <img src={logo} alt="Arkvyn Logo" width={135} height={36} style={{ height: 36, width: 'auto', opacity: 0.6 }} />
+            </a>
             <Typography
               sx={{ fontSize: '0.8rem', color: 'text.disabled', letterSpacing: '0.1em', textTransform: 'uppercase' }}
             >
@@ -75,7 +77,9 @@ export default function Footer({ scrollTo }: FooterProps) {
                 <Box component="li" key={item.id}>
                   <Button
                     variant="text"
-                    onClick={() => handleNav(item.id)}
+                    component="a"
+                    href={`/#${item.id}`}
+                    onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
                     sx={{ fontSize: '0.875rem', p: 0, minWidth: 0, height: 'auto', '&:hover': { background: 'none', color: 'text.primary' } }}
                   >
                     {item.label}
@@ -93,11 +97,15 @@ export default function Footer({ scrollTo }: FooterProps) {
               Kontakt
             </Typography>
             <Box component="address">
-              <Typography sx={{ fontSize: '0.875rem', color: 'text.secondary', mb: 0.75, overflowWrap: 'break-word' }}>
-                +49 (0) 176 46143387
+              <Typography sx={{ fontSize: '0.875rem', mb: 0.75, overflowWrap: 'break-word' }}>
+                <Box component="a" href="tel:+4917646143387" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  +49 (0) 176 46143387
+                </Box>
               </Typography>
-              <Typography sx={{ fontSize: '0.875rem', color: 'text.secondary', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                arkvyn.solutions@proton.me
+              <Typography sx={{ fontSize: '0.875rem', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+                <Box component="a" href="mailto:arkvyn.solutions@proton.me" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  arkvyn.solutions@proton.me
+                </Box>
               </Typography>
             </Box>
           </Box>

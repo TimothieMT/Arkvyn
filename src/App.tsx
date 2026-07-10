@@ -1,5 +1,5 @@
 import './App.css'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ThemeProvider } from '@mui/material/styles'
@@ -19,7 +19,7 @@ const Impressum = lazy(() => import('./components/Impressum'))
 const Datenschutz = lazy(() => import('./components/Datenschutz'))
 const NotFound = lazy(() => import('./components/NotFound'))
 
-function MainPage({ scrollTo }: { scrollTo: (id: string) => void }) {
+function MainPage() {
   return (
     <>
       <Helmet>
@@ -27,8 +27,8 @@ function MainPage({ scrollTo }: { scrollTo: (id: string) => void }) {
         <meta name="description" content="Arkvyn – Maßgeschneiderte Softwarelösungen von Tim Tolk, Full-Stack Entwickler aus Lübeck. React, TypeScript, Node.js, AI-Integration, DevOps & IT-Beratung. Jetzt Erstgespräch vereinbaren." />
         <link rel="canonical" href="https://arkvyn.de/" />
       </Helmet>
-      <main className="main-content">
-        <Home scrollTo={scrollTo} />
+      <main id="main" className="main-content">
+        <Home />
         <Angebot />
         <Preise />
         <UeberMich />
@@ -48,14 +48,23 @@ function App() {
     }
   }
 
+  // Deep-Links wie arkvyn.de/#angebot nach dem ersten Render auflösen
+  useEffect(() => {
+    const hash = window.location.hash.slice(1)
+    if (hash) {
+      setTimeout(() => scrollTo(hash), 100)
+    }
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
+        <a className="skip-link" href="#main">Zum Inhalt springen</a>
         <Navbar scrollTo={scrollTo} />
         <Suspense fallback={null}>
           <Routes>
-            <Route path="/" element={<MainPage scrollTo={scrollTo} />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="*" element={<NotFound />} />
