@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import logo from '../assets/noBgColor.svg'
 
 interface FooterProps {
@@ -105,6 +106,18 @@ export default function Footer({ scrollTo }: FooterProps) {
               <Typography sx={{ fontSize: '0.875rem', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                 <Box component="a" href="mailto:arkvyn.solutions@proton.me" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                   arkvyn.solutions@proton.me
+                </Box>
+              </Typography>
+              <Typography sx={{ fontSize: '0.875rem', mt: 0.75 }}>
+                <Box
+                  component="a"
+                  href="https://www.linkedin.com/in/tim-tolk-2091a7258"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+                >
+                  <LinkedInIcon sx={{ fontSize: 18 }} aria-hidden="true" />
+                  LinkedIn-Profil
                 </Box>
               </Typography>
             </Box>

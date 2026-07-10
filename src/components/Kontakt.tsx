@@ -11,8 +11,9 @@ import CircularProgress from '@mui/material/CircularProgress'
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
 const contactDetails = [
-  { label: 'Telefon', value: '0176 46143387', href: 'tel:+4917646143387', icon: '📞' },
-  { label: 'E-Mail', value: 'arkvyn.solutions@proton.me', href: 'mailto:arkvyn.solutions@proton.me', icon: '✉' },
+  { label: 'Telefon', value: '0176 46143387', href: 'tel:+4917646143387', icon: '📞', external: false },
+  { label: 'E-Mail', value: 'arkvyn.solutions@proton.me', href: 'mailto:arkvyn.solutions@proton.me', icon: '✉', external: false },
+  { label: 'LinkedIn', value: 'in/tim-tolk', href: 'https://www.linkedin.com/in/tim-tolk-2091a7258', icon: '💼', external: true },
 ]
 
 export default function Kontakt() {
@@ -109,6 +110,7 @@ export default function Kontakt() {
                     <Typography
                       component="a"
                       href={detail.href}
+                      {...(detail.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       sx={{ fontSize: '0.9375rem', color: 'text.primary', display: 'inline-block', '&:hover': { color: 'primary.main' } }}
                     >
                       {detail.value}
