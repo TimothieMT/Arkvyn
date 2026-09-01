@@ -16,11 +16,13 @@ const services: { num: string; title: string; desc: string; to?: string }[] = [
     num: '02',
     title: 'Full-Stack Entwicklung',
     desc: 'Moderne Webanwendungen mit React, TypeScript und Node.js, von responsiven Frontends bis zu skalierbaren REST-APIs und Backend-Services.',
+    to: '/full-stack-entwicklung',
   },
   {
     num: '03',
     title: 'Backend & Datenarchitektur',
     desc: 'Robuste Backend-Systeme mit Java, Go, Python oder Node.js, inklusive Datenbankdesign (PostgreSQL, MongoDB) und ETL-Pipelines.',
+    to: '/backend-entwicklung',
   },
   {
     num: '04',
@@ -32,16 +34,19 @@ const services: { num: string; title: string; desc: string; to?: string }[] = [
     num: '05',
     title: 'API-Integration',
     desc: 'Anbindung komplexer Drittanbieter-Systeme wie Shopify, Weclapp, Billbee, Keycloak, Mailjet, Google und mehr.',
+    to: '/api-integration',
   },
   {
     num: '06',
     title: 'DevOps & Infrastruktur',
     desc: 'Deployment und Hosting mit Docker, Kubernetes und Hetzner, CI/CD mit GitLab, TeamCity und Bitbucket.',
+    to: '/devops-infrastruktur',
   },
   {
     num: '07',
     title: 'IT-Beratung',
     desc: 'Strategische Beratung für Digitalisierungsprojekte von der Konzeption bis zur erfolgreichen Umsetzung.',
+    to: '/it-beratung',
   },
 ]
 

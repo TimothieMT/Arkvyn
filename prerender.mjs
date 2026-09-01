@@ -17,6 +17,11 @@ const routes = [
   '/webdesign',
   '/homepage-erstellen-lassen',
   '/ki-integration',
+  '/full-stack-entwicklung',
+  '/backend-entwicklung',
+  '/devops-infrastruktur',
+  '/api-integration',
+  '/it-beratung',
   '/impressum',
   '/datenschutz',
 ]

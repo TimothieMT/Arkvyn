@@ -22,6 +22,11 @@ const NotFound = lazy(() => import('./components/NotFound'))
 const Webdesign = lazy(() => import('./components/services/Webdesign'))
 const HomepageErstellen = lazy(() => import('./components/services/HomepageErstellen'))
 const KiIntegration = lazy(() => import('./components/services/KiIntegration'))
+const FullStackEntwicklung = lazy(() => import('./components/services/FullStackEntwicklung'))
+const BackendEntwicklung = lazy(() => import('./components/services/BackendEntwicklung'))
+const DevopsInfrastruktur = lazy(() => import('./components/services/DevopsInfrastruktur'))
+const ApiIntegration = lazy(() => import('./components/services/ApiIntegration'))
+const ItBeratung = lazy(() => import('./components/services/ItBeratung'))
 
 function MainPage() {
   return (
@@ -73,6 +78,11 @@ function App() {
             <Route path="/webdesign" element={<Webdesign />} />
             <Route path="/homepage-erstellen-lassen" element={<HomepageErstellen />} />
             <Route path="/ki-integration" element={<KiIntegration />} />
+            <Route path="/full-stack-entwicklung" element={<FullStackEntwicklung />} />
+            <Route path="/backend-entwicklung" element={<BackendEntwicklung />} />
+            <Route path="/devops-infrastruktur" element={<DevopsInfrastruktur />} />
+            <Route path="/api-integration" element={<ApiIntegration />} />
+            <Route path="/it-beratung" element={<ItBeratung />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="*" element={<NotFound />} />
