@@ -91,6 +91,33 @@
   width: 22px;
 }
 
+.navbar__drawer-close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.navbar__drawer-close:hover {
+  background: var(--surface-2);
+}
+
+.route-loading {
+  min-height: calc(100vh - 72px);
+  margin-top: 72px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
 /* ════════════════════════════════════════
    LEGAL PAGES
 ════════════════════════════════════════ */
@@ -167,13 +194,13 @@
 }
 
 .legal-section a {
-  color: #2997ff;
+  color: #0071e3;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .legal-section a:hover {
-  color: #0071e3;
+  color: #005bb5;
 }
 
 /* ════════════════════════════════════════

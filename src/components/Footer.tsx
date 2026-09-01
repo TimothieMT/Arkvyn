@@ -68,7 +68,7 @@ export default function Footer({ scrollTo }: FooterProps) {
               Think / Build / Deliver
             </Typography>
             <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', mt: 1 }}>
-              Webentwickler &amp; IT Freelancer aus Lübeck –<br />
+              Webentwickler &amp; IT-Freelancer aus Lübeck –<br />
               remote in ganz Deutschland tätig
             </Typography>
           </Box>
@@ -88,7 +88,7 @@ export default function Footer({ scrollTo }: FooterProps) {
                     component="a"
                     href={`/#${item.id}`}
                     onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
-                    sx={{ fontSize: '0.875rem', p: 0, minWidth: 0, height: 'auto', '&:hover': { background: 'none', color: 'text.primary' } }}
+                    sx={{ fontSize: '0.875rem', p: 0, minWidth: 0, minHeight: 32, '&:hover': { background: 'none', color: 'text.primary' } }}
                   >
                     {item.label}
                   </Button>
@@ -109,7 +109,7 @@ export default function Footer({ scrollTo }: FooterProps) {
                 <Box component="li" key={link.to}>
                   <Link
                     to={link.to}
-                    style={{ fontSize: '0.875rem', color: '#6e6e73' }}
+                    style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, fontSize: '0.875rem', color: '#6e6e73' }}
                   >
                     {link.label}
                   </Link>
@@ -127,12 +127,12 @@ export default function Footer({ scrollTo }: FooterProps) {
             </Typography>
             <Box component="address">
               <Typography sx={{ fontSize: '0.875rem', mb: 0.75, overflowWrap: 'break-word' }}>
-                <Box component="a" href="tel:+4917646143387" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                <Box component="a" href="tel:+4917646143387" sx={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                   +49 (0) 176 46143387
                 </Box>
               </Typography>
               <Typography sx={{ fontSize: '0.875rem', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                <Box component="a" href="mailto:arkvyn.solutions@proton.me" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                <Box component="a" href="mailto:arkvyn.solutions@proton.me" sx={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                   arkvyn.solutions@proton.me
                 </Box>
               </Typography>
@@ -142,7 +142,7 @@ export default function Footer({ scrollTo }: FooterProps) {
                   href="https://www.linkedin.com/in/tim-tolk-2091a7258"
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+                  sx={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, gap: 0.75, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
                 >
                   <LinkedInIcon sx={{ fontSize: 18 }} aria-hidden="true" />
                   LinkedIn-Profil
@@ -169,10 +169,10 @@ export default function Footer({ scrollTo }: FooterProps) {
             © {new Date().getFullYear()} Arkvyn. Alle Rechte vorbehalten.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
-            <Link to="/impressum" style={{ color: '#aeaeb2', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.2s' }}>
+            <Link to="/impressum" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: '#6e6e73', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.2s' }}>
               Impressum
             </Link>
-            <Link to="/datenschutz" style={{ color: '#aeaeb2', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.2s' }}>
+            <Link to="/datenschutz" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: '#6e6e73', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.2s' }}>
               Datenschutz
             </Link>
           </Box>

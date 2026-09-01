@@ -1,11 +1,11 @@
 import { useEffect, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
+import Seo from '../Seo'
 
 export interface ServiceSection {
   h2: string
@@ -55,13 +55,12 @@ export default function ServicePage({
 
   return (
     <>
-      <Helmet>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={canonical} />
-        <script type="application/ld+json">{JSON.stringify(serviceLd)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
-      </Helmet>
+      <Seo
+        title={metaTitle}
+        description={metaDescription}
+        canonical={canonical}
+        schemas={[serviceLd, breadcrumbLd]}
+      />
 
       <Box component="main" id="main" sx={{ pt: '72px' }}>
         {/* Hero */}

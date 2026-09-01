@@ -6,31 +6,9 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Divider from '@mui/material/Divider'
+import { faqs } from '../faqData'
 
-// Muss inhaltlich mit dem FAQPage-Schema in index.html übereinstimmen —
-// Google zeigt FAQ-Rich-Results nur für sichtbar vorhandene Inhalte.
-const faqs = [
-  {
-    q: 'Was kostet eine professionelle Website?',
-    a: 'Eine Landing Page beginnt bei 1.200 €, eine vollwertige Unternehmenswebsite ab 2.800 €. Kontaktieren Sie Arkvyn für ein kostenloses Erstgespräch – deutschlandweit remote oder vor Ort in Lübeck und Hamburg.',
-  },
-  {
-    q: 'Welche Leistungen bietet Arkvyn?',
-    a: 'Tim Tolk (Arkvyn) bietet als Freelance Webentwickler und Softwareentwickler: Webdesign, Full-Stack Entwicklung, App-Entwicklung, AI-Integration, REST-APIs, DevOps und IT-Beratung – für Kunden in ganz Deutschland, remote sowie vor Ort in Lübeck und Hamburg.',
-  },
-  {
-    q: 'Entwickelt Arkvyn auch Apps?',
-    a: 'Ja. Tim Tolk entwickelt Web-Apps, Backend-Services und Plattformapplikationen mit React, TypeScript, Node.js, Go und Java – für Startups und Unternehmen in ganz Deutschland.',
-  },
-  {
-    q: 'Arbeitet Arkvyn auch remote und deutschlandweit?',
-    a: 'Ja. Tim Tolk arbeitet als selbstständiger IT Freelancer und Softwareentwickler (Programmierer) aus Lübeck – remote für Projekte in ganz Deutschland und vor Ort in Lübeck, Hamburg und Schleswig-Holstein.',
-  },
-  {
-    q: 'Wie finde ich einen guten Softwareentwickler in Lübeck?',
-    a: 'Arkvyn bietet maßgeschneiderte Softwareentwicklung aus Lübeck an. Mit über 6 Jahren Erfahrung als Full-Stack Entwickler und Webdesigner unterstützt Tim Tolk Unternehmen deutschlandweit bei Webprojekten, Digitalisierung und App-Entwicklung.',
-  },
-]
+// Das FAQPage-Schema wird in App.tsx direkt aus diesen sichtbaren Inhalten erzeugt.
 
 export default function Faq() {
   return (
@@ -72,7 +50,7 @@ export default function Faq() {
                 expandIcon={<ExpandMoreIcon sx={{ color: 'primary.main' }} />}
                 sx={{ px: 3, py: 0.5, '&:hover': { bgcolor: '#f5f5f7' } }}
               >
-                <Typography variant="h3" sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.primary' }}>
+                <Typography variant="h3" component="span" sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.primary' }}>
                   {faq.q}
                 </Typography>
               </AccordionSummary>

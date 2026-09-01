@@ -6,13 +6,14 @@
 
 import puppeteer from 'puppeteer'
 import { createServer } from 'node:http'
-import { createReadStream, existsSync, statSync, writeFileSync, mkdirSync } from 'node:fs'
+import { createReadStream, existsSync, statSync, writeFileSync, mkdirSync, readFileSync } from 'node:fs'
 import { resolve, extname, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DIST = resolve(__dirname, 'dist')
-const PORT = 4174
+const HOST = process.env.PRERENDER_HOST || '127.0.0.1'
+const PORT = Number(process.env.PRERENDER_PORT || 4174)
 
 const MIME = {
   '.html': 'text/html',
@@ -38,28 +39,49 @@ const routes = [
   '/it-beratung',
   '/impressum',
   '/datenschutz',
+  '/__not-found__',
 ]
 
-function startServer() {
-  return new Promise((res) => {
+function startServer(shellHtml) {
+  return new Promise((res, reject) => {
     const server = createServer((req, rsp) => {
-      const url = req.url.split('?')[0]
+      let url
+      try {
+        const requestUrl = new URL(req.url || '/', `http://${HOST}`)
+        url = decodeURIComponent(requestUrl.pathname)
+      } catch {
+        rsp.statusCode = 400
+        rsp.end('Bad request')
+        return
+      }
+      const file = resolve(DIST, `.${url}`)
 
-      // Try exact file, then dir/index.html, then SPA fallback
-      const candidates = [
-        resolve(DIST, url.slice(1)),
-        resolve(DIST, url.slice(1), 'index.html'),
-        resolve(DIST, 'index.html'),
-      ]
+      // Nur Dateien innerhalb von dist ausliefern (auch bei manipulierten URLs).
+      if (file !== DIST && !file.startsWith(`${DIST}/`)) {
+        rsp.statusCode = 400
+        rsp.end('Bad request')
+        return
+      }
 
-      const isFile = f => existsSync(f) && statSync(f).isFile()
-      const file = candidates.find(isFile) ?? resolve(DIST, 'index.html')
+      // Jede HTML-Route startet mit der unveränderten Vite-Shell. So können
+      // bereits gerenderte Helmet-Tags einer Route nicht in die nächste lecken.
+      if (!extname(url)) {
+        rsp.setHeader('Content-Type', 'text/html; charset=utf-8')
+        rsp.end(shellHtml)
+        return
+      }
 
-      const mime = MIME[extname(file)] ?? 'text/plain'
-      rsp.setHeader('Content-Type', mime)
-      createReadStream(file).pipe(rsp)
+      if (existsSync(file) && statSync(file).isFile()) {
+        rsp.setHeader('Content-Type', MIME[extname(file)] ?? 'application/octet-stream')
+        createReadStream(file).pipe(rsp)
+        return
+      }
+
+      rsp.statusCode = 404
+      rsp.end('Not found')
     })
-    server.listen(PORT, () => res(server))
+    server.once('error', reject)
+    server.listen(PORT, HOST, () => res(server))
   })
 }
 
@@ -74,12 +96,14 @@ async function renderRoute(browser, route) {
     const html = await page.content()
     if (route === '/') {
       writeFileSync(resolve(DIST, 'index.html'), html, 'utf-8')
+    } else if (route === '/__not-found__') {
+      writeFileSync(resolve(DIST, '404.html'), html, 'utf-8')
     } else {
       const dir = resolve(DIST, route.slice(1))
       mkdirSync(dir, { recursive: true })
       writeFileSync(resolve(dir, 'index.html'), html, 'utf-8')
     }
-    console.log(`  ✓ ${route}`)
+    console.log(`  ✓ ${route === '/__not-found__' ? '/404.html' : route}`)
   } finally {
     await page.close()
   }
@@ -87,7 +111,8 @@ async function renderRoute(browser, route) {
 
 async function main() {
   console.log('\n🔍 Prerendering routes...')
-  const server = await startServer()
+  const shellHtml = readFileSync(resolve(DIST, 'index.html'), 'utf-8')
+  const server = await startServer(shellHtml)
 
   // Split into two batches to avoid Puppeteer memory pressure
   const mid = Math.ceil(routes.length / 2)

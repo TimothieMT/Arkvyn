@@ -7,7 +7,7 @@ export default function KiIntegration() {
       metaTitle="KI-Integration & LLM-Entwicklung für Unternehmen | Arkvyn"
       metaDescription="KI-Integration vom Entwickler: LLMs in bestehende Systeme integrieren, Workflows automatisieren, Dokumente auswerten. Von der Beratung über den Prototyp bis zum fertigen KI-Produkt – deutschlandweit."
       canonical="https://arkvyn.de/ki-integration"
-      eyebrow="AI & Automatisierung"
+      eyebrow="KI & Automatisierung"
       h1={<>KI-Integration, die im Alltag <Box component="span" sx={{ color: 'primary.main' }}>wirklich arbeitet</Box></>}
       intro="Sprachmodelle wie GPT oder Claude können Texte verstehen, Daten extrahieren und Routineaufgaben übernehmen – wenn man sie richtig in Ihre Systeme integriert. Genau das ist mein Spezialgebiet: KI-Funktionen, die in Ihren bestehenden Abläufen echten Nutzen stiften, statt als Spielerei zu enden."
       serviceName="KI-Integration & LLM-Entwicklung"

@@ -23,23 +23,23 @@ export default function Home() {
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', py: { xs: 6, md: 10 } }}>
 
-          {/* H1 trägt die Keywords; der Slogan bleibt visuell unverändert als Display-Text */}
-          <Typography
-            variant="overline"
-            component="h1"
-            sx={{ color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
-          >
-            Webentwickler & Webdesign – deutschlandweit
-          </Typography>
-
+          {/* Ein gemeinsames H1 verbindet Seitenzweck und visuelle Hauptbotschaft. */}
           <Typography
             variant="h1"
-            component="p"
+            component="h1"
             sx={{ fontSize: { xs: '3rem', sm: '4.5rem', md: '6.5rem' }, textAlign: 'center', color: 'text.primary', mb: 3 }}
           >
-            Think. Build.
-            <Box component="br" />
-            <Box component="span" sx={{ color: 'primary.main' }}>Deliver.</Box>
+            <Box
+              component="span"
+              sx={{ typography: 'overline', color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
+            >
+              Webentwickler & Webdesign – deutschlandweit
+            </Box>
+            <Box component="span" sx={{ display: 'block' }}>
+              Think. Build.
+              <Box component="br" />
+              <Box component="span" sx={{ color: 'primary.main' }}>Deliver.</Box>
+            </Box>
           </Typography>
 
           <Typography

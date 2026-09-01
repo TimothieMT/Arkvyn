@@ -67,16 +67,16 @@
   --border-2:     #c7c7cc;
 
   /* Brand – Trustworthy Blue */
-  --accent:        #2997ff;
-  --accent-light:  #6db8ff;
-  --accent-dark:   #0071e3;
+  --accent:        #0071e3;
+  --accent-light:  #2997ff;
+  --accent-dark:   #005bb5;
   --accent-glow:   rgba(41, 151, 255, 0.08);
   --accent-glow-2: rgba(41, 151, 255, 0.04);
 
   /* Text */
   --text:         #1d1d1f;
   --text-muted:   #6e6e73;
-  --text-subtle:  #aeaeb2;
+  --text-subtle:  #6e6e73;
   --white:        #1d1d1f;
 
   font-family: 'Montserrat', system-ui, Helvetica, Arial, sans-serif;
@@ -127,7 +127,7 @@ a {
   transition: color 0.2s;
 }
 a:hover {
-  color: var(--accent-light);
+  color: var(--accent-dark);
 }
 
 h1, h2, h3, h4 {
@@ -181,7 +181,17 @@ img {
   display: block;
 }
 
-button:focus-visible {
+button:focus-visible,
+a:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

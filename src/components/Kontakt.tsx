@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -21,6 +22,7 @@ export default function Kontakt() {
   const [email, setEmail] = useState('')
   const [betreff, setBetreff] = useState('')
   const [nachricht, setNachricht] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState<FormState>('idle')
   const [feedback, setFeedback] = useState('')
 
@@ -33,13 +35,13 @@ export default function Kontakt() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, betreff, message: nachricht }),
+        body: JSON.stringify({ name, email, betreff, message: nachricht, website }),
       })
       const data = await res.json()
 
       if (res.ok && data.success) {
         setStatus('success')
-        setFeedback('Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns bald!')
+        setFeedback('Ihre Nachricht wurde erfolgreich gesendet. Ich melde mich bald!')
         setName(''); setEmail(''); setBetreff(''); setNachricht('')
       } else {
         setStatus('error')
@@ -111,7 +113,8 @@ export default function Kontakt() {
                       component="a"
                       href={detail.href}
                       {...(detail.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      sx={{ fontSize: '0.9375rem', color: 'text.primary', display: 'inline-block', '&:hover': { color: 'primary.main' } }}
+                      aria-label={detail.external ? `${detail.label}: ${detail.value} (öffnet in neuem Tab)` : undefined}
+                      sx={{ fontSize: '0.9375rem', color: 'text.primary', display: 'inline-flex', alignItems: 'center', minHeight: 32, '&:hover': { color: 'primary.main' } }}
                     >
                       {detail.value}
                     </Typography>
@@ -133,6 +136,18 @@ export default function Kontakt() {
           >
             <Box component="form" onSubmit={handleSubmit}>
               <Stack spacing={2}>
+                <Box
+                  component="input"
+                  type="text"
+                  name="website"
+                  value={website}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWebsite(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  sx={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}
+                />
+
                 {/* Name + Email row */}
                 <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
                   <TextField
@@ -143,6 +158,7 @@ export default function Kontakt() {
                     value={name}
                     onChange={e => setName(e.target.value)}
                     required
+                    inputProps={{ maxLength: 100 }}
                     disabled={isLoading}
                     fullWidth
                   />
@@ -156,6 +172,7 @@ export default function Kontakt() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     required
+                    inputProps={{ maxLength: 254 }}
                     disabled={isLoading}
                     fullWidth
                   />
@@ -169,6 +186,7 @@ export default function Kontakt() {
                   value={betreff}
                   onChange={e => setBetreff(e.target.value)}
                   required
+                  inputProps={{ maxLength: 200 }}
                   disabled={isLoading}
                   fullWidth
                 />
@@ -181,6 +199,8 @@ export default function Kontakt() {
                   value={nachricht}
                   onChange={e => setNachricht(e.target.value)}
                   required
+                  inputProps={{ minLength: 20, maxLength: 5000 }}
+                  helperText="Mindestens 20 Zeichen"
                   disabled={isLoading}
                   multiline
                   rows={5}
@@ -196,11 +216,17 @@ export default function Kontakt() {
                   </Alert>
                 ) : null}
 
+                <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary', lineHeight: 1.6 }}>
+                  Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Beantwortung Ihrer Anfrage zu.{' '}
+                  <Link to="/datenschutz">Hinweise zum Datenschutz</Link>
+                </Typography>
+
                 <Button
                   type="submit"
                   variant="contained"
                   fullWidth
                   disabled={isLoading}
+                  aria-busy={isLoading}
                   sx={{ py: 1.625 }}
                   startIcon={isLoading ? <CircularProgress size={16} sx={{ color: 'rgba(255,255,255,0.5)' }} /> : null}
                 >

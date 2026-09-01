@@ -1,19 +1,20 @@
 import { useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
+import Seo from './Seo'
 
 export default function Datenschutz() {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0 })
   }, [])
 
   return (
     <>
-    <Helmet>
-      <title>Datenschutzerklärung – Arkvyn | Tim Tolk</title>
-      <meta name="description" content="Datenschutzerklärung von Arkvyn – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
-      <meta name="robots" content="noindex, follow" />
-      <link rel="canonical" href="https://arkvyn.de/datenschutz" />
-    </Helmet>
+    <Seo
+      title="Datenschutzerklärung – Arkvyn | Tim Tolk"
+      description="Datenschutzerklärung von Arkvyn – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO."
+      canonical="https://arkvyn.de/datenschutz"
+      robots="noindex, follow"
+      social={false}
+    />
     <main id="main" className="legal-page">
       <div className="legal-page__inner">
         <h1>Datenschutzerklärung</h1>

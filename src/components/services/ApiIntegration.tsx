@@ -14,7 +14,7 @@ export default function ApiIntegration() {
       serviceDescription="API-Integration für Unternehmen: Anbindung von Shopify, Weclapp, Billbee, Keycloak, Mailjet, Google und weiteren Drittsystemen – zuverlässig, wartbar und dokumentiert. Deutschlandweit."
       relatedLinks={[
         { to: '/backend-entwicklung', label: 'Backend & Datenarchitektur' },
-        { to: '/full-stack-entwicklung', label: 'Full-Stack Entwicklung' },
+        { to: '/full-stack-entwicklung', label: 'Full-Stack-Entwicklung' },
       ]}
       sections={[
         {
@@ -42,7 +42,7 @@ export default function ApiIntegration() {
         {
           h2: 'Vom Proof of Concept zur stabilen Integration',
           paragraphs: [
-            'Ich liefere keine Wegwerf-Integrationen. Jede Anbindung bekommt eine saubere Fehlerbehandlung, Logging, und wo sinnvoll, eine Retry-Logik für temporäre Ausfälle. Die Integration wird dokumentiert – nicht für die Schublade, sondern so, dass Ihr Team sie später nachvollziehen und erweitern kann.',
+            'Ich liefere keine Wegwerf-Integrationen. Jede Anbindung bekommt eine saubere Fehlerbehandlung, Logging und, wo sinnvoll, eine Retry-Logik für temporäre Ausfälle. Die Integration wird dokumentiert – nicht für die Schublade, sondern so, dass Ihr Team sie später nachvollziehen und erweitern kann.',
             'Bei größeren Integrationsvorhaben empfehle ich einen strukturierten Ansatz: Zuerst Datenflüsse und Grenzfälle definieren, dann einen Prototyp mit einem System, dann schrittweise erweitern. So entstehen keine Überraschungen kurz vor dem Launch.',
           ],
         },

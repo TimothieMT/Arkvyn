@@ -5,14 +5,14 @@ export default function HomepageErstellen() {
   return (
     <ServicePage
       metaTitle="Homepage erstellen lassen – professionell zum Festpreis ab 1.200 € | Arkvyn"
-      metaDescription="Homepage erstellen lassen vom Entwickler: Festpreis ab 1.200 €, transparente Pakete, voller Quellcode-Besitz. Für Selbstständige, Startups und Unternehmen – deutschlandweit remote, vor Ort in Lübeck & Hamburg."
+      metaDescription="Homepage erstellen lassen: Festpreis ab 1.200 €, transparente Pakete und voller Quellcode-Besitz – für Selbstständige und Unternehmen, deutschlandweit remote."
       canonical="https://arkvyn.de/homepage-erstellen-lassen"
       eyebrow="Homepage erstellen lassen"
       h1={<>Homepage erstellen lassen – <Box component="span" sx={{ color: 'primary.main' }}>zum Festpreis</Box>, ohne Überraschungen</>}
       intro="Sie brauchen eine professionelle Homepage, wollen sich aber nicht mit Baukästen, Technik und Kleingedrucktem beschäftigen? Ich übernehme das komplett: von der Struktur über Design und Entwicklung bis zum Livegang – zum vorher vereinbarten Festpreis."
       serviceName="Homepage-Erstellung"
-      serviceDescription="Professionelle Homepage-Erstellung zum Festpreis – Landing Pages ab 1.200 €, Business Websites ab 2.800 €, inklusive responsivem Design, Kontaktformular und SEO-Grundlagen. Deutschlandweit."
-      priceText="Die Landing Page (eine Seite, Kontaktformular, SEO-Grundlagen, zwei Revisionsrunden) kostet ab 1.200 € einmalig. Die Business Website mit 3–5 Seiten, CMS-Anbindung und drei Revisionsrunden gibt es ab 2.800 €. Nicht enthalten sind Texte, Bilder und Hosting – dabei berate ich Sie aber gern."
+      serviceDescription="Professionelle Homepage-Erstellung zum Festpreis – Landingpages ab 1.200 €, Business-Websites ab 2.800 €, inklusive responsivem Design, Kontaktformular und SEO-Grundlagen. Deutschlandweit."
+      priceText="Die Landingpage (eine Seite, Kontaktformular, SEO-Grundlagen, zwei Revisionsrunden) kostet ab 1.200 € einmalig. Die Business-Website mit 3–5 Seiten, CMS-Anbindung und drei Revisionsrunden gibt es ab 2.800 €. Nicht enthalten sind Texte, Bilder und Hosting – dabei berate ich Sie aber gern."
       relatedLinks={[
         { to: '/webdesign', label: 'Webdesign & Webentwicklung' },
         { to: '/ki-integration', label: 'KI-Integration & LLM-Entwicklung' },
@@ -21,7 +21,7 @@ export default function HomepageErstellen() {
         {
           h2: 'Was kostet es, eine Homepage erstellen zu lassen?',
           paragraphs: [
-            'Die ehrliche Antwort: je nach Anbieter zwischen ein paar hundert und mehreren zehntausend Euro. Damit Sie kalkulieren können, arbeite ich mit transparenten Festpreisen: Eine professionelle Landing Page gibt es bei mir ab 1.200 €, eine vollwertige Unternehmenswebsite mit mehreren Seiten ab 2.800 € – einmalig, inklusive Einrichtung, ohne monatliche Baukasten-Gebühren.',
+            'Die ehrliche Antwort: je nach Anbieter zwischen ein paar hundert und mehreren zehntausend Euro. Damit Sie kalkulieren können, arbeite ich mit transparenten Festpreisen: Eine professionelle Landingpage gibt es bei mir ab 1.200 €, eine vollwertige Unternehmenswebsite mit mehreren Seiten ab 2.800 € – einmalig, inklusive Einrichtung, ohne monatliche Baukasten-Gebühren.',
             'Der Preis steht fest, bevor die Arbeit beginnt. Änderungswünsche sind über die enthaltenen Revisionsrunden abgedeckt; was darüber hinausgeht, wird vorher transparent abgestimmt.',
           ],
         },

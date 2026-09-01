@@ -13,7 +13,7 @@ export default function ItBeratung() {
       serviceName="IT-Beratung & Digitalisierungsstrategie"
       serviceDescription="IT-Beratung für Unternehmen: Technologieauswahl, Softwarearchitektur, Digitalisierungsstrategie und Make-or-Buy-Analyse – praxisnah, von einem Entwickler der selbst umsetzt. Deutschlandweit."
       relatedLinks={[
-        { to: '/full-stack-entwicklung', label: 'Full-Stack Entwicklung' },
+        { to: '/full-stack-entwicklung', label: 'Full-Stack-Entwicklung' },
         { to: '/ki-integration', label: 'KI-Integration & Automatisierung' },
       ]}
       sections={[

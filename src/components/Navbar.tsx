@@ -113,6 +113,14 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           },
         }}
       >
+        <button
+          type="button"
+          className="navbar__drawer-close"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Menü schließen"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
         <Stack spacing={0.5} alignItems="center" width="100%" px={4}>
           {navItems.map(item => (
             <Button

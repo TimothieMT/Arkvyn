@@ -14,13 +14,13 @@ export default function DevopsInfrastruktur() {
       serviceDescription="DevOps-Beratung und Umsetzung: Docker, Kubernetes, CI/CD-Pipelines mit GitLab und TeamCity, Hosting auf Hetzner und AWS – für Entwicklungsteams und Unternehmen deutschlandweit."
       relatedLinks={[
         { to: '/backend-entwicklung', label: 'Backend & Datenarchitektur' },
-        { to: '/full-stack-entwicklung', label: 'Full-Stack Entwicklung' },
+        { to: '/full-stack-entwicklung', label: 'Full-Stack-Entwicklung' },
       ]}
       sections={[
         {
           h2: 'Von manuellen Deployments zur automatisierten Pipeline',
           paragraphs: [
-            'Viele Entwicklungsteams deployen manuell: Code per SSH auf den Server kopieren, Dienste manuell neustart, Finger kreuzen. Das funktioniert – bis es nicht mehr funktioniert. Ein Deployment schlägt fehl, niemand weiß warum, die letzte Backup-Version ist unklar.',
+            'Viele Entwicklungsteams deployen manuell: Code per SSH auf den Server kopieren, Dienste neu starten, Daumen drücken. Das funktioniert – bis es nicht mehr funktioniert. Ein Deployment schlägt fehl, niemand weiß warum, die letzte Backup-Version ist unklar.',
             'Mit einer CI/CD-Pipeline läuft jede Code-Änderung automatisch durch Tests, Build und Deployment. Fehler werden sofort sichtbar, Rollbacks sind in Sekunden durchgeführt, und das Team kann sich auf Entwicklung konzentrieren statt auf Betrieb.',
           ],
         },

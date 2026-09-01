@@ -12,7 +12,7 @@ export default function Webdesign() {
       intro="Eine Website ist Ihr wichtigster Vertriebsmitarbeiter: rund um die Uhr erreichbar, deutschlandweit sichtbar. Ich entwickle individuelle Websites mit moderner Technik – handgeschrieben statt aus dem Baukasten, mit Fokus auf Ladezeit, Suchmaschinen und Nutzerführung."
       serviceName="Webdesign & Webentwicklung"
       serviceDescription="Individuelles Webdesign und Webentwicklung mit React und TypeScript – responsive Websites mit schnellen Ladezeiten und SEO-Grundlagen für Unternehmen in ganz Deutschland."
-      priceText="Eine professionelle Landing Page gibt es ab 1.200 € zum Festpreis, eine vollwertige Business Website ab 2.800 €. Individuelle Webanwendungen kalkuliere ich transparent nach Aufwand ab 90 €/Std."
+      priceText="Eine professionelle Landingpage gibt es ab 1.200 € zum Festpreis, eine vollwertige Business-Website ab 2.800 €. Individuelle Webanwendungen kalkuliere ich transparent nach Aufwand ab 90 €/Std."
       relatedLinks={[
         { to: '/homepage-erstellen-lassen', label: 'Homepage erstellen lassen' },
         { to: '/ki-integration', label: 'KI-Integration & LLM-Entwicklung' },
@@ -22,11 +22,11 @@ export default function Webdesign() {
           h2: 'Was professionelles Webdesign heute leisten muss',
           paragraphs: [
             'Gutes Webdesign ist mehr als eine hübsche Oberfläche. Ihre Website muss auf dem Smartphone genauso überzeugen wie auf dem Desktop, in unter zwei Sekunden laden und Besucher ohne Umwege zur Kontaktaufnahme führen. Und sie muss von Google verstanden werden – sonst findet sie niemand.',
-            'Deshalb denke ich Design und Technik zusammen: Jede Website, die ich entwickle, erfüllt die Core Web Vitals (Googles Messwerte für Ladezeit und Stabilität), ist barrierearm nach gängigen Standards und bringt saubere SEO-Grundlagen mit – von der Überschriften-Struktur über strukturierte Daten bis zur Sitemap.',
+            'Deshalb denke ich Design und Technik zusammen: Jede Website wird auf gute Core Web Vitals, verständliche Bedienung und barrierearme Nutzung ausgerichtet. Saubere SEO-Grundlagen – von der Überschriftenstruktur über strukturierte Daten bis zur Sitemap – gehören ebenfalls dazu.',
           ],
           bullets: [
             'Responsives Design – optimiert für Smartphone, Tablet und Desktop',
-            'Schnelle Ladezeiten und gute Core Web Vitals ab dem ersten Tag',
+            'Auf schnelle Ladezeiten und gute Core Web Vitals ausgerichtet',
             'SEO-Grundlagen: Meta-Tags, strukturierte Daten, saubere Semantik',
             'Barrierearme Umsetzung mit Tastaturbedienung und Screenreader-Unterstützung',
             'DSGVO-bewusste Umsetzung, Hosting in Deutschland möglich',

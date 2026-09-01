@@ -5,8 +5,8 @@ import Divider from '@mui/material/Divider'
 
 const highlights = [
   'Webentwicklung & Webdesign',
-  'Full-Stack & Backend Entwicklung',
-  'AI/LLM-Integration',
+  'Full-Stack- & Backend-Entwicklung',
+  'KI-/LLM-Integration',
   'REST-APIs & Microservices',
   'DevOps & Infrastruktur',
 ]
@@ -18,7 +18,7 @@ const credentials = [
   { label: 'Backend', value: 'Node.js · Go · Java · Python' },
   { label: 'Datenbanken', value: 'PostgreSQL · MongoDB' },
   { label: 'Infrastruktur', value: 'Docker · Kubernetes · Hetzner' },
-  { label: 'Spezialisierung', value: 'AI/LLM · Automatisierung' },
+  { label: 'Spezialisierung', value: 'KI/LLM · Automatisierung' },
 ]
 
 export default function UeberMich() {
@@ -43,25 +43,20 @@ export default function UeberMich() {
               <Box component="span" sx={{ color: 'primary.main' }}>Arkvyn</Box>
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
-              Ich bin Tim Tolk, Webentwickler und Softwareentwickler aus Lübeck (Schleswig-Holstein) mit Erfahrung
-              in der Entwicklung datengetriebener Web- und Plattformapplikationen.
+              Ich bin Tim Tolk, Web- und Softwareentwickler aus Lübeck. Mein Schwerpunkt liegt auf
+              datengetriebenen Webanwendungen und digitalen Plattformen.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
               Mit <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>Arkvyn</Box> verfolge ich ein klares Ziel:
               komplexe technische Herausforderungen in einfache, elegante Lösungen
-              zu verwandeln von der Architektur über APIs bis zur UI.
+              zu verwandeln – von der Architektur über APIs bis zur Benutzeroberfläche.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
               Mein Stack reicht von React & TypeScript im Frontend über Node.js,
               Java, Go und Python im Backend bis zu PostgreSQL, MongoDB und
-              Cloud-Infrastruktur mit Docker & Hetzner. Als IT Freelancer aus Lübeck
-              arbeite ich remote für Kunden in ganz Deutschland.
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 4 }}>
-              Als freiberuflicher Programmierer und Webdesigner aus Lübeck unterstütze
-              ich Startups und Unternehmen bei der App-Entwicklung, Digitalisierung und
-              IT-Beratung – vor Ort in Lübeck, Kiel & Hamburg sowie remote in ganz
-              Deutschland.
+              Cloud-Infrastruktur mit Docker & Hetzner. Ich unterstütze Start-ups und Unternehmen
+              bei Entwicklung, Automatisierung und IT-Beratung – remote in ganz Deutschland sowie
+              auf Wunsch vor Ort in Lübeck und Hamburg.
             </Typography>
 
             {/* Highlights list — elevated */}

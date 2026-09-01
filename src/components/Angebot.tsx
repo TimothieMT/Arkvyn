@@ -9,12 +9,12 @@ const services: { num: string; title: string; desc: string; to?: string }[] = [
   {
     num: '01',
     title: 'Webdesign & Webentwicklung',
-    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in ganz Deutschland – von der modernen Landing Page bis zur komplexen Webanwendung.',
+    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in ganz Deutschland – von der modernen Landingpage bis zur komplexen Webanwendung.',
     to: '/webdesign',
   },
   {
     num: '02',
-    title: 'Full-Stack Entwicklung',
+    title: 'Full-Stack-Entwicklung',
     desc: 'Moderne Webanwendungen mit React, TypeScript und Node.js, von responsiven Frontends bis zu skalierbaren REST-APIs und Backend-Services.',
     to: '/full-stack-entwicklung',
   },
@@ -26,7 +26,7 @@ const services: { num: string; title: string; desc: string; to?: string }[] = [
   },
   {
     num: '04',
-    title: 'AI & Automatisierung',
+    title: 'KI & Automatisierung',
     desc: 'Integration von LLMs in Backend und Frontend, automatisierte Workflows, Datenextraktion und intelligente Matching-Systeme.',
     to: '/ki-integration',
   },
@@ -124,7 +124,9 @@ export default function Angebot() {
                 </Typography>
                 {service.to ? (
                   <Typography sx={{ mt: 1.5, fontSize: '0.875rem', fontWeight: 600 }}>
-                    <Link to={service.to}>Mehr erfahren →</Link>
+                    <Link to={service.to} style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32 }}>
+                      Mehr erfahren →
+                    </Link>
                   </Typography>
                 ) : null}
               </CardContent>

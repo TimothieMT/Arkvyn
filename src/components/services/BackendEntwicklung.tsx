@@ -14,7 +14,7 @@ export default function BackendEntwicklung() {
       serviceDescription="Backend-Entwicklung mit Java, Go, Python und Node.js – REST-APIs, Datenbankdesign (PostgreSQL, MongoDB), ETL-Pipelines und skalierbare Architekturen für Unternehmen deutschlandweit."
       priceText="Backend-Projekte kalkuliere ich nach Aufwand ab 90 €/Std. Für klar abgegrenzte Backend-Komponenten (z. B. eine API oder ein Datenbankmodell) erstelle ich gerne ein Festpreisangebot."
       relatedLinks={[
-        { to: '/full-stack-entwicklung', label: 'Full-Stack Entwicklung' },
+        { to: '/full-stack-entwicklung', label: 'Full-Stack-Entwicklung' },
         { to: '/api-integration', label: 'API-Integration' },
       ]}
       sections={[
@@ -49,7 +49,7 @@ export default function BackendEntwicklung() {
         {
           h2: 'Referenz: Backend-Erfahrung aus Produktionssystemen',
           paragraphs: [
-            'Ich habe Backend-Systeme in verschiedenen Kontexten entwickelt: als Teil einer großen Agentur mit Over 750 Kunden, bei einem cloudbasierten Logistiksystem mit komplexem Datenbankschema und als Senior Developer in der Entwicklung eines LLM-basierten KI-Produkts – von der Architektur bis zur Qualitätssicherung unter realen Lastbedingungen.',
+            'Ich habe Backend-Systeme in verschiedenen Kontexten entwickelt: als Teil einer großen Agentur mit über 750 Kunden, bei einem cloudbasierten Logistiksystem mit komplexem Datenbankschema und als Senior Developer in der Entwicklung eines LLM-basierten KI-Produkts – von der Architektur bis zur Qualitätssicherung unter realen Lastbedingungen.',
           ],
         },
       ]}

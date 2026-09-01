@@ -20,7 +20,7 @@ const businessFeatures = [
   'CMS-Anbindung',
   'SEO-Grundlagen',
   'Kontaktformular',
-  'Google Analytics ready',
+  'Für Webanalyse vorbereitet',
   '3 Revisionsrunden',
 ]
 
@@ -71,11 +71,11 @@ export default function Preise() {
             boxShadow: '0 2px 6px rgba(0,0,0,0.05), 0 10px 28px rgba(0,0,0,0.09)',
           }}
         >
-          {/* Landing Page */}
+          {/* Landingpage */}
           <Card sx={{ borderRadius: 0, bgcolor: 'background.paper', display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ p: '2.5rem !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
               <Typography variant="h3" sx={{ fontSize: '1.5rem', color: 'text.primary', mb: 0.75, fontWeight: 700 }}>
-                Landing Page
+                Landingpage
               </Typography>
               <Typography sx={{ fontSize: '2.75rem', fontWeight: 700, color: 'text.primary', letterSpacing: '-0.04em', lineHeight: 1, mb: 0.5 }}>
                 ab 1.200 €
@@ -85,7 +85,7 @@ export default function Preise() {
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, pb: 3, borderBottom: '1px solid #e5e5ea' }}>
                 Eine professionelle einseitige Webpräsenz ideal für Selbstständige,
-                Startups und Produktlaunches.
+                Start-ups und Produktlaunches.
               </Typography>
               <FeatureList items={landingFeatures} />
               <Button variant="outlined" fullWidth component="a" href="#kontakt" sx={{ mt: 'auto' }}>
@@ -94,7 +94,7 @@ export default function Preise() {
             </CardContent>
           </Card>
 
-          {/* Business Website — highlighted */}
+          {/* Business-Website — highlighted */}
           <Card
             sx={{
               borderRadius: 0,
@@ -107,7 +107,7 @@ export default function Preise() {
             <CardContent sx={{ p: '2.5rem !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
               <Chip label="Beliebt" color="primary" size="small" sx={{ mb: 2, alignSelf: 'flex-start' }} />
               <Typography variant="h3" sx={{ fontSize: '1.5rem', color: 'text.primary', mb: 0.75, fontWeight: 700 }}>
-                Business Website
+                Business-Website
               </Typography>
               <Typography sx={{ fontSize: '2.75rem', fontWeight: 700, color: 'text.primary', letterSpacing: '-0.04em', lineHeight: 1, mb: 0.5 }}>
                 ab 2.800 €
@@ -156,7 +156,7 @@ export default function Preise() {
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.25, maxWidth: 520 }}>
               Mein Stundensatz beginnt bei{' '}
               <Box component="strong" sx={{ color: 'text.primary', fontWeight: 700 }}>90 €/Std</Box>
-              {' '} je nach Projektumfang und Komplexität erstelle ich ein individuelles Angebot. AI- und LLM-Projekte werden ab{' '}
+              . Je nach Projektumfang und Komplexität erstelle ich ein individuelles Angebot. KI- und LLM-Projekte werden ab{' '}
               <Box component="strong" sx={{ color: 'text.primary', fontWeight: 700 }}>110 €/Std</Box>
               {' '}kalkuliert.
             </Typography>

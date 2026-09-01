@@ -1,7 +1,6 @@
 import './App.css'
-import { lazy, Suspense, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import { lazy, Suspense, useEffect, useRef } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import theme from './theme'
@@ -14,6 +13,8 @@ import Referenzen from './components/Referenzen'
 import Faq from './components/Faq'
 import Kontakt from './components/Kontakt'
 import Footer from './components/Footer'
+import Seo from './components/Seo'
+import { faqs } from './faqData'
 
 // Unterseiten aus dem Haupt-Bundle heraushalten
 const Impressum = lazy(() => import('./components/Impressum'))
@@ -28,14 +29,103 @@ const DevopsInfrastruktur = lazy(() => import('./components/services/DevopsInfra
 const ApiIntegration = lazy(() => import('./components/services/ApiIntegration'))
 const ItBeratung = lazy(() => import('./components/services/ItBeratung'))
 
+const homeTitle = 'Webentwicklung & Webdesign | Arkvyn – Tim Tolk, Lübeck'
+const homeDescription = 'Individuelle Websites, Webanwendungen, KI-Integration und IT-Beratung von Tim Tolk in Lübeck – deutschlandweit remote. Kostenloses Erstgespräch.'
+
+const homeSchemas: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': ['ProfessionalService', 'LocalBusiness'],
+    name: 'Arkvyn',
+    description: 'Individuelle Webentwicklung, KI-Integration, DevOps und IT-Beratung aus Lübeck – deutschlandweit remote.',
+    url: 'https://arkvyn.de',
+    logo: 'https://arkvyn.de/logo.png',
+    image: 'https://arkvyn.de/og-image.png',
+    telephone: '+4917646143387',
+    email: 'arkvyn.solutions@proton.me',
+    sameAs: ['https://www.linkedin.com/in/tim-tolk-2091a7258'],
+    founder: {
+      '@type': 'Person',
+      name: 'Tim Tolk',
+      jobTitle: 'Full-Stack-Softwareentwickler',
+      url: 'https://arkvyn.de',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lübeck',
+      addressRegion: 'Schleswig-Holstein',
+      addressCountry: 'DE',
+    },
+    areaServed: [{ '@type': 'Country', name: 'Deutschland' }, 'Lübeck', 'Hamburg', 'Schleswig-Holstein'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Softwareentwicklung & IT-Dienstleistungen',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landingpage-Erstellung' }, priceSpecification: { '@type': 'PriceSpecification', price: '1200', priceCurrency: 'EUR' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business-Website-Entwicklung' }, priceSpecification: { '@type': 'PriceSpecification', price: '2800', priceCurrency: 'EUR' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Full-Stack-Entwicklung' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'KI- & LLM-Integration' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'DevOps & Infrastruktur' } },
+      ],
+    },
+    priceRange: 'ab 1.200 €',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Arkvyn',
+    url: 'https://arkvyn.de',
+    description: homeDescription,
+    inLanguage: 'de-DE',
+    author: { '@type': 'Person', name: 'Tim Tolk' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Tim Tolk',
+    jobTitle: 'Full-Stack-Softwareentwickler',
+    worksFor: { '@type': 'Organization', name: 'Arkvyn', url: 'https://arkvyn.de' },
+    url: 'https://arkvyn.de',
+    sameAs: ['https://www.linkedin.com/in/tim-tolk-2091a7258'],
+    knowsAbout: ['React', 'TypeScript', 'Node.js', 'Full-Stack-Entwicklung', 'KI-Integration', 'Softwarearchitektur', 'DevOps'],
+  },
+]
+
+function RouteFocusManager() {
+  const { pathname } = useLocation()
+  const initialRender = useRef(true)
+
+  useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false
+      return
+    }
+
+    window.requestAnimationFrame(() => {
+      const heading = document.querySelector<HTMLElement>('#main h1')
+      if (heading) {
+        heading.tabIndex = -1
+        heading.focus({ preventScroll: true })
+      }
+    })
+  }, [pathname])
+
+  return null
+}
+
 function MainPage() {
   return (
     <>
-      <Helmet>
-        <title>Arkvyn – Webentwicklung &amp; Webdesign deutschlandweit | Tim Tolk, Lübeck</title>
-        <meta name="description" content="Arkvyn – Maßgeschneiderte Softwarelösungen von Tim Tolk, Full-Stack Entwickler aus Lübeck. Deutschlandweit remote: React, TypeScript, Node.js, AI-Integration, DevOps & IT-Beratung. Jetzt Erstgespräch vereinbaren." />
-        <link rel="canonical" href="https://arkvyn.de/" />
-      </Helmet>
+      <Seo title={homeTitle} description={homeDescription} canonical="https://arkvyn.de/" schemas={homeSchemas} />
       <main id="main" className="main-content">
         <Home />
         <Angebot />
@@ -54,7 +144,8 @@ function App() {
     const el = document.getElementById(id)
     if (el) {
       const top = el.getBoundingClientRect().top + window.scrollY - 72
-      window.scrollTo({ top, behavior: 'smooth' })
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' })
     }
   }
 
@@ -70,9 +161,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
+        <RouteFocusManager />
         <a className="skip-link" href="#main">Zum Inhalt springen</a>
         <Navbar scrollTo={scrollTo} />
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="route-loading" role="status">Seite wird geladen…</div>}>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/webdesign" element={<Webdesign />} />

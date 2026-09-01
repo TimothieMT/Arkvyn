@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import Seo from './Seo'
 
 export default function NotFound() {
   return (
     <>
-      <Helmet>
-        <title>Seite nicht gefunden – Arkvyn</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <Seo title="Seite nicht gefunden – Arkvyn" robots="noindex, nofollow" social={false} />
       <Box
         component="main"
         id="main"

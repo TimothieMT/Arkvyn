@@ -1,25 +1,26 @@
 import { useEffect } from 'react'
-import { Helmet } from 'react-helmet-async'
+import Seo from './Seo'
 
 export default function Impressum() {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0 })
   }, [])
 
   return (
     <>
-    <Helmet>
-      <title>Impressum – Arkvyn | Tim Tolk, Lübeck</title>
-      <meta name="description" content="Impressum von Arkvyn – Angaben gemäß § 5 TMG. Inhaber: Tim Tolk, Softwareentwickler aus Lübeck." />
-      <meta name="robots" content="noindex, follow" />
-      <link rel="canonical" href="https://arkvyn.de/impressum" />
-    </Helmet>
+    <Seo
+      title="Impressum – Arkvyn | Tim Tolk, Lübeck"
+      description="Impressum von Arkvyn – Angaben gemäß § 5 DDG. Inhaber: Tim Tolk, Softwareentwickler aus Lübeck."
+      canonical="https://arkvyn.de/impressum"
+      robots="noindex, follow"
+      social={false}
+    />
     <main id="main" className="legal-page">
       <div className="legal-page__inner">
         <h1>Impressum</h1>
 
         <section className="legal-section">
-          <h2>Angaben gemäß § 5 TMG</h2>
+          <h2>Angaben gemäß § 5 DDG</h2>
           <address>
             <p><strong>Tim Tolk</strong></p>
             <p>Arkvyn – Softwareentwicklung</p>
@@ -47,22 +48,6 @@ export default function Impressum() {
         <section className="legal-section">
           <h2>Haftungsausschluss</h2>
 
-          <h3>Haftung für Inhalte</h3>
-          <p>
-            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-            nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
-            Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
-            Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
-            Tätigkeit hinweisen.
-          </p>
-          <p>
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
-            allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch
-            erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei
-            Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
-            entfernen.
-          </p>
-
           <h3>Haftung für Links</h3>
           <p>
             Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
@@ -85,12 +70,6 @@ export default function Impressum() {
 
         <section className="legal-section">
           <h2>Streitschlichtung</h2>
-          <p>
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
-              https://ec.europa.eu/consumers/odr/
-            </a>
-          </p>
           <p>
             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
             Verbraucherschlichtungsstelle teilzunehmen.
