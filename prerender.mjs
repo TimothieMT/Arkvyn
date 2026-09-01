@@ -6,7 +6,7 @@
 
 import puppeteer from 'puppeteer'
 import { createServer } from 'node:http'
-import { createReadStream, existsSync, writeFileSync, mkdirSync } from 'node:fs'
+import { createReadStream, existsSync, statSync, writeFileSync, mkdirSync } from 'node:fs'
 import { resolve, extname, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -52,8 +52,8 @@ function startServer() {
         resolve(DIST, 'index.html'),
       ]
 
-      const file = candidates.find(f => existsSync(f) && !f.endsWith('/'))
-        ?? resolve(DIST, 'index.html')
+      const isFile = f => existsSync(f) && statSync(f).isFile()
+      const file = candidates.find(isFile) ?? resolve(DIST, 'index.html')
 
       const mime = MIME[extname(file)] ?? 'text/plain'
       rsp.setHeader('Content-Type', mime)
