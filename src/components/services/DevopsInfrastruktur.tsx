@@ -26,6 +26,7 @@ export default function DevopsInfrastruktur() {
         },
         {
           h2: 'Leistungen im DevOps-Bereich',
+          paragraphs: [],
           bullets: [
             'Docker-Containerisierung bestehender Anwendungen',
             'Kubernetes-Setup und Orchestrierung für skalierbare Services',
@@ -35,7 +36,6 @@ export default function DevopsInfrastruktur() {
             'Monitoring und Alerting: Logs, Uptime und Performance im Blick',
             'Automatisierte Backups und Disaster-Recovery-Konzepte',
           ],
-          paragraphs: [],
         },
         {
           h2: 'Hosting in Deutschland – DSGVO-konform und kosteneffizient',

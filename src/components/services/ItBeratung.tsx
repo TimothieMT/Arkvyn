@@ -26,6 +26,7 @@ export default function ItBeratung() {
         },
         {
           h2: 'Typische Beratungsthemen',
+          paragraphs: [],
           bullets: [
             'Make-or-Buy: Wann lohnt sich eine Eigenentwicklung – wann ist ein fertiges SaaS-Tool die bessere Wahl?',
             'Technologieauswahl: Welches Framework, welche Datenbank, welcher Cloud-Anbieter passt zu Ihren Anforderungen?',
