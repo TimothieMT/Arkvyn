@@ -23,8 +23,9 @@ echo "==> Backend-Abhängigkeiten installieren..."
 cd "$APP_DIR/backend"
 npm ci --omit=dev
 
-echo "==> Frontend-Build nach /var/www/arkvyn/dist bereitstellen..."
-# Nginx zeigt auf /var/www/arkvyn/dist (oder passe den Nginx-Root an)
+echo "==> Nginx-Konfiguration aktualisieren..."
+cp "$APP_DIR/nginx.conf" /etc/nginx/sites-enabled/arkvyn
+nginx -t
 
 echo "==> .env Datei prüfen..."
 if [ ! -f "$APP_DIR/backend/.env" ]; then
