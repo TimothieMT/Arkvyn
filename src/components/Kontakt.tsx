@@ -195,7 +195,7 @@ export default function Kontakt() {
                   label="Nachricht"
                   name="message"
                   autoComplete="off"
-                  placeholder="Beschreiben Sie Ihr Projekt…"
+                  placeholder="Beschreiben Sie Ihr Projekt..."
                   value={nachricht}
                   onChange={e => setNachricht(e.target.value)}
                   required
@@ -230,7 +230,7 @@ export default function Kontakt() {
                   sx={{ py: 1.625 }}
                   startIcon={isLoading ? <CircularProgress size={16} sx={{ color: 'rgba(255,255,255,0.5)' }} /> : null}
                 >
-                  {isLoading ? 'Wird gesendet…' : 'Nachricht senden →'}
+                  {isLoading ? 'Wird gesendet...' : 'Nachricht senden'}
                 </Button>
               </Stack>
             </Box>

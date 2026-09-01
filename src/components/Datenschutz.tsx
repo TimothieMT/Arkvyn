@@ -10,7 +10,7 @@ export default function Datenschutz() {
     <>
     <Seo
       title="Datenschutzerklärung – Arkvyn | Tim Tolk"
-      description="Datenschutzerklärung von Arkvyn – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO."
+      description="Datenschutzerklärung von Arkvyn Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO."
       canonical="https://arkvyn.de/datenschutz"
       robots="noindex, follow"
       social={false}
@@ -27,7 +27,7 @@ export default function Datenschutz() {
             Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren
             personenbezogenen Daten passiert, wenn Sie diese Website besuchen.
             Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden
-            können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter
+            können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie meiner unter
             diesem Text aufgeführten Datenschutzerklärung.
           </p>
 
@@ -36,27 +36,27 @@ export default function Datenschutz() {
             <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong>
           </p>
           <p>
-            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen
+            Die Datenverarbeitung auf dieser Website erfolgt durch mich als Websitebetreiber. Meine
             Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser
             Datenschutzerklärung entnehmen.
           </p>
 
           <p>
-            <strong>Wie erfassen wir Ihre Daten?</strong>
+            <strong>Wie erfasse ich Ihre Daten?</strong>
           </p>
           <p>
-            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann
+            Ihre Daten werden zum einen dadurch erhoben, dass Sie mir diese mitteilen. Hierbei kann
             es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
           </p>
           <p>
             Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website
-            durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B.
+            durch meine IT-Systeme erfasst. Das sind vor allem technische Daten (z. B.
             Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser
             Daten erfolgt automatisch, sobald Sie diese Website betreten.
           </p>
 
           <p>
-            <strong>Wofür nutzen wir Ihre Daten?</strong>
+            <strong>Wofür nutze ich Ihre Daten?</strong>
           </p>
           <p>
             Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
@@ -89,7 +89,7 @@ export default function Datenschutz() {
             generiert werden, handeln.
           </p>
           <p>
-            Der Einsatz von Hetzner erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren
+            Der Einsatz von Hetzner erfolgt zum Zwecke der Vertragserfüllung gegenüber meinen
             potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer
             sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen
             professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Mit Hetzner wurde ein
@@ -106,8 +106,8 @@ export default function Datenschutz() {
 
           <h3>Datenschutz</h3>
           <p>
-            Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir
-            behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen
+            Ich nehme den Schutz Ihrer persönlichen Daten sehr ernst. Ich
+            behandle Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen
             Datenschutzvorschriften sowie dieser Datenschutzerklärung.
           </p>
 
@@ -125,10 +125,10 @@ export default function Datenschutz() {
           <h3>Speicherdauer</h3>
           <p>
             Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt
-            wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die
+            wurde, verbleiben Ihre personenbezogenen Daten bei mir, bis der Zweck für die
             Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder
             eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern
-            wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer
+            ich keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer
             personenbezogenen Daten haben.
           </p>
 
@@ -146,21 +146,21 @@ export default function Datenschutz() {
 
           <h3>Kontaktformular</h3>
           <p>
-            Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem
+            Wenn Sie mir per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem
             Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung
-            der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben
-            wir nicht ohne Ihre Einwilligung weiter.
+            der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe
+            ich nicht ohne Ihre Einwilligung weiter.
           </p>
           <p>
             Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO,
             sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung
             vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die
-            Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns
+            Verarbeitung auf meinem berechtigten Interesse an der effektiven Bearbeitung der an mich
             gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung
             (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.
           </p>
           <p>
-            Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur
+            Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei mir, bis Sie mich zur
             Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die
             Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende
             gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
@@ -170,7 +170,7 @@ export default function Datenschutz() {
           <p>
             Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail-Adresse, Betreff
             und Nachricht) über den SMTP-Dienst von Google Ireland Limited, Gordon House, Barrow
-            Street, Dublin 4, Irland übermittelt und an uns weitergeleitet. Google verarbeitet diese
+            Street, Dublin 4, Irland übermittelt und an mich weitergeleitet. Google verarbeitet diese
             Daten dabei als Auftragsverarbeiter. Die Nutzung erfolgt auf Grundlage unseres
             berechtigten Interesses an einer zuverlässigen E-Mail-Zustellung (Art. 6 Abs. 1 lit. f
             DSGVO). Ihre Daten werden nicht für Werbezwecke durch Google genutzt. Weitere
@@ -183,7 +183,7 @@ export default function Datenschutz() {
           <h3>Server-Log-Dateien</h3>
           <p>
             Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten
-            Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            Server-Log-Dateien, die Ihr Browser automatisch an mich übermittelt. Dies sind:
           </p>
           <ul>
             <li>Browsertyp und Browserversion</li>
@@ -196,14 +196,14 @@ export default function Datenschutz() {
           <p>
             Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die
             Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der
-            Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung
+            Ich habe ein berechtigtes Interesse an der technisch fehlerfreien Darstellung
             und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.
           </p>
         </section>
 
         <section className="legal-section">
           <h2>5. Ihre Rechte</h2>
-          <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
+          <p>Sie haben mir gegenüber folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
           <ul>
             <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
             <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
@@ -214,7 +214,7 @@ export default function Datenschutz() {
           </ul>
           <p>
             Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die
-            Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren. Zuständige
+            Verarbeitung Ihrer personenbezogenen Daten durch mich zu beschweren. Zuständige
             Aufsichtsbehörde in Schleswig-Holstein ist das Unabhängige Landeszentrum für Datenschutz
             Schleswig-Holstein (ULD), Holstenstraße 98, 24103 Kiel.
           </p>

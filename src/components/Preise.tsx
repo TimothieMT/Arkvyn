@@ -16,7 +16,7 @@ const landingFeatures = [
 ]
 
 const businessFeatures = [
-  '3–5 responsive Seiten',
+  '3-5 responsive Seiten',
   'CMS-Anbindung',
   'SEO-Grundlagen',
   'Kontaktformular',
@@ -53,7 +53,7 @@ export default function Preise() {
           <Box component="span" sx={{ color: 'primary.main' }}>Festpreis</Box>
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>
-          Homepage erstellen lassen, professionell, responsive, transparent kalkuliert, ohne versteckte Kosten.
+          Klare Pakete für Websites transparent kalkuliert und ohne versteckte Kosten.
         </Typography>
       </Container>
 
@@ -81,7 +81,7 @@ export default function Preise() {
                 ab 1.200 €
               </Typography>
               <Typography sx={{ fontSize: '0.8125rem', color: 'text.disabled', mb: 2.5 }}>
-                Einmalig · inkl. Einrichtung
+                Einmalig, inklusive Einrichtung
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, pb: 3, borderBottom: '1px solid #e5e5ea' }}>
                 Eine professionelle einseitige Webpräsenz ideal für Selbstständige,
@@ -113,7 +113,7 @@ export default function Preise() {
                 ab 2.800 €
               </Typography>
               <Typography sx={{ fontSize: '0.8125rem', color: 'text.disabled', mb: 2.5 }}>
-                Einmalig · inkl. Einrichtung
+                Einmalig, inklusive Einrichtung
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, pb: 3, borderBottom: '1px solid #d0d8f0' }}>
                 Vollwertige Unternehmenswebsite mit mehreren Seiten und
@@ -161,12 +161,12 @@ export default function Preise() {
               {' '}kalkuliert.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-              Schreiben Sie mir und wir besprechen Ihr Vorhaben in einem{' '}
+              Schreiben Sie mir und ich bespreche Ihr Vorhaben in einem{' '}
               <Box component="strong" sx={{ color: 'primary.main', fontWeight: 600 }}>kostenlosen Erstgespräch</Box>.
             </Typography>
           </Box>
           <Button variant="contained" component="a" href="#kontakt" sx={{ flexShrink: 0, whiteSpace: 'nowrap' }}>
-            Kostenloses Erstgespräch →
+            Kostenloses Erstgespräch
           </Button>
         </Box>
       </Container>

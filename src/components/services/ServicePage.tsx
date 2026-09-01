@@ -76,7 +76,7 @@ export default function ServicePage({
               {intro}
             </Typography>
             <Button variant="contained" component="a" href="/#kontakt" sx={{ mt: 4 }}>
-              Kostenloses Erstgespräch →
+              Kostenloses Erstgespräch
             </Button>
           </Container>
         </Box>
@@ -136,10 +136,10 @@ export default function ServicePage({
           {/* CTA */}
           <Box sx={{ textAlign: 'center', mt: 8 }}>
             <Typography variant="h2" sx={{ fontSize: { xs: '1.5rem', md: '1.875rem' }, color: 'text.primary', mb: 2 }}>
-              Lassen Sie uns über Ihr Projekt sprechen
+              Sprechen Sie mit mir über Ihr Projekt
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto', mb: 3 }}>
-              Schildern Sie mir Ihr Vorhaben in einem kostenlosen Erstgespräch –
+              Schildern Sie mir Ihr Vorhaben in einem kostenlosen Erstgespräch.
               ich melde mich innerhalb von 24 Stunden.
             </Typography>
             <Button variant="contained" component="a" href="/#kontakt">
@@ -155,7 +155,7 @@ export default function ServicePage({
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
             {relatedLinks.map(link => (
               <Link key={link.to} to={link.to} style={{ fontSize: '0.9375rem', fontWeight: 600 }}>
-                {link.label} →
+                {link.label}
               </Link>
             ))}
           </Box>

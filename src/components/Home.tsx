@@ -33,7 +33,7 @@ export default function Home() {
               component="span"
               sx={{ typography: 'overline', color: 'primary.main', mb: 3, display: 'block', textAlign: 'center' }}
             >
-              Webentwickler & Webdesign – deutschlandweit
+              Webentwickler & Webdesign deutschlandweit
             </Box>
             <Box component="span" sx={{ display: 'block' }}>
               Think. Build.
@@ -46,9 +46,9 @@ export default function Home() {
             variant="body1"
             sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 520, mb: 5, fontSize: '1.125rem' }}
           >
-            Maßgeschneiderte Softwarelösungen für Unternehmen in ganz
-            Deutschland – remote oder vor Ort in Lübeck &amp; Hamburg,
-            von der Idee bis zur fertigen Anwendung.
+            Sie haben eine Idee oder ein konkretes Problem? Ich entwickle die
+            passende Website oder Anwendung remote in ganz Deutschland oder
+            persönlich in Lübeck und Hamburg.
           </Typography>
 
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} mb={8} sx={{ width: { xs: '100%', sm: 'auto' } }}>

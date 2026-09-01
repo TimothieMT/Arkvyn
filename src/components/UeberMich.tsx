@@ -12,13 +12,13 @@ const highlights = [
 ]
 
 const credentials = [
-  { label: 'Standort', value: 'Lübeck · remote deutschlandweit' },
+  { label: 'Standort', value: 'Lübeck, remote deutschlandweit' },
   { label: 'Erfahrung', value: '6+ Jahre' },
-  { label: 'Frontend', value: 'React · TypeScript' },
-  { label: 'Backend', value: 'Node.js · Go · Java · Python' },
-  { label: 'Datenbanken', value: 'PostgreSQL · MongoDB' },
-  { label: 'Infrastruktur', value: 'Docker · Kubernetes · Hetzner' },
-  { label: 'Spezialisierung', value: 'KI/LLM · Automatisierung' },
+  { label: 'Frontend', value: 'React, TypeScript' },
+  { label: 'Backend', value: 'Node.js, Go, Java, Python' },
+  { label: 'Datenbanken', value: 'PostgreSQL, MongoDB' },
+  { label: 'Infrastruktur', value: 'Docker, Kubernetes, Hetzner' },
+  { label: 'Spezialisierung', value: 'KI/LLM, Automatisierung' },
 ]
 
 export default function UeberMich() {
@@ -39,7 +39,7 @@ export default function UeberMich() {
               Über mich
             </Typography>
             <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 3 }}>
-              Softwareentwickler aus Lübeck – wer steckt hinter{' '}
+              Softwareentwickler aus Lübeck: Wer steckt hinter{' '}
               <Box component="span" sx={{ color: 'primary.main' }}>Arkvyn</Box>
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
@@ -49,13 +49,13 @@ export default function UeberMich() {
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
               Mit <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>Arkvyn</Box> verfolge ich ein klares Ziel:
               komplexe technische Herausforderungen in einfache, elegante Lösungen
-              zu verwandeln – von der Architektur über APIs bis zur Benutzeroberfläche.
+              zu verwandeln von der Architektur über APIs bis zur Benutzeroberfläche.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.5 }}>
               Mein Stack reicht von React & TypeScript im Frontend über Node.js,
               Java, Go und Python im Backend bis zu PostgreSQL, MongoDB und
               Cloud-Infrastruktur mit Docker & Hetzner. Ich unterstütze Start-ups und Unternehmen
-              bei Entwicklung, Automatisierung und IT-Beratung – remote in ganz Deutschland sowie
+              bei Entwicklung, Automatisierung und IT-Beratung remote in ganz Deutschland sowie
               auf Wunsch vor Ort in Lübeck und Hamburg.
             </Typography>
 
@@ -114,7 +114,7 @@ export default function UeberMich() {
                 Profil
               </Typography>
               <Typography variant="h3" sx={{ fontSize: '1.25rem', color: 'text.primary', fontWeight: 700 }}>
-                Tim Tolk — Software Developer
+                Tim Tolk Software Developer
               </Typography>
             </Box>
 

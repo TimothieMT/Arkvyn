@@ -26,7 +26,7 @@ const referenzen = [
     branche: 'IT-Beratung · Hamburg',
     zeitraum: 'seit 2026',
     title: 'KI-Produkt von der Architektur bis zum MVP',
-    desc: 'Konzeption der Softwarearchitektur und Entwicklung eines LLM-basierten KI-Produkts als Senior Developer für ein Hamburger IT-Beratungsunternehmen – von der Systemarchitektur über die Kernfunktionalitäten bis zu Code-Reviews und Qualitätssicherung.',
+    desc: 'Konzeption der Softwarearchitektur und Entwicklung eines LLM-basierten KI-Produkts als Senior Developer für ein Hamburger IT-Beratungsunternehmen von der Systemarchitektur über die Kernfunktionalitäten bis zu Code-Reviews und Qualitätssicherung.',
     stack: ['AI/LLM', 'Softwarearchitektur', 'Full-Stack'],
   },
 ]
@@ -130,7 +130,7 @@ export default function Referenzen() {
                 {z.text}
               </Typography>
               <Typography component="cite" sx={{ fontSize: '0.8rem', color: 'text.secondary', fontStyle: 'normal' }}>
-                — {z.quelle}
+                - {z.quelle}
               </Typography>
             </Box>
           ))}

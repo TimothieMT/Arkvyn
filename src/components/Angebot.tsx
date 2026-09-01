@@ -9,43 +9,43 @@ const services: { num: string; title: string; desc: string; to?: string }[] = [
   {
     num: '01',
     title: 'Webdesign & Webentwicklung',
-    desc: 'Professionelles Webdesign und Webentwicklung für Unternehmen in ganz Deutschland – von der modernen Landingpage bis zur komplexen Webanwendung.',
+    desc: 'Ich entwickle Websites, die zu Ihrem Angebot passen von der klaren Landingpage bis zur umfangreichen Webanwendung.',
     to: '/webdesign',
   },
   {
     num: '02',
     title: 'Full-Stack-Entwicklung',
-    desc: 'Moderne Webanwendungen mit React, TypeScript und Node.js, von responsiven Frontends bis zu skalierbaren REST-APIs und Backend-Services.',
+    desc: 'Webanwendungen mit React, TypeScript und Node.js vom Frontend bis zur API und zum Backend.',
     to: '/full-stack-entwicklung',
   },
   {
     num: '03',
     title: 'Backend & Datenarchitektur',
-    desc: 'Robuste Backend-Systeme mit Java, Go, Python oder Node.js, inklusive Datenbankdesign (PostgreSQL, MongoDB) und ETL-Pipelines.',
+    desc: 'Saubere Backend-Systeme mit Java, Go, Python oder Node.js, inklusive Datenbanken und Datenpipelines.',
     to: '/backend-entwicklung',
   },
   {
     num: '04',
     title: 'KI & Automatisierung',
-    desc: 'Integration von LLMs in Backend und Frontend, automatisierte Workflows, Datenextraktion und intelligente Matching-Systeme.',
+    desc: 'Ich integriere Sprachmodelle in bestehende Anwendungen und automatisiere Abläufe, Datenextraktion und Matching.',
     to: '/ki-integration',
   },
   {
     num: '05',
     title: 'API-Integration',
-    desc: 'Anbindung komplexer Drittanbieter-Systeme wie Shopify, Weclapp, Billbee, Keycloak, Mailjet, Google und mehr.',
+    desc: 'Ich verbinde Ihre Systeme zum Beispiel Shopify, Weclapp, Billbee, Keycloak, Mailjet oder Google.',
     to: '/api-integration',
   },
   {
     num: '06',
     title: 'DevOps & Infrastruktur',
-    desc: 'Deployment und Hosting mit Docker, Kubernetes und Hetzner, CI/CD mit GitLab, TeamCity und Bitbucket.',
+    desc: 'Ich kümmere mich um Deployment und Hosting mit Docker, Kubernetes und Hetzner sowie um Ihre CI/CD-Pipeline.',
     to: '/devops-infrastruktur',
   },
   {
     num: '07',
     title: 'IT-Beratung',
-    desc: 'Strategische Beratung für Digitalisierungsprojekte von der Konzeption bis zur erfolgreichen Umsetzung.',
+    desc: 'Praktische IT-Beratung von der ersten Idee bis zur technischen Umsetzung.',
     to: '/it-beratung',
   },
 ]
@@ -58,11 +58,11 @@ export default function Angebot() {
           Leistungen
         </Typography>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 1.5 }}>
-          Webentwicklung, Apps & KI – was ich für Sie{' '}
+          Webentwicklung, Apps & KI was ich für Sie{' '}
           <Box component="span" sx={{ color: 'primary.main' }}>entwickle</Box>
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>
-          Individuelle Lösungen für Ihre digitalen Herausforderungen von der Idee bis zur Umsetzung.
+          Sie erzählen mir, was Sie vorhaben. Gemeinsam klären wir, was sinnvoll ist und wie ich es umsetze.
         </Typography>
       </Container>
 
@@ -125,7 +125,7 @@ export default function Angebot() {
                 {service.to ? (
                   <Typography sx={{ mt: 1.5, fontSize: '0.875rem', fontWeight: 600 }}>
                     <Link to={service.to} style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32 }}>
-                      Mehr erfahren →
+                      Mehr erfahren
                     </Link>
                   </Typography>
                 ) : null}

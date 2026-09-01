@@ -9,8 +9,8 @@ export default function Impressum() {
   return (
     <>
     <Seo
-      title="Impressum – Arkvyn | Tim Tolk, Lübeck"
-      description="Impressum von Arkvyn – Angaben gemäß § 5 DDG. Inhaber: Tim Tolk, Softwareentwickler aus Lübeck."
+      title="Impressum Arkvyn | Tim Tolk, Lübeck"
+      description="Impressum von Arkvyn. Angaben gemäß § 5 DDG. Inhaber: Tim Tolk, Softwareentwickler aus Lübeck."
       canonical="https://arkvyn.de/impressum"
       robots="noindex, follow"
       social={false}
@@ -23,7 +23,7 @@ export default function Impressum() {
           <h2>Angaben gemäß § 5 DDG</h2>
           <address>
             <p><strong>Tim Tolk</strong></p>
-            <p>Arkvyn – Softwareentwicklung</p>
+            <p>Arkvyn - Softwareentwicklung</p>
             <p>Krummer Weg 30</p>
             <p>23569 Lübeck</p>
           </address>
@@ -50,8 +50,8 @@ export default function Impressum() {
 
           <h3>Haftung für Links</h3>
           <p>
-            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-            Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr
+            Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen
+            Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr
             übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
             Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
             Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum
@@ -71,7 +71,7 @@ export default function Impressum() {
         <section className="legal-section">
           <h2>Streitschlichtung</h2>
           <p>
-            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+            Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
             Verbraucherschlichtungsstelle teilzunehmen.
           </p>
         </section>

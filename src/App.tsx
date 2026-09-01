@@ -29,15 +29,15 @@ const DevopsInfrastruktur = lazy(() => import('./components/services/DevopsInfra
 const ApiIntegration = lazy(() => import('./components/services/ApiIntegration'))
 const ItBeratung = lazy(() => import('./components/services/ItBeratung'))
 
-const homeTitle = 'Webentwicklung & Webdesign | Arkvyn – Tim Tolk, Lübeck'
-const homeDescription = 'Individuelle Websites, Webanwendungen, KI-Integration und IT-Beratung von Tim Tolk in Lübeck – deutschlandweit remote. Kostenloses Erstgespräch.'
+const homeTitle = 'Webentwicklung & Webdesign | Arkvyn - Tim Tolk, Lübeck'
+const homeDescription = 'Individuelle Websites, Webanwendungen, KI-Integration und IT-Beratung von Tim Tolk in Lübeck. Deutschlandweit remote. Kostenloses Erstgespräch.'
 
 const homeSchemas: Record<string, unknown>[] = [
   {
     '@context': 'https://schema.org',
     '@type': ['ProfessionalService', 'LocalBusiness'],
     name: 'Arkvyn',
-    description: 'Individuelle Webentwicklung, KI-Integration, DevOps und IT-Beratung aus Lübeck – deutschlandweit remote.',
+    description: 'Individuelle Webentwicklung, KI-Integration, DevOps und IT-Beratung aus Lübeck. Deutschlandweit remote.',
     url: 'https://arkvyn.de',
     logo: 'https://arkvyn.de/logo.png',
     image: 'https://arkvyn.de/og-image.png',
@@ -164,7 +164,7 @@ function App() {
         <RouteFocusManager />
         <a className="skip-link" href="#main">Zum Inhalt springen</a>
         <Navbar scrollTo={scrollTo} />
-        <Suspense fallback={<div className="route-loading" role="status">Seite wird geladen…</div>}>
+        <Suspense fallback={<div className="route-loading" role="status">Seite wird geladen...</div>}>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/webdesign" element={<Webdesign />} />

@@ -8,7 +8,7 @@ import Seo from './Seo'
 export default function NotFound() {
   return (
     <>
-      <Seo title="Seite nicht gefunden – Arkvyn" robots="noindex, nofollow" social={false} />
+      <Seo title="Seite nicht gefunden Arkvyn" robots="noindex, nofollow" social={false} />
       <Box
         component="main"
         id="main"

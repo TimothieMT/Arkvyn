@@ -58,7 +58,7 @@ export default function Footer({ scrollTo }: FooterProps) {
               href="/#home"
               onClick={e => handleNav(e, 'home')}
               style={{ display: 'inline-flex', marginBottom: 16 }}
-              aria-label="Arkvyn – Startseite"
+              aria-label="Arkvyn Startseite"
             >
               <img src={logo} alt="Arkvyn Logo" width={135} height={36} style={{ height: 36, width: 'auto', opacity: 0.6 }} />
             </a>
@@ -68,7 +68,7 @@ export default function Footer({ scrollTo }: FooterProps) {
               Think / Build / Deliver
             </Typography>
             <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', mt: 1 }}>
-              Webentwickler &amp; IT-Freelancer aus Lübeck –<br />
+              Webentwickler &amp; IT-Freelancer aus Lübeck<br />
               remote in ganz Deutschland tätig
             </Typography>
           </Box>
