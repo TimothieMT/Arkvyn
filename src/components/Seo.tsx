@@ -38,7 +38,7 @@ export default function Seo({
       {showSocial ? <meta property="og:image" content={SOCIAL_IMAGE} /> : null}
       {showSocial ? <meta property="og:image:width" content="1200" /> : null}
       {showSocial ? <meta property="og:image:height" content="630" /> : null}
-      {showSocial ? <meta property="og:image:alt" content={`${title} – Arkvyn`} /> : null}
+      {showSocial ? <meta property="og:image:alt" content={`${title} Arkvyn`} /> : null}
       {showSocial ? <meta property="og:locale" content="de_DE" /> : null}
       {showSocial ? <meta property="og:site_name" content="Arkvyn" /> : null}
 

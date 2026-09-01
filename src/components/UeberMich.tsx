@@ -23,7 +23,7 @@ const credentials = [
 
 export default function UeberMich() {
   return (
-    <Box component="section" id="ueber-mich" className="section section--ueber-mich" aria-label="Über Tim Tolk – Arkvyn">
+    <Box component="section" id="ueber-mich" className="section section--ueber-mich" aria-label="Über Tim Tolk Arkvyn">
       <Container maxWidth="lg">
         <Box
           sx={{

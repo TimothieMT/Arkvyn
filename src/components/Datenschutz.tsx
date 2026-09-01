@@ -9,7 +9,7 @@ export default function Datenschutz() {
   return (
     <>
     <Seo
-      title="Datenschutzerklärung – Arkvyn | Tim Tolk"
+      title="Datenschutzerklärung Arkvyn | Tim Tolk"
       description="Datenschutzerklärung von Arkvyn Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO."
       canonical="https://arkvyn.de/datenschutz"
       robots="noindex, follow"
@@ -115,7 +115,7 @@ export default function Datenschutz() {
           <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
           <address>
             <p>Tim Tolk</p>
-            <p>Arkvyn – Softwareentwicklung</p>
+            <p>Arkvyn Softwareentwicklung</p>
             <p>Krummer Weg 30</p>
             <p>23569 Lübeck</p>
             <p>Telefon: +49 (0) 176 46143387</p>
@@ -163,7 +163,7 @@ export default function Datenschutz() {
             Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei mir, bis Sie mich zur
             Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die
             Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende
-            gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+            gesetzliche Bestimmungen insbesondere Aufbewahrungsfristen bleiben unberührt.
           </p>
 
           <h3>E-Mail-Versand über Google (Gmail)</h3>
@@ -197,7 +197,7 @@ export default function Datenschutz() {
             Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die
             Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der
             Ich habe ein berechtigtes Interesse an der technisch fehlerfreien Darstellung
-            und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.
+            und der Optimierung seiner Website hierzu müssen die Server-Log-Files erfasst werden.
           </p>
         </section>
 

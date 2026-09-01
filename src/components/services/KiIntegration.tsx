@@ -28,7 +28,7 @@ export default function KiIntegration() {
         {
           h2: 'Typische Anwendungsfälle im Mittelstand',
           paragraphs: [
-            'Die wertvollsten KI-Projekte sind selten spektakulär – sie sparen schlicht jede Woche Stunden an Routinearbeit:',
+            'Die wertvollsten KI-Projekte sind selten spektakulär sie sparen schlicht jede Woche Stunden an Routinearbeit:',
           ],
           bullets: [
             'Dokumentenanalyse: Rechnungen, Verträge oder Formulare automatisch auslesen und in Ihre Systeme übertragen',

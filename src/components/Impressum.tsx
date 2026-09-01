@@ -23,7 +23,7 @@ export default function Impressum() {
           <h2>Angaben gemäß § 5 DDG</h2>
           <address>
             <p><strong>Tim Tolk</strong></p>
-            <p>Arkvyn - Softwareentwicklung</p>
+            <p>Arkvyn Softwareentwicklung</p>
             <p>Krummer Weg 30</p>
             <p>23569 Lübeck</p>
           </address>

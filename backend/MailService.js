@@ -126,7 +126,7 @@ app.post('/api/contact', contactRateLimit, async (req, res) => {
     from: `Arkvyn Kontakt <${process.env.GMAIL_USER}>`,
     replyTo: cEmail,
     to: 'arkvyn.solutions@proton.me',
-    subject: `[Arkvyn] ${cBetreff} – von ${cName}`,
+    subject: `[Arkvyn] ${cBetreff} von ${cName}`,
     text: `Name: ${cName}\nEmail: ${cEmail}\nBetreff: ${cBetreff}\n\nNachricht:\n${cMessage}`,
     html: `
       <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5;">

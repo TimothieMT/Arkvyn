@@ -46,7 +46,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
             href="/#home"
             onClick={e => handleNav(e, 'home')}
             style={{ display: 'flex', alignItems: 'center' }}
-            aria-label="Arkvyn – Startseite"
+            aria-label="Arkvyn Startseite"
           >
             <img src={logo} alt="Arkvyn Logo" width={195} height={52} style={{ height: 52, width: 'auto' }} />
           </a>

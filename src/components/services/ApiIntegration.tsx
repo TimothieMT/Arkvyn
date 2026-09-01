@@ -8,7 +8,7 @@ export default function ApiIntegration() {
       metaDescription="API-Integration vom Entwickler: Shopify, Weclapp, Billbee, Keycloak, Mailjet, Google und mehr. Zuverlässige Anbindung komplexer Drittsysteme für Unternehmen deutschlandweit remote."
       canonical="https://arkvyn.de/api-integration"
       eyebrow="API-Integration"
-      h1={<>API-Integration - Ihre Systeme <Box component="span" sx={{ color: 'primary.main' }}>sprechen miteinander</Box></>}
+      h1={<>API-Integration Ihre Systeme <Box component="span" sx={{ color: 'primary.main' }}>sprechen miteinander</Box></>}
       intro="Moderne Unternehmens-IT besteht aus Dutzenden von Diensten: ein Shopsystem hier, eine Warenwirtschaft dort, ein CRM, eine Buchhaltung. Ich verbinde diese Systeme über Schnittstellen so dass Daten automatisch fließen, statt manuell übertragen zu werden."
       serviceName="API-Integration & Drittanbieter-Anbindung"
       serviceDescription="API-Integration für Unternehmen: Anbindung von Shopify, Weclapp, Billbee, Keycloak, Mailjet, Google und weiteren Drittsystemen zuverlässig, wartbar und dokumentiert. Deutschlandweit."

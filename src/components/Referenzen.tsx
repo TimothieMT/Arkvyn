@@ -6,18 +6,18 @@ import CardContent from '@mui/material/CardContent'
 import Chip from '@mui/material/Chip'
 import Divider from '@mui/material/Divider'
 
-// Anonymisierte Referenzen aus Festanstellungen – bewusst ohne Firmennamen
+// Anonymisierte Referenzen aus Festanstellungen bewusst ohne Firmennamen
 const referenzen = [
   {
     branche: 'Logistik-Software',
-    zeitraum: '2025 – 2026',
+    zeitraum: '2025 2026',
     title: 'Cloudbasiertes Lagerverwaltungssystem',
     desc: 'Weiterentwicklung eines cloudbasierten Lagerverwaltungssystems für ein Software-Unternehmen der Logistikbranche: Konzeption neuer Technologie-Anforderungen für den Cloud-Einsatz, Performance-Optimierung, kundenspezifische Erweiterungen und Automatisierung der Deployments.',
     stack: ['Java', 'PHP', 'Cloud', 'CI/CD'],
   },
   {
     branche: 'Online-Marketing & E-Commerce',
-    zeitraum: '2023 – 2024',
+    zeitraum: '2023 2024',
     title: 'Softwarelösungen für eine Full-Service-Internetagentur',
     desc: 'Entwicklung eigener Softwarelösungen für eine der großen Internetagenturen im deutschsprachigen Raum (über 200 Mitarbeiter, mehr als 750 Kunden): grafische Frontend-Umsetzungen, API-Schnittstellen zu Drittsystemen sowie Programmierung von Crawlern und Scrapern.',
     stack: ['JavaScript', 'Frontend', 'PHP', 'REST-APIs'],
@@ -54,7 +54,7 @@ export default function Referenzen() {
           <Box component="span" sx={{ color: 'primary.main' }}>Praxis</Box>
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 560, mx: 'auto' }}>
-          Ausgewählte Projekte aus Festanstellungen und freier Arbeit –
+          Ausgewählte Projekte aus Festanstellungen und freier Arbeit
           aus Vertraulichkeitsgründen ohne Nennung der Unternehmen.
         </Typography>
       </Container>
@@ -130,7 +130,7 @@ export default function Referenzen() {
                 {z.text}
               </Typography>
               <Typography component="cite" sx={{ fontSize: '0.8rem', color: 'text.secondary', fontStyle: 'normal' }}>
-                - {z.quelle}
+                {z.quelle}
               </Typography>
             </Box>
           ))}

@@ -4,7 +4,7 @@ import ServicePage from './ServicePage'
 export default function Webdesign() {
   return (
     <ServicePage
-      metaTitle="Webdesign & Webentwicklung - modern, schnell, SEO-stark | Arkvyn"
+      metaTitle="Webdesign & Webentwicklung modern, schnell, SEO-stark | Arkvyn"
       metaDescription="Professionelles Webdesign vom Entwickler: individuelle Websites mit React & TypeScript statt Baukasten. Schnelle Ladezeiten, SEO-Grundlagen, responsives Design. Deutschlandweit remote, vor Ort in Lübeck & Hamburg."
       canonical="https://arkvyn.de/webdesign"
       eyebrow="Webdesign & Webentwicklung"

@@ -4,7 +4,7 @@ import ServicePage from './ServicePage'
 export default function DevopsInfrastruktur() {
   return (
     <ServicePage
-      metaTitle="DevOps & Infrastruktur - Docker, Kubernetes, CI/CD | Arkvyn"
+      metaTitle="DevOps & Infrastruktur Docker, Kubernetes, CI/CD | Arkvyn"
       metaDescription="DevOps und Infrastruktur vom Freelancer: Docker, Kubernetes, CI/CD-Pipelines mit GitLab und Hetzner-Hosting. Zuverlässige Deployments und automatisierte Workflows für Entwicklungsteams deutschlandweit."
       canonical="https://arkvyn.de/devops-infrastruktur"
       eyebrow="DevOps & Infrastruktur"
@@ -38,7 +38,7 @@ export default function DevopsInfrastruktur() {
           ],
         },
         {
-          h2: 'Hosting in Deutschland – DSGVO-konform und kosteneffizient',
+          h2: 'Hosting in Deutschland DSGVO-konform und kosteneffizient',
           paragraphs: [
             'Ich empfehle und betreibe primär Infrastruktur auf Hetzner Cloud einem deutschen Anbieter mit Rechenzentren in Nürnberg, Falkenstein und Helsinki. Das bedeutet: niedrige Latenz für deutsche Nutzer, DSGVO-konforme Datenhaltung innerhalb der EU und ein Bruchteil der Kosten im Vergleich zu AWS oder Azure bei vergleichbarer Leistung.',
             'Für Projekte mit internationaler Nutzung oder spezifischen Cloud-Anforderungen (S3, CDN, Serverless) integriere ich entsprechende AWS- oder Cloudflare-Dienste gezielt.',
@@ -48,7 +48,7 @@ export default function DevopsInfrastruktur() {
           h2: 'Praxisbeispiel: Deployment dieser Website',
           paragraphs: [
             'Diese Website selbst läuft auf einem Hetzner VPS: Nginx als Reverse Proxy, PM2 für den Node.js-Backend-Prozess, automatisiertes Deployment per Shell-Script aus dem Git-Repository. Klein, aber ein gutes Beispiel dafür, wie auch einfache Setups sauber und reproduzierbar sein können.',
-            'Für komplexere Systeme mehrere Services, mehrere Umgebungen (Dev/Staging/Prod), Skalierungsanforderungen – baue ich entsprechend robustere Infrastrukturen auf Basis von Kubernetes oder Docker Compose.',
+            'Für komplexere Systeme mehrere Services, mehrere Umgebungen (Dev/Staging/Prod), Skalierungsanforderungen baue ich entsprechend robustere Infrastrukturen auf Basis von Kubernetes oder Docker Compose.',
           ],
         },
       ]}

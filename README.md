@@ -1,6 +1,6 @@
 # Arkvyn
 
-Persönliche Website von Arkvyn – gebaut mit **React + TypeScript + Vite** (Frontend) und **Node.js + Express** (Backend/Mail-Service).
+Persönliche Website von Arkvyn gebaut mit **React + TypeScript + Vite** (Frontend) und **Node.js + Express** (Backend/Mail-Service).
 
 ---
 
@@ -73,7 +73,7 @@ cd backend && node MailService.js
 npm run dev
 ```
 
-Der Frontend-Dev-Server erwartet das Backend unter `http://localhost:5173` – CORS ist dafür bereits konfiguriert.
+Der Frontend-Dev-Server erwartet das Backend unter `http://localhost:5173` CORS ist dafür bereits konfiguriert.
 
 ---
 
@@ -108,12 +108,12 @@ bash deploy.sh
 ```
 
 Das Skript führt automatisch folgende Schritte aus:
-1. `git pull` – aktuellen Code vom Repository holen
-2. `npm ci` – Frontend-Abhängigkeiten installieren
-3. `npm run build` – TypeScript kompilieren & Vite-Build erstellen
-4. `npm ci --omit=dev` – Backend-Abhängigkeiten installieren
+1. `git pull` aktuellen Code vom Repository holen
+2. `npm ci` Frontend-Abhängigkeiten installieren
+3. `npm run build` TypeScript kompilieren & Vite-Build erstellen
+4. `npm ci --omit=dev` Backend-Abhängigkeiten installieren
 5. PM2 Backend neustarten (`pm2 startOrRestart`)
-6. `sudo systemctl reload nginx` – Nginx neu laden
+6. `sudo systemctl reload nginx` Nginx neu laden
 
 ### Nützliche Server-Befehle
 

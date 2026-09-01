@@ -29,7 +29,7 @@ const DevopsInfrastruktur = lazy(() => import('./components/services/DevopsInfra
 const ApiIntegration = lazy(() => import('./components/services/ApiIntegration'))
 const ItBeratung = lazy(() => import('./components/services/ItBeratung'))
 
-const homeTitle = 'Webentwicklung & Webdesign | Arkvyn - Tim Tolk, Lübeck'
+const homeTitle = 'Webentwicklung & Webdesign | Arkvyn Tim Tolk, Lübeck'
 const homeDescription = 'Individuelle Websites, Webanwendungen, KI-Integration und IT-Beratung von Tim Tolk in Lübeck. Deutschlandweit remote. Kostenloses Erstgespräch.'
 
 const homeSchemas: Record<string, unknown>[] = [

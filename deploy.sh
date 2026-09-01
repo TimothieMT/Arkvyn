@@ -1,5 +1,5 @@
 #!/bin/bash
-# deploy.sh – Wird auf dem Hetzner Server ausgeführt
+# deploy.sh  Wird auf dem Hetzner Server ausgeführt
 # Einmalig ausführbar machen: chmod +x deploy.sh
 
 set -e
@@ -43,7 +43,7 @@ pm2 list
 
 echo "==> Backend Health-Check..."
 sleep 2
-curl -sf http://127.0.0.1:3001/api/health && echo " ✅ Backend erreichbar" || echo " ❌ Backend NICHT erreichbar – prüfe: pm2 logs arkvyn-backend"
+curl -sf http://127.0.0.1:3001/api/health && echo " ✅ Backend erreichbar" || echo " ❌ Backend NICHT erreichbar  prüfe: pm2 logs arkvyn-backend"
 
 echo "==> Nginx neu laden..."
 sudo systemctl reload nginx
