@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function KiIntegration() {
@@ -8,7 +7,7 @@ export default function KiIntegration() {
       metaDescription="KI-Integration vom Entwickler: LLMs in bestehende Systeme integrieren, Workflows automatisieren, Dokumente auswerten. Von der Beratung über den Prototyp bis zum fertigen KI-Produkt deutschlandweit."
       canonical="https://arkvyn.de/ki-integration"
       eyebrow="KI & Automatisierung"
-      h1={<>KI-Integration, die im Alltag <Box component="span" sx={{ color: 'primary.main' }}>wirklich arbeitet</Box></>}
+      h1={<>KI-Integration, die im Alltag <span className="text-soft">wirklich arbeitet</span></>}
       intro="Sprachmodelle wie GPT oder Claude können Texte verstehen, Daten extrahieren und Routineaufgaben übernehmen wenn man sie richtig in Ihre Systeme integriert. Genau das ist mein Spezialgebiet: KI-Funktionen, die in Ihren bestehenden Abläufen echten Nutzen stiften, statt als Spielerei zu enden."
       serviceName="KI-Integration & LLM-Entwicklung"
       serviceDescription="Integration von Large Language Models (LLMs) in Unternehmens-Software: Workflow-Automatisierung, Dokumentenanalyse, Chatbots und KI-Produktentwicklung von der Architektur bis zum MVP. Deutschlandweit."

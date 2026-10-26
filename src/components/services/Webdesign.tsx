@@ -1,14 +1,13 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function Webdesign() {
   return (
     <ServicePage
       metaTitle="Webdesign & Webentwicklung modern, schnell, SEO-stark | Arkvyn"
-      metaDescription="Professionelles Webdesign vom Entwickler: individuelle Websites mit React & TypeScript statt Baukasten. Schnelle Ladezeiten, SEO-Grundlagen, responsives Design. Deutschlandweit remote, vor Ort in Lübeck & Hamburg."
+      metaDescription="Professionelles Webdesign vom Entwickler: individuelle Websites mit React & TypeScript statt Baukasten. Schnelle Ladezeiten, SEO-Grundlagen, responsives Design. Deutschlandweit remote, vor Ort in Lübeck, Hamburg & Kiel."
       canonical="https://arkvyn.de/webdesign"
       eyebrow="Webdesign & Webentwicklung"
-      h1={<>Webdesign, das <Box component="span" sx={{ color: 'primary.main' }}>verkauft</Box>, nicht nur gut aussieht</>}
+      h1={<>Webdesign, das <span className="text-soft">verkauft</span>, nicht nur gut aussieht</>}
       intro="Eine Website ist Ihr wichtigster Vertriebsmitarbeiter: rund um die Uhr erreichbar, deutschlandweit sichtbar. Ich entwickle individuelle Websites mit moderner Technik handgeschrieben statt aus dem Baukasten, mit Fokus auf Ladezeit, Suchmaschinen und Nutzerführung."
       serviceName="Webdesign & Webentwicklung"
       serviceDescription="Individuelles Webdesign und Webentwicklung mit React und TypeScript responsive Websites mit schnellen Ladezeiten und SEO-Grundlagen für Unternehmen in ganz Deutschland."
@@ -49,7 +48,7 @@ export default function Webdesign() {
         {
           h2: 'So läuft Ihr Webdesign-Projekt ab',
           paragraphs: [
-            'Der Ablauf ist bewusst schlank und funktioniert vollständig remote deutschlandweit. Auf Wunsch treffe ich Sie persönlich in Lübeck oder Hamburg.',
+            'Der Ablauf ist bewusst schlank und funktioniert vollständig remote deutschlandweit. Auf Wunsch treffe ich Sie persönlich in Lübeck, Hamburg oder Kiel.',
           ],
           bullets: [
             'Kostenloses Erstgespräch: Ziele, Zielgruppe und Umfang klären',

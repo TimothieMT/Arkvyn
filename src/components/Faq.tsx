@@ -1,69 +1,54 @@
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Accordion from '@mui/material/Accordion'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import AccordionDetails from '@mui/material/AccordionDetails'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import Divider from '@mui/material/Divider'
+import { useState } from 'react'
+import Section from './ui/Section'
 import { faqs } from '../faqData'
 
 // Das FAQPage-Schema wird in App.tsx direkt aus diesen sichtbaren Inhalten erzeugt.
 
 export default function Faq() {
-  return (
-    <Box component="section" id="faq" className="section section--faq" aria-label="Häufige Fragen">
-      <Container maxWidth="lg" sx={{ mb: 6, textAlign: 'center' }}>
-        <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 1.5 }}>
-          FAQ
-        </Typography>
-        <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 1.5 }}>
-          Häufige{' '}
-          <Box component="span" sx={{ color: 'primary.main' }}>Fragen</Box>
-        </Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>
-          Antworten auf die häufigsten Fragen zu Webentwicklung, Preisen und Zusammenarbeit.
-        </Typography>
-      </Container>
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
-      <Container maxWidth="md">
-        <Box
-          sx={{
-            border: '1px solid #c7c7cc',
-            borderRadius: 2,
-            overflow: 'hidden',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 6px 20px rgba(0,0,0,0.07)',
-          }}
-        >
-          {faqs.map((faq, i) => (
-            <Accordion
-              key={faq.q}
-              disableGutters
-              elevation={0}
-              sx={{
-                bgcolor: 'background.paper',
-                '&:before': { display: 'none' },
-                borderBottom: i < faqs.length - 1 ? '1px solid #e5e5ea' : 'none',
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: 'primary.main' }} />}
-                sx={{ px: 3, py: 0.5, '&:hover': { bgcolor: '#f5f5f7' } }}
-              >
-                <Typography variant="h3" component="span" sx={{ fontSize: '1rem', fontWeight: 600, color: 'text.primary' }}>
-                  {faq.q}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails sx={{ px: 3, pt: 0, pb: 2.5 }}>
-                <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8, textAlign: 'left' }}>
-                  {faq.a}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          ))}
-        </Box>
-      </Container>
-      <Divider sx={{ mt: 10 }} />
-    </Box>
+  return (
+    <Section id="faq" surface="grey" aria-labelledby="faq-heading">
+      <div className="split">
+        <header className="split__side">
+          <p className="eyebrow" data-reveal="fade">FAQ</p>
+          <h2 id="faq-heading" data-reveal="blur">Häufige Fragen</h2>
+          <p className="split__lead" data-reveal="fade">
+            Antworten auf die häufigsten Fragen zu Webentwicklung, Preisen und Zusammenarbeit.
+          </p>
+        </header>
+
+        <div className="split__main faq">
+          {faqs.map((faq, i) => {
+            const open = openIndex === i
+            const id = `faq-${i}`
+            return (
+              <div key={faq.q} className="faq__item" data-open={open || undefined} data-reveal="lift">
+                <h3>
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    aria-controls={`${id}-panel`}
+                    id={`${id}-button`}
+                    onClick={() => setOpenIndex(open ? null : i)}
+                  >
+                    {faq.q}
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                      <path d="m7 10 5 5 5-5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                </h3>
+                {/* Antworten bleiben im DOM (auch prerendered), werden nur visuell eingeklappt. */}
+                <div id={`${id}-panel`} role="region" aria-labelledby={`${id}-button`} className="faq__panel" inert={!open}>
+                  <div>
+                    <p>{faq.a}</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </Section>
   )
 }

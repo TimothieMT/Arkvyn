@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function DevopsInfrastruktur() {
@@ -8,7 +7,7 @@ export default function DevopsInfrastruktur() {
       metaDescription="DevOps und Infrastruktur vom Freelancer: Docker, Kubernetes, CI/CD-Pipelines mit GitLab und Hetzner-Hosting. Zuverlässige Deployments und automatisierte Workflows für Entwicklungsteams deutschlandweit."
       canonical="https://arkvyn.de/devops-infrastruktur"
       eyebrow="DevOps & Infrastruktur"
-      h1={<>DevOps & Infrastruktur: <Box component="span" sx={{ color: 'primary.main' }}>zuverlässige Deployments</Box> und automatisierte Pipelines</>}
+      h1={<>DevOps & Infrastruktur: <span className="text-soft">zuverlässige Deployments</span> und automatisierte Pipelines</>}
       intro="Code, der nie deployed wird, schafft keinen Wert. Ich sorge dafür, dass Ihre Software zuverlässig, wiederholbar und sicher in Betrieb geht mit Docker-Containern, automatisierten CI/CD-Pipelines und einer Infrastruktur, die unter Last stabil bleibt."
       serviceName="DevOps & Infrastruktur"
       serviceDescription="DevOps-Beratung und Umsetzung: Docker, Kubernetes, CI/CD-Pipelines mit GitLab und TeamCity, Hosting auf Hetzner und AWS für Entwicklungsteams und Unternehmen deutschlandweit."

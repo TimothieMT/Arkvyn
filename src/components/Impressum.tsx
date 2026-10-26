@@ -31,7 +31,7 @@ export default function Impressum() {
 
         <section className="legal-section">
           <h2>Kontakt</h2>
-          <p>Telefon: <a href="tel:+4917646143387">+49 (0) 176 46143387</a></p>
+          <p>Telefon: <a href="tel:+4915567829726">+49 (0) 155 67829726</a></p>
           <p>E-Mail: <a href="mailto:arkvyn.solutions@proton.me">arkvyn.solutions@proton.me</a></p>
           <p>Website: <a href="https://arkvyn.de">arkvyn.de</a></p>
         </section>

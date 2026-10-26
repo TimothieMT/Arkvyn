@@ -5,7 +5,7 @@ export const faqs = [
   },
   {
     q: 'Welche Leistungen bietet Arkvyn?',
-    a: 'Ich entwickle Websites und Web-Apps, baue Backends und APIs, integriere KI und unterstütze bei DevOps sowie IT-Entscheidungen. Ich arbeite remote in ganz Deutschland und persönlich in Lübeck und Hamburg.',
+    a: 'Ich entwickle Websites und Web-Apps, baue Backends und APIs, integriere KI und unterstütze bei DevOps sowie IT-Entscheidungen. Ich arbeite remote in ganz Deutschland und persönlich in Lübeck, Hamburg und Kiel.',
   },
   {
     q: 'Entwickelt Arkvyn auch Apps?',
@@ -13,7 +13,7 @@ export const faqs = [
   },
   {
     q: 'Arbeitet Arkvyn auch remote und deutschlandweit?',
-    a: 'Ja. Ich arbeite remote in ganz Deutschland und treffe Kunden auf Wunsch persönlich in Lübeck, Hamburg und Schleswig-Holstein.',
+    a: 'Ja. Ich arbeite remote in ganz Deutschland und treffe Kunden auf Wunsch persönlich in Lübeck, Hamburg, Kiel und Schleswig-Holstein.',
   },
   {
     q: 'Wie finde ich einen guten Softwareentwickler in Lübeck?',

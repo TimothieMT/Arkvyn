@@ -1,14 +1,13 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function BackendEntwicklung() {
   return (
     <ServicePage
       metaTitle="Backend-Entwicklung & Datenarchitektur | Arkvyn Tim Tolk"
-      metaDescription="Robuste Backend-Systeme mit Java, Go und Node.js Datenbankdesign, REST-APIs, ETL-Pipelines und skalierbare Architekturen vom Freelancer. Deutschlandweit remote, vor Ort in Lübeck & Hamburg."
+      metaDescription="Robuste Backend-Systeme mit Java, Go und Node.js Datenbankdesign, REST-APIs, ETL-Pipelines und skalierbare Architekturen vom Freelancer. Deutschlandweit remote, vor Ort in Lübeck, Hamburg & Kiel."
       canonical="https://arkvyn.de/backend-entwicklung"
       eyebrow="Backend & Datenarchitektur"
-      h1={<>Backend-Entwicklung, die <Box component="span" sx={{ color: 'primary.main' }}>skaliert</Box> von der API bis zur Datenbank</>}
+      h1={<>Backend-Entwicklung, die <span className="text-soft">skaliert</span> von der API bis zur Datenbank</>}
       intro="Die beste Benutzeroberfläche ist nutzlos, wenn das Backend dahinter schwächelt. Ich entwickle robuste Server-Systeme, saubere Datenbankstrukturen und zuverlässige APIs mit dem Fokus auf Wartbarkeit, Leistung und langfristige Erweiterbarkeit."
       serviceName="Backend-Entwicklung & Datenarchitektur"
       serviceDescription="Backend-Entwicklung mit Java, Go, Python und Node.js REST-APIs, Datenbankdesign (PostgreSQL, MongoDB), ETL-Pipelines und skalierbare Architekturen für Unternehmen deutschlandweit."

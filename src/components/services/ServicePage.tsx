@@ -1,10 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
 import Seo from '../Seo'
 
 export interface ServiceSection {
@@ -41,7 +36,7 @@ export default function ServicePage({
     name: serviceName,
     description: serviceDescription,
     url: canonical,
-    areaServed: [{ '@type': 'Country', name: 'Deutschland' }, 'Lübeck', 'Hamburg', 'Schleswig-Holstein'],
+    areaServed: [{ '@type': 'Country', name: 'Deutschland' }, 'Lübeck', 'Hamburg', 'Kiel', 'Schleswig-Holstein'],
     provider: { '@type': 'ProfessionalService', name: 'Arkvyn', url: 'https://arkvyn.de' },
   }
   const breadcrumbLd = {
@@ -62,105 +57,89 @@ export default function ServicePage({
         schemas={[serviceLd, breadcrumbLd]}
       />
 
-      <Box component="main" id="main" sx={{ pt: '72px' }}>
+      <main id="main" className="page-main">
         {/* Hero */}
-        <Box component="section" sx={{ py: { xs: 8, md: 11 }, textAlign: 'center' }}>
-          <Container maxWidth="md">
-            <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 1.5 }}>
-              {eyebrow}
-            </Typography>
-            <Typography variant="h1" sx={{ fontSize: { xs: '2.25rem', md: '3.25rem' }, color: 'text.primary', mb: 2.5 }}>
-              {h1}
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 640, mx: 'auto', fontSize: '1.0625rem' }}>
-              {intro}
-            </Typography>
-            <Button variant="contained" component="a" href="/#kontakt" sx={{ mt: 4 }}>
-              Kostenloses Erstgespräch
-            </Button>
-          </Container>
-        </Box>
-
-        <Divider />
+        <section className="page-hero surface--light" data-surface="light">
+          <div className="container">
+            <nav className="breadcrumb" aria-label="Brotkrumen">
+              <Link to="/">Startseite</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">{serviceName}</span>
+            </nav>
+            <p className="eyebrow" data-reveal="fade">{eyebrow}</p>
+            <h1 data-reveal="blur">{h1}</h1>
+            <p className="page-hero__intro" data-reveal="fade">{intro}</p>
+            <div className="btn-row" data-reveal="lift">
+              <a href="/#kontakt" className="btn btn--ink">Kostenloses Erstgespräch</a>
+              <a href="/#preise" className="btn btn--ghost">Preise ansehen</a>
+            </div>
+          </div>
+        </section>
 
         {/* Inhalt */}
-        <Container maxWidth="md" sx={{ py: { xs: 6, md: 8 } }}>
-          {sections.map((section, i) => (
-            <Box key={section.h2} component="section" sx={{ mb: i < sections.length - 1 ? 6 : 0 }}>
-              <Typography variant="h2" sx={{ fontSize: { xs: '1.5rem', md: '1.875rem' }, color: 'text.primary', mb: 2 }}>
-                {section.h2}
-              </Typography>
-              {section.paragraphs.map(p => (
-                <Typography key={p.slice(0, 40)} variant="body1" sx={{ color: 'text.secondary', mb: 1.75 }}>
-                  {p}
-                </Typography>
+        <section className="section surface--grey" data-surface="grey" aria-label={`${serviceName} im Detail`}>
+          <div className="container">
+            <div className="article">
+              {sections.map(section => (
+                <section key={section.h2} className="article__block" data-reveal="lift">
+                  <h2>{section.h2}</h2>
+                  <div className="article__body">
+                    {section.paragraphs.map(p => (
+                      <p key={p.slice(0, 40)}>{p}</p>
+                    ))}
+                    {section.bullets ? (
+                      <ul className="check-list">
+                        {section.bullets.map(item => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                </section>
               ))}
-              {section.bullets ? (
-                <Box component="ul" sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 1, p: 0 }}>
-                  {section.bullets.map(item => (
-                    <Box
-                      component="li"
-                      key={item}
-                      sx={{ display: 'flex', gap: 1.5, color: 'text.secondary', lineHeight: 1.6, alignItems: 'flex-start' }}
-                    >
-                      <Box component="span" sx={{ color: 'primary.main', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', mt: '3px' }}>✓</Box>
-                      {item}
-                    </Box>
-                  ))}
-                </Box>
+
+              {priceText ? (
+                <section className="article__block article__block--price" data-reveal="lift">
+                  <h2>Was kostet das?</h2>
+                  <div className="article__body">
+                    <p>
+                      {priceText}{' '}
+                      Alle Pakete und Konditionen finden Sie unter{' '}
+                      <a href="/#preise" className="text-link">Preise &amp; Pakete</a>.
+                    </p>
+                  </div>
+                </section>
               ) : null}
-            </Box>
-          ))}
+            </div>
+          </div>
+        </section>
 
-          {priceText ? (
-            <Box
-              sx={{
-                mt: 6,
-                p: { xs: 3, md: 4 },
-                bgcolor: '#f0f5ff',
-                border: '1px solid #d0d8f0',
-                borderRadius: 2,
-              }}
-            >
-              <Typography variant="h2" sx={{ fontSize: '1.25rem', color: 'text.primary', mb: 1.5 }}>
-                Was kostet das?
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                {priceText}{' '}
-                Alle Pakete und Konditionen finden Sie unter{' '}
-                <Box component="a" href="/#preise" sx={{ fontWeight: 600 }}>Preise &amp; Pakete</Box>.
-              </Typography>
-            </Box>
-          ) : null}
-
-          {/* CTA */}
-          <Box sx={{ textAlign: 'center', mt: 8 }}>
-            <Typography variant="h2" sx={{ fontSize: { xs: '1.5rem', md: '1.875rem' }, color: 'text.primary', mb: 2 }}>
-              Sprechen Sie mit mir über Ihr Projekt
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto', mb: 3 }}>
-              Schildern Sie mir Ihr Vorhaben in einem kostenlosen Erstgespräch.
-              ich melde mich innerhalb von 24 Stunden.
-            </Typography>
-            <Button variant="contained" component="a" href="/#kontakt">
+        {/* CTA */}
+        <section className="section surface--dark" data-surface="dark" aria-labelledby="service-cta">
+          <div className="container cta">
+            <div>
+              <h2 id="service-cta" data-reveal="blur">Sprechen Sie mit mir über Ihr Projekt</h2>
+              <p data-reveal="fade">
+                Schildern Sie mir Ihr Vorhaben in einem kostenlosen Erstgespräch.
+                Ich melde mich innerhalb von 24 Stunden.
+              </p>
+            </div>
+            <a href="/#kontakt" className="btn btn--light" data-reveal="lift">
               Jetzt Kontakt aufnehmen
-            </Button>
-          </Box>
-
-          {/* Weiterführende Leistungen */}
-          <Divider sx={{ my: 6 }} />
-          <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', textTransform: 'uppercase', letterSpacing: '0.1em', mb: 1.5 }}>
-            Weitere Leistungen
-          </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
-            {relatedLinks.map(link => (
-              <Link key={link.to} to={link.to} style={{ fontSize: '0.9375rem', fontWeight: 600 }}>
-                {link.label}
-              </Link>
-            ))}
-          </Box>
-        </Container>
-      </Box>
+            </a>
+          </div>
+          <div className="container related">
+            <h2 className="related__title">Weitere Leistungen</h2>
+            <ul>
+              {relatedLinks.map(link => (
+                <li key={link.to}>
+                  <Link to={link.to}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
     </>
   )
 }

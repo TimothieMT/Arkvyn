@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function FullStackEntwicklung() {
@@ -8,7 +7,7 @@ export default function FullStackEntwicklung() {
       metaDescription="Full-Stack-Webentwicklung mit React-Frontends, Node.js-APIs und skalierbaren Backends für Start-ups und Unternehmen in ganz Deutschland."
       canonical="https://arkvyn.de/full-stack-entwicklung"
       eyebrow="Full-Stack-Entwicklung"
-      h1={<>Full-Stack-Entwicklung: Frontend, Backend und API <Box component="span" sx={{ color: 'primary.main' }}>aus einer Hand</Box></>}
+      h1={<>Full-Stack-Entwicklung: Frontend, Backend und API <span className="text-soft">aus einer Hand</span></>}
       intro="Viele Projekte scheitern nicht an der Idee, sondern an der Schnittstelle: zwischen Design und Technik, zwischen Frontend und Backend, zwischen Anforderung und Umsetzung. Als Full-Stack Entwickler schließe ich diese Lücken von der React-Oberfläche bis zur Datenbankabfrage, alles aus einer Hand."
       serviceName="Full-Stack Webentwicklung"
       serviceDescription="Full-Stack-Entwicklung mit React, TypeScript und Node.js skalierbare Webanwendungen von der UI bis zur Datenbank, REST-APIs und Backend-Services für Start-ups und Unternehmen deutschlandweit."

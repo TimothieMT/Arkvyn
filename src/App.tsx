@@ -1,9 +1,6 @@
 import './App.css'
 import { lazy, Suspense, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { ThemeProvider } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-import theme from './theme'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Angebot from './components/Angebot'
@@ -14,6 +11,7 @@ import Faq from './components/Faq'
 import Kontakt from './components/Kontakt'
 import Footer from './components/Footer'
 import Seo from './components/Seo'
+import { useReveal } from './components/ui/useReveal'
 import { faqs } from './faqData'
 
 // Unterseiten aus dem Haupt-Bundle heraushalten
@@ -41,7 +39,7 @@ const homeSchemas: Record<string, unknown>[] = [
     url: 'https://arkvyn.de',
     logo: 'https://arkvyn.de/logo.png',
     image: 'https://arkvyn.de/og-image.png',
-    telephone: '+4917646143387',
+    telephone: '+4915567829726',
     email: 'arkvyn.solutions@proton.me',
     sameAs: ['https://www.linkedin.com/in/tim-tolk-2091a7258'],
     founder: {
@@ -56,7 +54,7 @@ const homeSchemas: Record<string, unknown>[] = [
       addressRegion: 'Schleswig-Holstein',
       addressCountry: 'DE',
     },
-    areaServed: [{ '@type': 'Country', name: 'Deutschland' }, 'Lübeck', 'Hamburg', 'Schleswig-Holstein'],
+    areaServed: [{ '@type': 'Country', name: 'Deutschland' }, 'Lübeck', 'Hamburg', 'Kiel', 'Schleswig-Holstein'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Softwareentwicklung & IT-Dienstleistungen',
@@ -140,10 +138,13 @@ function MainPage() {
 }
 
 function App() {
+  useReveal()
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id)
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 72
+      // Sektionen haben genug Innenabstand für die schwebende Navigation
+      const top = id === 'home' ? 0 : el.getBoundingClientRect().top + window.scrollY
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
       window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' })
     }
@@ -158,31 +159,28 @@ function App() {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <RouteFocusManager />
-        <a className="skip-link" href="#main">Zum Inhalt springen</a>
-        <Navbar scrollTo={scrollTo} />
-        <Suspense fallback={<div className="route-loading" role="status">Seite wird geladen...</div>}>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/webdesign" element={<Webdesign />} />
-            <Route path="/homepage-erstellen-lassen" element={<HomepageErstellen />} />
-            <Route path="/ki-integration" element={<KiIntegration />} />
-            <Route path="/full-stack-entwicklung" element={<FullStackEntwicklung />} />
-            <Route path="/backend-entwicklung" element={<BackendEntwicklung />} />
-            <Route path="/devops-infrastruktur" element={<DevopsInfrastruktur />} />
-            <Route path="/api-integration" element={<ApiIntegration />} />
-            <Route path="/it-beratung" element={<ItBeratung />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/datenschutz" element={<Datenschutz />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-        <Footer scrollTo={scrollTo} />
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <RouteFocusManager />
+      <a className="skip-link" href="#main">Zum Inhalt springen</a>
+      <Navbar scrollTo={scrollTo} />
+      <Suspense fallback={<div className="route-loading" role="status">Seite wird geladen...</div>}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/webdesign" element={<Webdesign />} />
+          <Route path="/homepage-erstellen-lassen" element={<HomepageErstellen />} />
+          <Route path="/ki-integration" element={<KiIntegration />} />
+          <Route path="/full-stack-entwicklung" element={<FullStackEntwicklung />} />
+          <Route path="/backend-entwicklung" element={<BackendEntwicklung />} />
+          <Route path="/devops-infrastruktur" element={<DevopsInfrastruktur />} />
+          <Route path="/api-integration" element={<ApiIntegration />} />
+          <Route path="/it-beratung" element={<ItBeratung />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+      <Footer scrollTo={scrollTo} />
+    </BrowserRouter>
   )
 }
 

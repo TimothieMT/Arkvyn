@@ -1,175 +1,94 @@
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Chip from '@mui/material/Chip'
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
+import Section from './ui/Section'
 
-const landingFeatures = [
-  'Eine responsive Seite',
-  'Kontaktformular',
-  'Mobile-optimiert',
-  'SEO-Grundlagen',
-  '2 Revisionsrunden',
+const packages = [
+  {
+    name: 'Landingpage',
+    price: 'ab 1.200 €',
+    unit: 'Festpreis',
+    desc: 'Eine professionelle einseitige Webpräsenz ideal für Selbstständige, Start-ups und Produktlaunches.',
+    features: ['Eine responsive Seite', 'Kontaktformular', 'Mobile-optimiert', 'SEO-Grundlagen', '2 Revisionsrunden'],
+  },
+  {
+    name: 'Business-Website',
+    price: 'ab 2.800 €',
+    unit: 'Festpreis',
+    badge: 'Beliebt',
+    desc: 'Vollwertige Unternehmenswebsite mit mehreren Seiten und Content-Management für Ihre langfristige Online-Präsenz.',
+    features: ['3-5 responsive Seiten', 'CMS-Anbindung', 'SEO-Grundlagen', 'Kontaktformular', 'Für Webanalyse vorbereitet', '3 Revisionsrunden'],
+  },
+  {
+    name: 'Individuelle Projekte & Beratung',
+    price: 'ab 90 €',
+    unit: 'pro Stunde',
+    desc: 'Webanwendungen, Backends, Integrationen und IT-Beratung. Je nach Umfang und Komplexität erstelle ich ein individuelles Angebot.',
+  },
+  {
+    name: 'KI- & LLM-Projekte',
+    price: 'ab 110 €',
+    unit: 'pro Stunde',
+    desc: 'Integration von Sprachmodellen, Automatisierung und Datenextraktion in Ihre bestehenden Anwendungen.',
+  },
 ]
-
-const businessFeatures = [
-  '3-5 responsive Seiten',
-  'CMS-Anbindung',
-  'SEO-Grundlagen',
-  'Kontaktformular',
-  'Für Webanalyse vorbereitet',
-  '3 Revisionsrunden',
-]
-
-function FeatureList({ items }: { items: string[] }) {
-  return (
-    <Box component="ul" sx={{ display: 'flex', flexDirection: 'column', gap: 1.25, mb: 4, flex: 1, p: 0 }}>
-      {items.map(item => (
-        <Box
-          component="li"
-          key={item}
-          sx={{ display: 'flex', gap: 1.5, fontSize: '0.875rem', color: 'text.secondary', lineHeight: 1.5, alignItems: 'flex-start' }}
-        >
-          <Box component="span" sx={{ color: 'primary.main', fontWeight: 700, flexShrink: 0, mt: '1px', fontSize: '0.8rem' }}>✓</Box>
-          {item}
-        </Box>
-      ))}
-    </Box>
-  )
-}
 
 export default function Preise() {
   return (
-    <Box component="section" id="preise" className="section section--preise" aria-label="Preise & Pakete">
-      <Container maxWidth="lg" sx={{ mb: 7, textAlign: 'center' }}>
-        <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 1.5 }}>
-          Preise & Pakete
-        </Typography>
-        <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' }, color: 'text.primary', mb: 1.5 }}>
-          Website erstellen lassen zum{' '}
-          <Box component="span" sx={{ color: 'primary.main' }}>Festpreis</Box>
-        </Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 520, mx: 'auto' }}>
-          Klare Pakete für Websites transparent kalkuliert und ohne versteckte Kosten.
-        </Typography>
-      </Container>
+    <Section id="preise" surface="light" aria-labelledby="preise-heading">
+      <div className="split">
+        <header className="split__side">
+          <p className="eyebrow" data-reveal="fade">Preise &amp; Pakete</p>
+          <h2 id="preise-heading" data-reveal="blur">Website erstellen lassen zum Festpreis</h2>
+          <p className="split__lead" data-reveal="fade">
+            Klare Pakete für Websites transparent kalkuliert und ohne versteckte Kosten.
+          </p>
+        </header>
 
-      <Container maxWidth="lg">
-        {/* Pricing cards */}
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-            border: '1px solid #c7c7cc',
-            borderRadius: 2,
-            overflow: 'hidden',
-            gap: '1px',
-            bgcolor: '#c7c7cc',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.05), 0 10px 28px rgba(0,0,0,0.09)',
-          }}
-        >
-          {/* Landingpage */}
-          <Card sx={{ borderRadius: 0, bgcolor: 'background.paper', display: 'flex', flexDirection: 'column' }}>
-            <CardContent sx={{ p: '2.5rem !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <Typography variant="h3" sx={{ fontSize: '1.5rem', color: 'text.primary', mb: 0.75, fontWeight: 700 }}>
-                Landingpage
-              </Typography>
-              <Typography sx={{ fontSize: '2.75rem', fontWeight: 700, color: 'text.primary', letterSpacing: '-0.04em', lineHeight: 1, mb: 0.5 }}>
-                ab 1.200 €
-              </Typography>
-              <Typography sx={{ fontSize: '0.8125rem', color: 'text.disabled', mb: 2.5 }}>
-                Einmalig, inklusive Einrichtung
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, pb: 3, borderBottom: '1px solid #e5e5ea' }}>
-                Eine professionelle einseitige Webpräsenz ideal für Selbstständige,
-                Start-ups und Produktlaunches.
-              </Typography>
-              <FeatureList items={landingFeatures} />
-              <Button variant="outlined" fullWidth component="a" href="#kontakt" sx={{ mt: 'auto' }}>
-                Angebot anfragen
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="split__main">
+          <div data-reveal="lift">
+            <table className="price-table">
+              <caption className="sr-only">Preise und Pakete in Euro</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Leistung</th>
+                  <th scope="col" className="price-table__price">Preis</th>
+                </tr>
+              </thead>
+              <tbody>
+                {packages.map(pkg => (
+                  <tr key={pkg.name}>
+                    <th scope="row">
+                      <span className="price-table__name">
+                        {pkg.name}
+                        {pkg.badge ? <span className="badge">{pkg.badge}</span> : null}
+                      </span>
+                      <p>{pkg.desc}</p>
+                      {pkg.features ? (
+                        <ul className="tag-list" aria-label={`Enthalten in ${pkg.name}`}>
+                          {pkg.features.map(f => (
+                            <li key={f}>{f}</li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </th>
+                    <td className="price-table__price">
+                      {pkg.price}
+                      <span>{pkg.unit}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-          {/* Business-Website — highlighted */}
-          <Card
-            sx={{
-              borderRadius: 0,
-              bgcolor: '#f0f5ff',
-              display: 'flex',
-              flexDirection: 'column',
-              borderTop: '3px solid #2997ff',
-            }}
-          >
-            <CardContent sx={{ p: '2.5rem !important', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <Chip label="Beliebt" color="primary" size="small" sx={{ mb: 2, alignSelf: 'flex-start' }} />
-              <Typography variant="h3" sx={{ fontSize: '1.5rem', color: 'text.primary', mb: 0.75, fontWeight: 700 }}>
-                Business-Website
-              </Typography>
-              <Typography sx={{ fontSize: '2.75rem', fontWeight: 700, color: 'text.primary', letterSpacing: '-0.04em', lineHeight: 1, mb: 0.5 }}>
-                ab 2.800 €
-              </Typography>
-              <Typography sx={{ fontSize: '0.8125rem', color: 'text.disabled', mb: 2.5 }}>
-                Einmalig, inklusive Einrichtung
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, pb: 3, borderBottom: '1px solid #d0d8f0' }}>
-                Vollwertige Unternehmenswebsite mit mehreren Seiten und
-                Content-Management für Ihre langfristige Online-Präsenz.
-              </Typography>
-              <FeatureList items={businessFeatures} />
-              <Button variant="contained" fullWidth component="a" href="#kontakt" sx={{ mt: 'auto' }}>
-                Angebot anfragen
-              </Button>
-            </CardContent>
-          </Card>
-        </Box>
+          <p className="footnote">
+            * Nicht enthalten: Texte, Bilder und Hosting. Änderungen nach Abnahme werden separat berechnet.
+          </p>
 
-        <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', textAlign: 'center', mt: 2.5 }}>
-          * Nicht enthalten: Texte, Bilder und Hosting. Änderungen nach Abnahme werden separat berechnet.
-        </Typography>
-
-        <Divider sx={{ my: 7 }} />
-
-        {/* Individual projects */}
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: { xs: 'flex-start', md: 'center' },
-            justifyContent: 'space-between',
-            flexDirection: { xs: 'column', md: 'row' },
-            gap: { xs: 4, md: 6 },
-            bgcolor: 'background.paper',
-            border: '1px solid #c7c7cc',
-            borderRadius: 2,
-            p: { xs: 3, md: 4.5 },
-            boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 14px rgba(0,0,0,0.06)',
-          }}
-        >
-          <Box>
-            <Typography variant="h2" sx={{ fontSize: { xs: '1.75rem', md: '2.25rem' }, color: 'text.primary', mb: 2 }}>
-              Individuelle Projekte &{' '}
-              <Box component="span" sx={{ color: 'primary.main' }}>Beratung</Box>
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1.25, maxWidth: 520 }}>
-              Mein Stundensatz beginnt bei{' '}
-              <Box component="strong" sx={{ color: 'text.primary', fontWeight: 700 }}>90 €/Std</Box>
-              . Je nach Projektumfang und Komplexität erstelle ich ein individuelles Angebot. KI- und LLM-Projekte werden ab{' '}
-              <Box component="strong" sx={{ color: 'text.primary', fontWeight: 700 }}>110 €/Std</Box>
-              {' '}kalkuliert.
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-              Schreiben Sie mir und ich bespreche Ihr Vorhaben in einem{' '}
-              <Box component="strong" sx={{ color: 'primary.main', fontWeight: 600 }}>kostenlosen Erstgespräch</Box>.
-            </Typography>
-          </Box>
-          <Button variant="contained" component="a" href="#kontakt" sx={{ flexShrink: 0, whiteSpace: 'nowrap' }}>
-            Kostenloses Erstgespräch
-          </Button>
-        </Box>
-      </Container>
-    </Box>
+          <div className="btn-row price-actions">
+            <a href="#kontakt" className="btn btn--primary">Kostenloses Erstgespräch</a>
+            <a href="#kontakt" className="btn btn--ghost">Angebot anfragen</a>
+          </div>
+        </div>
+      </div>
+    </Section>
   )
 }

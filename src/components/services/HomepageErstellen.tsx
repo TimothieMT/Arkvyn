@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function HomepageErstellen() {
@@ -8,7 +7,7 @@ export default function HomepageErstellen() {
       metaDescription="Homepage erstellen lassen: Festpreis ab 1.200 €, transparente Pakete und voller Quellcode-Besitz für Selbstständige und Unternehmen, deutschlandweit remote."
       canonical="https://arkvyn.de/homepage-erstellen-lassen"
       eyebrow="Homepage erstellen lassen"
-      h1={<>Homepage erstellen lassen <Box component="span" sx={{ color: 'primary.main' }}>zum Festpreis</Box>, ohne Überraschungen</>}
+      h1={<>Homepage erstellen lassen <span className="text-soft">zum Festpreis</span>, ohne Überraschungen</>}
       intro="Sie brauchen eine professionelle Homepage, wollen sich aber nicht mit Baukästen, Technik und Kleingedrucktem beschäftigen? Ich übernehme das komplett: von der Struktur über Design und Entwicklung bis zum Livegang zum vorher vereinbarten Festpreis."
       serviceName="Homepage-Erstellung"
       serviceDescription="Professionelle Homepage-Erstellung zum Festpreis Landingpages ab 1.200 €, Business-Websites ab 2.800 €, inklusive responsivem Design, Kontaktformular und SEO-Grundlagen. Deutschlandweit."
@@ -41,7 +40,7 @@ export default function HomepageErstellen() {
         {
           h2: 'So läuft die Zusammenarbeit ab deutschlandweit remote',
           paragraphs: [
-            'Der gesamte Prozess funktioniert ortsunabhängig: Erstgespräch per Video-Call, Abstimmungen per E-Mail oder Telefon, Zwischenstände als Live-Vorschau im Browser. So betreue ich Kunden in ganz Deutschland und treffe Sie auf Wunsch persönlich, wenn Sie in Lübeck, Hamburg oder Umgebung sitzen.',
+            'Der gesamte Prozess funktioniert ortsunabhängig: Erstgespräch per Video-Call, Abstimmungen per E-Mail oder Telefon, Zwischenstände als Live-Vorschau im Browser. So betreue ich Kunden in ganz Deutschland und treffe Sie auf Wunsch persönlich, wenn Sie in Lübeck, Hamburg, Kiel oder Umgebung sitzen.',
             'Vom Erstgespräch bis zum Livegang vergehen je nach Umfang und Feedback-Tempo typischerweise zwei bis sechs Wochen. Sie bekommen früh eine klickbare Vorschau und sehen die Website wachsen, statt auf ein Überraschungsergebnis zu warten.',
           ],
         },

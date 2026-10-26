@@ -1,12 +1,6 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
-import Stack from '@mui/material/Stack'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import logo from '../assets/noBgColor.svg'
+import BrandMark from './ui/BrandMark'
+import LinkedInIcon from './ui/LinkedInIcon'
 
 interface FooterProps {
   scrollTo: (id: string) => void
@@ -15,6 +9,7 @@ interface FooterProps {
 const navItems = [
   { id: 'home', label: 'Startseite' },
   { id: 'angebot', label: 'Leistungen' },
+  { id: 'preise', label: 'Preise' },
   { id: 'referenzen', label: 'Referenzen' },
   { id: 'ueber-mich', label: 'Über mich' },
   { id: 'kontakt', label: 'Kontakt' },
@@ -24,6 +19,8 @@ const serviceLinks = [
   { to: '/webdesign', label: 'Webdesign & Webentwicklung' },
   { to: '/homepage-erstellen-lassen', label: 'Homepage erstellen lassen' },
   { to: '/ki-integration', label: 'KI-Integration & LLM' },
+  { to: '/full-stack-entwicklung', label: 'Full-Stack-Entwicklung' },
+  { to: '/it-beratung', label: 'IT-Beratung' },
 ]
 
 export default function Footer({ scrollTo }: FooterProps) {
@@ -31,6 +28,7 @@ export default function Footer({ scrollTo }: FooterProps) {
   const location = useLocation()
 
   const handleNav = (e: React.MouseEvent, id: string) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
     e.preventDefault()
     if (location.pathname !== '/') {
       navigate('/')
@@ -41,143 +39,57 @@ export default function Footer({ scrollTo }: FooterProps) {
   }
 
   return (
-    <Box component="footer" sx={{ bgcolor: '#ffffff', borderTop: '1px solid', borderColor: 'divider' }}>
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr' },
-            gap: { xs: 4, md: 5 },
-            pt: { xs: 6, md: 8 },
-            pb: { xs: 5, md: 6 },
-          }}
-        >
-          {/* Brand */}
-          <Box sx={{ gridColumn: { sm: '1 / -1', md: '1' } }}>
-            <a
-              href="/#home"
-              onClick={e => handleNav(e, 'home')}
-              style={{ display: 'inline-flex', marginBottom: 16 }}
-              aria-label="Arkvyn Startseite"
-            >
-              <img src={logo} alt="Arkvyn Logo" width={135} height={36} style={{ height: 36, width: 'auto', opacity: 0.6 }} />
-            </a>
-            <Typography
-              sx={{ fontSize: '0.8rem', color: 'text.disabled', letterSpacing: '0.1em', textTransform: 'uppercase' }}
-            >
-              Think / Build / Deliver
-            </Typography>
-            <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled', mt: 1 }}>
-              Webentwickler &amp; IT-Freelancer aus Lübeck<br />
-              remote in ganz Deutschland tätig
-            </Typography>
-          </Box>
+    <footer className="site-footer" data-surface="dark">
+      <div className="container">
+        <div className="site-footer__grid">
+          <p className="site-footer__tagline" data-reveal="blur">
+            Think. Build. Deliver.
+            <br />
+            <span>Webentwicklung aus Lübeck, remote in ganz Deutschland.</span>
+          </p>
 
-          {/* Navigation */}
-          <Box>
-            <Typography
-              sx={{ fontSize: '0.6875rem', fontWeight: 600, color: 'text.disabled', letterSpacing: '0.12em', textTransform: 'uppercase', mb: 2.5 }}
-            >
-              Navigation
-            </Typography>
-            <Stack spacing={1} component="ul" sx={{ p: 0 }}>
-              {navItems.map(item => (
-                <Box component="li" key={item.id}>
-                  <Button
-                    variant="text"
-                    component="a"
-                    href={`/#${item.id}`}
-                    onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
-                    sx={{ fontSize: '0.875rem', p: 0, minWidth: 0, minHeight: 32, '&:hover': { background: 'none', color: 'text.primary' } }}
-                  >
-                    {item.label}
-                  </Button>
-                </Box>
-              ))}
-            </Stack>
-          </Box>
+          <nav className="site-footer__group" aria-labelledby="footer-nav">
+            <h2 id="footer-nav">Navigation</h2>
+            {navItems.map(item => (
+              <a key={item.id} href={`/#${item.id}`} onClick={e => handleNav(e, item.id)}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
-          {/* Services */}
-          <Box>
-            <Typography
-              sx={{ fontSize: '0.6875rem', fontWeight: 600, color: 'text.disabled', letterSpacing: '0.12em', textTransform: 'uppercase', mb: 2.5 }}
-            >
-              Leistungen
-            </Typography>
-            <Stack spacing={1} component="ul" sx={{ p: 0 }}>
-              {serviceLinks.map(link => (
-                <Box component="li" key={link.to}>
-                  <Link
-                    to={link.to}
-                    style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, fontSize: '0.875rem', color: '#6e6e73' }}
-                  >
-                    {link.label}
-                  </Link>
-                </Box>
-              ))}
-            </Stack>
-          </Box>
+          <nav className="site-footer__group" aria-labelledby="footer-services">
+            <h2 id="footer-services">Leistungen</h2>
+            {serviceLinks.map(link => (
+              <Link key={link.to} to={link.to}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-          {/* Contact */}
-          <Box>
-            <Typography
-              sx={{ fontSize: '0.6875rem', fontWeight: 600, color: 'text.disabled', letterSpacing: '0.12em', textTransform: 'uppercase', mb: 2.5 }}
-            >
-              Kontakt
-            </Typography>
-            <Box component="address">
-              <Typography sx={{ fontSize: '0.875rem', mb: 0.75, overflowWrap: 'break-word' }}>
-                <Box component="a" href="tel:+4917646143387" sx={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
-                  +49 (0) 176 46143387
-                </Box>
-              </Typography>
-              <Typography sx={{ fontSize: '0.875rem', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                <Box component="a" href="mailto:arkvyn.solutions@proton.me" sx={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
-                  arkvyn.solutions@proton.me
-                </Box>
-              </Typography>
-              <Typography sx={{ fontSize: '0.875rem', mt: 0.75 }}>
-                <Box
-                  component="a"
-                  href="https://www.linkedin.com/in/tim-tolk-2091a7258"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, gap: 0.75, color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
-                >
-                  <LinkedInIcon sx={{ fontSize: 18 }} aria-hidden="true" />
-                  LinkedIn-Profil
-                </Box>
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
+          <div className="site-footer__group">
+            <h2>Kontakt</h2>
+            <address>
+              <a href="tel:+4915567829726">+49 (0) 155 67829726</a>
+              <a href="mailto:arkvyn.solutions@proton.me">arkvyn.solutions@proton.me</a>
+              <a href="https://www.linkedin.com/in/tim-tolk-2091a7258" target="_blank" rel="noopener noreferrer" className="icon-link">
+                <LinkedInIcon />
+                LinkedIn-Profil<span className="sr-only"> (öffnet in neuem Tab)</span>
+              </a>
+            </address>
+          </div>
+        </div>
 
-        <Divider />
-
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            py: 2.5,
-            gap: 1.5,
-            textAlign: { xs: 'center', sm: 'left' },
-          }}
-        >
-          <Typography sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
-            © {new Date().getFullYear()} Arkvyn. Alle Rechte vorbehalten.
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 3 }}>
-            <Link to="/impressum" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: '#6e6e73', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.2s' }}>
-              Impressum
-            </Link>
-            <Link to="/datenschutz" style={{ display: 'inline-flex', alignItems: 'center', minHeight: 32, color: '#6e6e73', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.2s' }}>
-              Datenschutz
-            </Link>
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+        <div className="site-footer__bottom">
+          <p>© {new Date().getFullYear()} Arkvyn. Alle Rechte vorbehalten.</p>
+          <nav aria-label="Rechtliches">
+            <Link to="/impressum">Impressum</Link>
+            <Link to="/datenschutz">Datenschutz</Link>
+          </nav>
+          <a href="/#home" onClick={e => handleNav(e, 'home')} className="site-footer__mark" aria-label="Arkvyn Startseite">
+            <BrandMark width="44" height="32" />
+          </a>
+        </div>
+      </div>
+    </footer>
   )
 }

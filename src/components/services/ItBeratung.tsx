@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import ServicePage from './ServicePage'
 
 export default function ItBeratung() {
@@ -8,7 +7,7 @@ export default function ItBeratung() {
       metaDescription="IT-Beratung vom erfahrenen Entwickler: Technologieauswahl, Architekturentscheidungen, Digitalisierungsstrategie und Make-or-Buy-Analysen. Ohne Buzzwords, mit konkreten Empfehlungen deutschlandweit."
       canonical="https://arkvyn.de/it-beratung"
       eyebrow="IT-Beratung"
-      h1={<>IT-Beratung von jemandem, der <Box component="span" sx={{ color: 'primary.main' }}>selbst baut</Box></>}
+      h1={<>IT-Beratung von jemandem, der <span className="text-soft">selbst baut</span></>}
       intro="Viele IT-Berater empfehlen Lösungen, die sie selbst nie umgesetzt haben. Ich berate aus der Praxis: Als Entwickler mit über sechs Jahren Erfahrung in Agentur, Produktentwicklung und KI-Projekten weiß ich, was Empfehlungen in der Realität bedeuten technisch, zeitlich und finanziell."
       serviceName="IT-Beratung & Digitalisierungsstrategie"
       serviceDescription="IT-Beratung für Unternehmen: Technologieauswahl, Softwarearchitektur, Digitalisierungsstrategie und Make-or-Buy-Analyse praxisnah, von einem Entwickler der selbst umsetzt. Deutschlandweit."

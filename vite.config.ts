@@ -9,7 +9,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-          'mui': ['@mui/material', '@emotion/react', '@emotion/styled'],
         },
       },
     },

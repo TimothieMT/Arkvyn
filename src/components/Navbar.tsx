@@ -1,12 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
-import Box from '@mui/material/Box'
-import Drawer from '@mui/material/Drawer'
-import Stack from '@mui/material/Stack'
-import logo from '../assets/noBgColor.svg'
+import BrandMark from './ui/BrandMark'
 
 interface NavbarProps {
   scrollTo: (id: string) => void
@@ -15,18 +9,59 @@ interface NavbarProps {
 const navItems = [
   { id: 'angebot', label: 'Leistungen' },
   { id: 'preise', label: 'Preise' },
-  { id: 'referenzen', label: 'Referenzen' },
   { id: 'ueber-mich', label: 'Über mich' },
+  { id: 'referenzen', label: 'Referenzen' },
+  { id: 'faq', label: 'FAQ' },
 ]
 
 export default function Navbar({ scrollTo }: NavbarProps) {
   const navigate = useNavigate()
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [dark, setDark] = useState(false)
+  const panel = useRef<HTMLDivElement>(null)
+
+  // Die schwebende Leiste passt sich der Sektion an, über der sie gerade liegt.
+  useEffect(() => {
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const bounds = panel.current?.getBoundingClientRect()
+      if (!bounds) return
+      const y = bounds.top + 24
+      const section = Array.from(document.querySelectorAll<HTMLElement>('[data-surface]')).find(el => {
+        const rect = el.getBoundingClientRect()
+        return rect.top <= y && rect.bottom > y
+      })
+      const surface = section?.dataset.surface
+      setDark(surface === 'dark' || surface === 'deep')
+    }
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+    schedule()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+    }
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [menuOpen])
 
   // Auf der Startseite sanft scrollen (SPA), von anderen Routen zuerst zurück navigieren.
   // Als echte <a href="/#…">-Links bleiben die Sektionen crawlbar und per Middle-Click öffenbar.
   const handleNav = (e: React.MouseEvent, id: string) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
     e.preventDefault()
     setMenuOpen(false)
     if (location.pathname !== '/') {
@@ -38,51 +73,32 @@ export default function Navbar({ scrollTo }: NavbarProps) {
   }
 
   return (
-    <>
-      <AppBar position="fixed" component="header">
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          {/* Logo */}
-          <a
-            href="/#home"
-            onClick={e => handleNav(e, 'home')}
-            style={{ display: 'flex', alignItems: 'center' }}
-            aria-label="Arkvyn Startseite"
-          >
-            <img src={logo} alt="Arkvyn Logo" width={195} height={52} style={{ height: 52, width: 'auto' }} />
+    <header className="site-header">
+      <div ref={panel} className="site-header__panel" data-theme={dark ? 'dark' : 'light'} data-open={menuOpen || undefined}>
+        <div className="site-header__row">
+          <a href="/#home" onClick={e => handleNav(e, 'home')} className="brand" aria-label="Arkvyn Startseite">
+            <BrandMark className="brand__mark" />
+            <span className="brand__name">
+              <span>Arkvyn</span>
+              <span>Softwareentwicklung</span>
+            </span>
           </a>
 
-          {/* Desktop navigation */}
-          <Box
-            component="nav"
-            aria-label="Hauptnavigation"
-            sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.25 }}
-          >
+          <nav className="site-header__nav" aria-label="Hauptnavigation">
             {navItems.map(item => (
-              <Button
-                key={item.id}
-                variant="text"
-                component="a"
-                href={`/#${item.id}`}
-                onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
-              >
+              <a key={item.id} href={`/#${item.id}`} onClick={e => handleNav(e, item.id)}>
                 {item.label}
-              </Button>
+              </a>
             ))}
-            <Button
-              variant="contained"
-              size="small"
-              component="a"
-              href="/#kontakt"
-              onClick={(e: React.MouseEvent) => handleNav(e, 'kontakt')}
-              sx={{ ml: 1.5 }}
-            >
-              Kontakt
-            </Button>
-          </Box>
+          </nav>
 
-          {/* Mobile hamburger */}
+          <a href="/#kontakt" onClick={e => handleNav(e, 'kontakt')} className="btn btn--primary site-header__cta">
+            Kontakt
+          </a>
+
           <button
-            className={`navbar__hamburger${menuOpen ? ' open' : ''}`}
+            type="button"
+            className="menu-toggle"
             onClick={() => setMenuOpen(prev => !prev)}
             aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
             aria-expanded={menuOpen}
@@ -90,61 +106,22 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           >
             <span />
             <span />
-            <span />
           </button>
-        </Toolbar>
-      </AppBar>
+        </div>
 
-      {/* Mobile Drawer */}
-      <Drawer
-        anchor="top"
-        open={menuOpen}
-        onClose={() => setMenuOpen(false)}
-        sx={{ display: { md: 'none' } }}
-        PaperProps={{
-          id: 'mobile-menu',
-          sx: {
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            pt: 0,
-          },
-        }}
-      >
-        <button
-          type="button"
-          className="navbar__drawer-close"
-          onClick={() => setMenuOpen(false)}
-          aria-label="Menü schließen"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <Stack spacing={0.5} alignItems="center" width="100%" px={4}>
-          {navItems.map(item => (
-            <Button
-              key={item.id}
-              variant="text"
-              component="a"
-              href={`/#${item.id}`}
-              onClick={(e: React.MouseEvent) => handleNav(e, item.id)}
-              sx={{ fontSize: '1.25rem', width: 280, color: 'text.secondary', '&:hover': { color: 'text.primary' } }}
-            >
-              {item.label}
-            </Button>
-          ))}
-          <Button
-            variant="contained"
-            component="a"
-            href="/#kontakt"
-            onClick={(e: React.MouseEvent) => handleNav(e, 'kontakt')}
-            sx={{ mt: 1.5, width: 280 }}
-          >
+        <div id="mobile-menu" className="mobile-menu" hidden={!menuOpen}>
+          <nav aria-label="Mobile Navigation">
+            {navItems.map(item => (
+              <a key={item.id} href={`/#${item.id}`} onClick={e => handleNav(e, item.id)}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a href="/#kontakt" onClick={e => handleNav(e, 'kontakt')} className="btn btn--primary btn--block">
             Kontakt aufnehmen
-          </Button>
-        </Stack>
-      </Drawer>
-    </>
+          </a>
+        </div>
+      </div>
+    </header>
   )
 }
