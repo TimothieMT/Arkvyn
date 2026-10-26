@@ -3,25 +3,32 @@ import Section from './ui/Section'
 // Anonymisierte Referenzen aus Festanstellungen bewusst ohne Firmennamen
 const referenzen = [
   {
+    branche: 'IT-Beratung · Hamburg',
+    zeitraum: 'seit 2026',
+    title: 'KI-Produkt von der Architektur bis zum MVP',
+    desc: 'Konzeption der Softwarearchitektur und Entwicklung eines LLM-basierten KI-Produkts als Senior Developer für ein Hamburger IT-Beratungsunternehmen von der Systemarchitektur über die Kernfunktionalitäten bis zu Code-Reviews und Qualitätssicherung.',
+    stack: ['AI/LLM', 'Softwarearchitektur', 'Full-Stack'],
+  },
+  {
     branche: 'Logistik-Software',
-    zeitraum: '2025 2026',
+    zeitraum: '2025 – 2026',
     title: 'Cloudbasiertes Lagerverwaltungssystem',
     desc: 'Weiterentwicklung eines cloudbasierten Lagerverwaltungssystems für ein Software-Unternehmen der Logistikbranche: Konzeption neuer Technologie-Anforderungen für den Cloud-Einsatz, Performance-Optimierung, kundenspezifische Erweiterungen und Automatisierung der Deployments.',
     stack: ['Java', 'PHP', 'Cloud', 'CI/CD'],
   },
   {
     branche: 'Online-Marketing & E-Commerce',
-    zeitraum: '2023 2024',
+    zeitraum: '2023 – 2024',
     title: 'Softwarelösungen für eine Full-Service-Internetagentur',
     desc: 'Entwicklung eigener Softwarelösungen für eine der großen Internetagenturen im deutschsprachigen Raum (über 200 Mitarbeiter, mehr als 750 Kunden): grafische Frontend-Umsetzungen, API-Schnittstellen zu Drittsystemen sowie Programmierung von Crawlern und Scrapern.',
     stack: ['JavaScript', 'Frontend', 'PHP', 'REST-APIs'],
   },
   {
-    branche: 'IT-Beratung · Hamburg',
-    zeitraum: 'seit 2026',
-    title: 'KI-Produkt von der Architektur bis zum MVP',
-    desc: 'Konzeption der Softwarearchitektur und Entwicklung eines LLM-basierten KI-Produkts als Senior Developer für ein Hamburger IT-Beratungsunternehmen von der Systemarchitektur über die Kernfunktionalitäten bis zu Code-Reviews und Qualitätssicherung.',
-    stack: ['AI/LLM', 'Softwarearchitektur', 'Full-Stack'],
+    branche: 'Freie Projekte · Arkvyn',
+    zeitraum: 'seit 2020',
+    title: 'Websites, Webanwendungen und Automatisierung',
+    desc: 'Parallel zu den Festanstellungen setze ich eigene und freie Projekte um: Websites und Webanwendungen für kleine Unternehmen und Selbstständige, Automatisierungen wiederkehrender Abläufe sowie eigene Tools und Produkte. Heute gebündelt unter Arkvyn.',
+    stack: ['React', 'TypeScript', 'Node.js', 'Automatisierung'],
   },
 ]
 
