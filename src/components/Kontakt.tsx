@@ -83,16 +83,22 @@ export default function Kontakt() {
 
         <div className="split__main">
           <form className="contact-form" onSubmit={handleSubmit} data-reveal="lift">
-            <input
-              className="contact-form__trap"
-              type="text"
-              name="website"
-              value={website}
-              onChange={e => setWebsite(e.target.value)}
-              tabIndex={-1}
-              autoComplete="off"
-              aria-hidden="true"
-            />
+            {/* Honeypot für Bots. display:none, damit Browser-Autofill und
+                Passwortmanager es nicht befüllen (sonst wird die Anfrage verworfen). */}
+            <div className="contact-form__trap" aria-hidden="true">
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={e => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                data-1p-ignore
+                data-lpignore="true"
+                data-bwignore
+                data-form-type="other"
+              />
+            </div>
 
             <div className="contact-form__row">
               <label className="field">

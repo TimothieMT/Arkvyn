@@ -1220,11 +1220,7 @@
 }
 
 .contact-form__trap {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  display: none;
 }
 
 .contact-form__row {
